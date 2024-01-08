@@ -1,0 +1,249 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+.head{
+    height: 64px;
+    display: flex;
+    align-items: center;
+    background-color: rgb(33, 34, 39);
+}
+
+.first{
+    padding-right: 8px;
+}
+
+.second{
+    padding-right: 700px;
+}
+
+.third{
+}
+
+.front_blank{
+    width: 15%;
+}
+
+nav{
+    display: flex;
+    justify-content: left;
+    position: relative;
+    background-color: rgb(40, 40, 45);
+    height: 48px;
+    align-items: center;
+}
+
+ul, li{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navigation > li{
+    position: relative;
+    float: left;
+}
+
+.navigation > li > a{
+    font-size: 0.85em;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    display:block;
+    margin-right: 16px;
+}
+
+.navigation > li:hover .navigation_dropdown{
+    display: block;
+}
+
+.navigation .navigation_dropdown{
+    display: none; 
+    position:absolute; 
+    text-align:center;
+}
+
+.navigation_dropdown li{
+    list-style-type: none;
+}
+
+.navigation .navigation_dropdown a{
+    display: flex;
+    justify-content: center;
+    padding:5px; 
+    background:gray; 
+    color:white;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.background{
+    display: flex;
+    width: 100%;
+    height: 500px;
+    background-color: rgb(23, 22, 24);
+}
+
+.background_img{
+    z-index: 0;
+    justify-content: center;
+    overflow: hidden;
+    width: 70%;
+}
+
+.backgroundImg{
+    filter: brightness(70%);
+    opacity: 30%;
+    width: 100%;
+    height: 100%;
+    transform: scale(1.5);
+    margin-top: -100px;
+}
+
+.character_info{
+    position: absolute;
+    width: 100%;
+    height: 200px;
+    margin-top: 40px;
+    display: flex;
+    z-index: 1;
+}
+
+.cody_box{
+    width: 140px;
+}
+
+.cody_info{
+    background-color: rgb(54, 53, 53);
+    display: flex;
+    height: 82%;
+    border-radius: 5px 5px 0px 0px;
+}
+
+.cody_info_title{
+    margin-top: 5px;
+    margin-left: 10px;
+}
+
+.cody_info_detail{
+    margin-top: 5px;
+    margin-left: 7px;
+}
+
+.cody_info_title li{
+    font-size: 0.75em;
+    margin-top: 5px;
+    color: rgb(145, 145, 145);
+}
+
+.cody_info_detail li{
+    font-size: 0.75em;
+    margin-top: 5px;
+    color: rgb(240, 240, 240);
+}
+
+.cody_button{
+    width: 100%;
+    height: 18%;
+    background-color: rgb(72, 63, 65);
+    border: none;
+    border-top: 1px solid rgb(139, 100, 110);
+    border-radius: 0px 0px 5px 5px;
+    color: rgb(241, 158, 177);
+    cursor: pointer;
+}
+
+.character_box{
+    width: 200px;
+}
+
+.character_image{
+    height: 80%;
+    margin: -8px 20px 10px;
+}
+
+.characterImage{
+    width: 100%;
+    height: 100%;
+}
+
+.character_activity{
+    height: 10%;
+    font-size: 0.8em;
+    text-align: center;
+    color: white;
+}
+
+.character_since{
+    height: 10%;
+    font-size: 0.8em;
+    text-align: center;
+    color: rgb(166, 168, 179);
+}
+
+.tooltip_button{
+    font-size: 0.8em;
+    border-radius: 50%;
+    text-align: center;
+    border: none;
+    padding: 1px 5px;
+    margin-left: 3px;
+    position: absolute;
+}
+
+.tooltip_button .tooltip_text{
+    visibility: hidden;
+    width: 350px;
+    background-color: rgb(156, 208, 147);
+    color: rgb(63, 114, 49);
+    text-align: center;
+    font-size: 1.25em;
+    padding: 8px;
+    border-radius: 5px;
+
+    position: absolute;
+    z-index: 1;
+
+    margin-left: -192px;
+    left:50%;
+    bottom:200%;
+}
+
+.tooltip_button:hover .tooltip_text{
+    visibility: visible;
+}
+
+.tooltip_button .tooltip_text::after{
+    position: absolute;
+    content: '';
+    border-style: solid;
+    border-width: 10px;
+    border-color: rgb(156, 208, 147)transparent transparent transparent;
+    left: 50%;
+    margin-top: 23px;
+}
+
+.character_name{
+    font-size: 1.5em;
+    color: white;
+    padding-top:30px;
+    align-items: center;
+}
