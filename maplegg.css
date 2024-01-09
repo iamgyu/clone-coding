@@ -79,6 +79,7 @@ ul, li{
     display: none; 
     position:absolute; 
     text-align:center;
+    z-index: 2;
 }
 
 .navigation_dropdown li{
@@ -171,6 +172,11 @@ ul, li{
     cursor: pointer;
 }
 
+.cody_button:hover{
+    color: rgb(245, 187, 208);
+    background-color: rgb(73, 66, 69);
+}
+
 .character_box{
     width: 200px;
 }
@@ -241,9 +247,32 @@ ul, li{
     margin-top: 23px;
 }
 
+.character_info_box{
+    height: 100%;
+    width: 350px;
+    background-color: gray;
+}
+
 .character_name{
+    height: 30px;
     font-size: 1.5em;
     color: white;
-    padding-top:30px;
+    margin-top: 30px;
+    display: flex;
     align-items: center;
+}
+
+.character_server{
+    margin-left: 8px;
+    border-color: red;
+    border-radius: 10px;
+    border-width: 5px;
+    background: none;
+    color: white;
+}
+
+.character_level_job{
+    margin: 8px 0px;
+    font-size: 0.75em;
+    color: white;
 }
