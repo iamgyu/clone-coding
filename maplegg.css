@@ -11,12 +11,16 @@ article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup, 
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+body{
+    background-color: rgb(245, 245, 245);
 }
 
 .head{
@@ -342,4 +346,66 @@ ul, li{
     font-size: 0.75em;
     padding: 3px 0px;
     color: white;
+}
+
+.advertisement_box{
+    display: flex;
+    position: absolute;
+    margin-left: 13%;
+    margin-top: 280px;
+    width: 74%;
+    height: 100px;
+    background-color: rgb(48, 48, 49);
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.character_detail_info{
+    z-index: 1;
+    display: flex;
+    position: absolute;
+    background-color: rgb(245, 245, 245);
+    height: 100%;
+    margin-left: 13%;
+    margin-top: -100px;
+    width: 74%;
+    border-radius: 10px;
+}
+
+.explain_renewal_box{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding: 11px 15px;
+    height: 60px;
+    width: 96%;
+    margin: 20px 2%;
+    background: rgb(255, 255, 255);
+    border: 1px solid rgb(233, 234, 237);
+    border-radius: 10px;
+}
+
+.explain_sentense{
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.deco_box{
+    display: block;
+    width: 4px;
+    height: 4px;
+    background-color: gray;
+}
+
+.explain_sentense > div{
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.explain_sentense > div > p{
+    font-size: 0.7em;
 }
