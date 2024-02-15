@@ -103,3 +103,86 @@ table {
     margin-left: 10px;
     color: white;
 }
+
+.search_box {
+    display: flex;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(94, 130, 255);
+}
+
+.search_box > a{
+    margin: 0 20 0 20;
+}
+
+.search {
+    display: flex;
+    position: relative;
+    width: 900px;
+}
+
+.search > input {
+    width: 100%;
+    border-radius: 0 8px 8px 0;
+    padding: 10px 12px;
+    font-size: 12px;
+    border: none;
+
+}
+
+.search > button {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border: none;
+    border-radius: 8px;
+    background-color: white;
+    height: 100%;
+    width: 50px;
+    font-size: 16px;
+}
+
+.search > button:hover {
+    cursor: pointer;
+}
+
+.search > select {
+    float: left;
+}
+
+.country > button {
+    border: none;
+    border-radius: 8px 0 0 8px;
+    height: 100%;
+    width: 60px;
+    background-color: none;
+}
+
+.country > button:hover {
+    cursor: pointer;
+}
+
+.patchnote > button {
+    border: none;
+    border-radius: 16px;
+    margin-left: 10px;
+    height: 36px;
+    background-color: rgb(76, 112, 207);
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.patchnote > button:hover {
+    cursor: pointer;
+    background-color: rgb(59, 93, 186);
+}
+
+.main_menu {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 60px;
+    background-color: rgb(94, 130, 255);
+}
