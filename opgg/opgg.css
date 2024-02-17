@@ -195,7 +195,7 @@ table {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 1000px;
+    width: 1100px;
 }
 
 .main_menu .main_collections {
@@ -268,7 +268,7 @@ table {
 }
 
 .advertisement_sentence > div {
-    width: 1000px;
+    width: 1100px;
     height: 40px;
     display: flex;
 }
@@ -290,4 +290,212 @@ table {
 .player_rank_info {
     height: 250px;
     background-color: rgb(49, 49, 59);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.player_rank_info_box {
+    width: 1100px;
+    height: 250px;
+    display: flex;
+    align-items: center;
+}
+
+.player_icon {
+    height: 250px;
+    width: 11%;
+    display: flex;
+    position: relative;
+}
+
+.player_icon > img {
+    margin-top: 40px;
+    border-radius: 20px;
+}
+
+.player_icon > button {
+    position: absolute;
+    background-color: rgb(35, 45, 54);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    top: 130px;
+    left: 32px;
+}
+
+.player_info_detail {
+    display: flex;
+    flex-direction: column;
+    height: 250px;
+    width: 54%;
+}
+
+.player_tier {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    gap: 5px;
+}
+
+.player_tier > button {
+    background-color: rgb(28, 28, 31);
+    color: rgb(117, 116, 133);
+    border: none;
+    border-radius: 4px;
+    cursor: text;
+    font-size: 12px;
+}
+
+.player_tier .more_tier_button {
+    background-color: rgb(49, 49, 59);
+    color: rgb(117, 116, 133);
+    cursor: pointer;
+}
+
+.player_tier .more_tier_button:hover {
+    background-color: rgb(28, 28, 31);
+}
+
+.player_name {
+    font-size: 24px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.player_name #name {
+    color: white;
+    font-weight: bolder;
+}
+
+.player_name #hashcode {
+    color: rgb(117, 116, 133);
+}
+
+.player_name > button {
+    margin-left: 5px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 4px;
+    border: none;
+    font-size: 23px;
+    background-color: rgb(49, 49, 59);
+    color: rgb(117, 116, 133);
+    border: 0.5px solid rgb(117, 116, 133);
+}
+
+.prev_name_and_rank {
+    height: 25px;
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    gap: 5px;
+}
+
+.prev_name_and_rank > a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.prev_name_and_rank > a:hover > #pro_name {
+    text-decoration: underline;
+    text-decoration-color: white;
+}
+
+.prev_name_and_rank > a:hover > #arrow {
+    color: white;
+}
+
+.prev_name_and_rank #pro_name {
+    color: white;
+}
+
+.prev_name_and_rank #arrow {
+    color: rgb(117, 116, 133);
+    font-weight: bolder;
+    margin-left: 5px;
+}
+
+.prev_name_and_rank > p {
+    color: rgb(117, 116, 133);
+}
+
+.prev_name_and_rank > a > p {
+    color: gray;
+}
+
+.setting_profile {
+    height: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.setting_profile > button {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px;
+    font-size: 12px;
+    border: 0.5px solid rgb(117, 116, 133);
+    border-radius: 4px;
+    background-color: transparent;
+    color: white;
+}
+
+.setting_profile #arrow {
+    color: gray;
+    margin: 0 5px;
+}
+
+.button_collections {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.button_collections > button {
+    height: 40px;
+    padding: 0 15px;
+    border: none;
+    border-radius: 4px;
+}
+
+.button_collections #renewal {
+    color: white;
+    background-color: rgb(94, 130, 255);
+    cursor: pointer;
+}
+
+.button_collections #renewal:hover {
+    background-color: rgb(76, 112, 207);
+}
+
+.button_collections #tier_graph {
+    color: rgb(63, 80, 133);
+    border: 0.5px solid rgb(63, 80, 133);
+    background-color: transparent;
+}
+
+.button_collections #tier_graph:hover {
+    background-color: rgba(63, 80, 133, 0.3);
+}
+
+.recent_update {
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    color: rgb(117, 116, 133);
+}
+
+.video_ad {
+    height: 250px;
+    width: 35%;
+    background-color: gray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
