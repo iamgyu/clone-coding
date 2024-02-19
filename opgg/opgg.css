@@ -443,6 +443,7 @@ table {
     border-radius: 4px;
     background-color: transparent;
     color: white;
+    cursor: pointer;
 }
 
 .setting_profile #arrow {
@@ -478,6 +479,7 @@ table {
     color: rgb(63, 80, 133);
     border: 0.5px solid rgb(63, 80, 133);
     background-color: transparent;
+    cursor: pointer;
 }
 
 .button_collections #tier_graph:hover {
@@ -498,4 +500,102 @@ table {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.player_game_info {
+    height: 40px;
+    background-color:rgb(49, 49, 59);
+    border-top: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+.player_game_info > div {
+    height: 40px;
+    width: 1100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.player_game_info > div > nav > ul > li {
+    height: 40px;
+    float: left;
+    display: flex;
+    align-items: center;
+}
+
+.player_game_info > div > nav > ul > li > a{
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: white;
+    text-decoration: none;
+    height: 40px;
+}
+
+.player_game_info > div > nav > ul > li > a > span {
+    display: flex;
+    align-items: center;
+    height: 80%;
+    padding: 0 25px;
+    margin-right: 3px;
+    gap: 8px;
+}
+
+.player_game_info #total {
+    background-color: rgb(81, 81, 98);
+    border-radius: 4px;
+}
+
+.player_game_info > div> nav > ul > li > a:hover > span { 
+    background-color: rgb(40, 40, 47);
+    border-radius: 4px;
+}
+
+.player_game_info > div > div {
+    display: flex;
+    align-items: center;
+    color: white;
+    background-color: rgb(55, 65, 76);
+    height: 80%;
+    border-radius: 100px;
+    padding: 0 5px 0 20px;
+    gap: 10px;
+    font-size: 12px;
+}
+
+.player_game_info > div > div > span {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.player_game_info > div > div > button {
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+    color: gray;
+    background-color: rgb(35, 45, 54);
+}
+
+.main_page {
+    background-color: rgb(28, 28, 31);
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.main_page .advertisement_box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    width: 1100px;
+    margin: 5px 0px;
+    background-color: rgb(49, 49, 59);
+    border-radius: 4px;
 }
