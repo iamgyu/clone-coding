@@ -42,6 +42,10 @@ table {
  border-spacing: 0;
 }
 
+body {
+    background-color: rgb(28, 28, 31);
+}
+
 .page_collections {
     position: relative;
     display: flex;
@@ -540,8 +544,7 @@ table {
     align-items: center;
     height: 80%;
     padding: 0 25px;
-    margin-right: 3px;
-    gap: 8px;
+    margin-right: 5px;
 }
 
 .player_game_info #total {
@@ -586,7 +589,8 @@ table {
     background-color: rgb(28, 28, 31);
     height: 100%;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
 .main_page .advertisement_box {
@@ -595,7 +599,221 @@ table {
     align-items: center;
     height: 100px;
     width: 1100px;
-    margin: 5px 0px;
+    margin-top: 10px;
     background-color: rgb(49, 49, 59);
     border-radius: 4px;
+}
+
+.main_page .detail_box {
+    width: 1100px;
+    display: flex;
+    margin-top: 10px;
+}
+
+.main_page .detail_box .rank_and_used_champion {
+    width: 340px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main_page .detail_box .detail_game_info {
+    margin-left: 10px;
+    width: 750px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main_page .detail_box .rank_and_used_champion .solo_rank {
+    width: 100%;
+    height: 150px;
+    border-radius: 4px;
+    background-color: rgb(49, 49, 59);
+}
+
+.main_page .detail_box .rank_and_used_champion .solo_rank > p {
+    height: 34px;
+    border-bottom: 1px solid black;
+    color: white;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    padding: 0px 10px;
+}
+
+.main_page .detail_box .rank_and_used_champion .solo_rank > div {
+    width: 100%;
+    height: 115px;
+    display: flex;
+    align-items: center;
+}
+
+.main_page .detail_box .rank_and_used_champion .solo_rank > div > #tier_icon {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main_page .detail_box .rank_and_used_champion .solo_rank > div > #tier_icon > span {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: rgb(40, 40, 47);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main_page .detail_box .rank_and_used_champion .solo_rank > div > #tier_and_score {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.main_page .detail_box .rank_and_used_champion .solo_rank > div > #tier_and_score #tier_name {
+    color: white;
+    font-weight: bolder;
+    font-size: 20px
+}
+
+.main_page .detail_box .rank_and_used_champion .solo_rank > div > #tier_and_score #tier_score {
+    color: gray;
+    font-size: 12px;
+    margin-top: 8px;
+}
+
+.main_page .detail_box .rank_and_used_champion .solo_rank > div > #win_and_lose {
+    width: 20%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: right;
+}
+
+.main_page .detail_box .rank_and_used_champion .solo_rank > div > #win_and_lose > p {
+    color: gray;
+    font-size: 12px;
+    padding: 4px 8px;
+}
+
+.main_page .detail_box .rank_and_used_champion .free_rank {
+    width: 100%;
+    height: 30px;
+    margin-top: 10px;
+    background-color: rgb(49, 49, 59);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.main_page .detail_box .rank_and_used_champion .free_rank #free_rank_ko {
+    color: white;
+    font-size: 14px;
+    padding: 0px 10px;
+}
+
+.main_page .detail_box .rank_and_used_champion .free_rank #unranked {
+    color: rgb(79, 79, 96);
+    font-size: 14px;
+    padding: 0px 10px;
+}
+
+.main_page .detail_box .rank_and_used_champion .find_duo {
+    width: 100%;
+    height: 30px;
+    margin-top: 10px;
+    background-color: rgb(40, 40, 47);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main_page .detail_box .rank_and_used_champion .find_duo > a {
+    width: 100%;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.main_page .detail_box .rank_and_used_champion .used_champion {
+    width: 100%;
+    height: 435px;
+    border-radius: 4px;
+    background-color: rgb(49, 49, 59);
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.main_page .detail_box .rank_and_used_champion .used_champion .choose_rank {
+    height: 34px;
+    border-bottom: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 5px;
+}
+
+.main_page .detail_box .rank_and_used_champion .used_champion .choose_rank > button {
+    height: 80%;
+    padding: 0px 28px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    background-color: transparent;
+    border-radius: 4px;
+}
+
+.main_page .detail_box .rank_and_used_champion .used_champion .choose_rank > button:hover {
+    background-color: rgb(40, 40, 47);
+}
+
+.main_page .detail_box .rank_and_used_champion .used_champion .champion_info {
+    height: 49px;
+    border-bottom: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.main_page .detail_box .rank_and_used_champion .used_champion .champion_info .champion_name_and_img {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.main_page .detail_box .rank_and_used_champion .used_champion .champion_info .champion_name_and_img #champion_img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: gray;
+    margin: 0px 10px
+}
+
+.main_page .detail_box .rank_and_used_champion .used_champion .champion_info .champion_grade{
+    text-align: center;
+}
+
+
+.main_page .detail_box .rank_and_used_champion .used_champion .champion_info .champion_winrate {
+    text-align: right;
+    margin: 0px 10px;
+}
+
+
+.main_page .detail_box .detail_game_info .total_game_info {
+    width: 100%;
+    height: 180px;
+    border-radius: 4px;
+    background-color: white;
 }
