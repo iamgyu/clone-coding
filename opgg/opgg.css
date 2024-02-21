@@ -306,19 +306,19 @@ body {
     align-items: center;
 }
 
-.player_icon {
+.player_rank_info_box .player_icon {
     height: 250px;
     width: 11%;
     display: flex;
     position: relative;
 }
 
-.player_icon > img {
+.player_rank_info_box .player_icon > img {
     margin-top: 40px;
     border-radius: 20px;
 }
 
-.player_icon > button {
+.player_rank_info_box .player_icon > button {
     position: absolute;
     background-color: rgb(35, 45, 54);
     color: white;
@@ -587,7 +587,6 @@ body {
 
 .main_page {
     background-color: rgb(28, 28, 31);
-    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -612,14 +611,6 @@ body {
 
 .main_page .detail_box .rank_and_used_champion {
     width: 340px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.main_page .detail_box .detail_game_info {
-    margin-left: 10px;
-    width: 750px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -788,16 +779,20 @@ body {
 
 .main_page .detail_box .rank_and_used_champion .used_champion .champion_info .champion_name_and_img {
     height: 100%;
+    width: 140px;
     display: flex;
     align-items: center;
 }
 
-.main_page .detail_box .rank_and_used_champion .used_champion .champion_info .champion_name_and_img #champion_img {
+.main_page .detail_box .rank_and_used_champion .used_champion .champion_info .champion_name_and_img .champion_img {
     width: 30px;
     height: 30px;
     border-radius: 50%;
     background-color: gray;
-    margin: 0px 10px
+    margin: 0px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .main_page .detail_box .rank_and_used_champion .used_champion .champion_info .champion_grade{
@@ -808,8 +803,285 @@ body {
 .main_page .detail_box .rank_and_used_champion .used_champion .champion_info .champion_winrate {
     text-align: right;
     margin: 0px 10px;
+    width: 50px;
 }
 
+.main_page .detail_box .rank_and_used_champion .used_champion .show_another_season {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main_page .detail_box .rank_and_used_champion .used_champion .show_another_season > button {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 0 0 4px 4px;
+    cursor: pointer;
+    color: gray;
+    background-color: rgb(40, 40, 47);
+}
+
+.main_page .detail_box .rank_and_used_champion .recent_7day_winrate {
+    width: 100%;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 4px;
+    background-color: rgb(49, 49, 59);
+    margin-top: 10px;
+}
+
+.main_page .detail_box .rank_and_used_champion .recent_7day_winrate #sentence {
+    width: 100%;
+    height: 39px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid black;
+}
+
+.main_page .detail_box .rank_and_used_champion .recent_7day_winrate #sentence > p {
+    padding: 0 10px;
+    font-size: 14px;
+    color: white;
+}
+
+.main_page .detail_box .rank_and_used_champion .recent_7day_winrate #champion_winrate_word {
+    width: 100%;
+    height: 29px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid black;
+    background-color: rgb(40, 40, 47);
+}
+
+.main_page .detail_box .rank_and_used_champion .recent_7day_winrate #champion_winrate_word > p {
+    padding: 0 10px;
+    font-size: 12px;
+    color: gray;
+}
+
+.main_page .detail_box .rank_and_used_champion .recent_7day_winrate .champion_and_winrate_recent_version {
+    width: 100%;
+    height: 39px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid black;
+}
+
+.main_page .detail_box .rank_and_used_champion .recent_7day_winrate .champion_and_winrate_recent_version .champion_name_and_img {
+    height: 100%;
+    width: 140px;
+    display: flex;
+    align-items: center;
+}
+
+.main_page .detail_box .rank_and_used_champion .recent_7day_winrate .champion_and_winrate_recent_version .champion_name_and_img .champion_img {
+    width: 30px;
+    height: 30px;
+    margin: 0px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main_page .detail_box .rank_and_used_champion .recent_7day_winrate .champion_and_winrate_recent_version .champion_name_and_img > a {
+    text-decoration: none;
+    font-size: 12px; 
+    color: white;
+}
+
+.main_page .detail_box .rank_and_used_champion .recent_7day_winrate .champion_and_winrate_recent_version .champion_name_and_img > a:hover {
+    text-decoration: underline;
+}
+
+.main_page .detail_box .rank_and_used_champion .recent_7day_winrate .champion_and_winrate_recent_version .winrate_and_bar {
+    height: 100%;
+    width: 180px;
+    display: flex;
+    align-items: center;
+}
+
+.main_page .detail_box .rank_and_used_champion .recent_7day_winrate .champion_and_winrate_recent_version .winrate_and_bar .win_and_lose_bar {
+    height: 60%;
+    width: 135px;
+}
+
+.main_page .detail_box .rank_and_used_champion .recent_7day_winrate .champion_and_winrate_recent_version .winrate_and_bar .win_and_lose_bar .winbar {
+    height: 100%;
+    float: left;
+    background-color: rgb(94, 130, 255);
+    display: flex;
+    align-items: center;
+    border-radius: 4px 0 0 4px;
+}
+
+.main_page .detail_box .rank_and_used_champion .recent_7day_winrate .champion_and_winrate_recent_version .winrate_and_bar .win_and_lose_bar .losebar {
+    height: 100%;
+    float: left;
+    background-color: rgb(214, 78, 91);
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    border-radius: 0 4px 4px 0;
+}
+
+.main_page .detail_box .rank_and_used_champion .recent_7day_winrate .champion_and_winrate_recent_version .winrate_and_bar .win_and_lose_bar .winbar > p {
+    color: white;
+    font-size: 12px;
+    margin-left: 3px;
+}
+
+.main_page .detail_box .rank_and_used_champion .recent_7day_winrate .champion_and_winrate_recent_version .winrate_and_bar .win_and_lose_bar .losebar > p {
+    color: white;
+    font-size: 12px;
+    margin-right: 3px;
+}
+
+.main_page .detail_box .rank_and_used_champion .recent_7day_winrate .champion_and_winrate_recent_version .winrate_and_bar > p {
+    height: 100%;
+    width: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: gray;
+    font-size: 12px;
+}
+
+.main_page .detail_box .rank_and_used_champion .small_advertisement_box {
+    height: 340px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    background-color: rgb(49, 49, 59);
+    border-radius: 4px;
+}
+
+.main_page .detail_box .rank_and_used_champion .play_with_same_team {
+    height: 220px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    background-color: rgb(49, 49, 59);
+    border-radius: 4px;
+}
+
+.main_page .detail_box .rank_and_used_champion .play_with_same_team .sentence {
+    height: 39px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid black;
+}
+
+.main_page .detail_box .rank_and_used_champion .play_with_same_team .sentence > p {
+    padding: 0 10px;
+    font-size: 14px;
+    color: white;
+}
+
+.main_page .detail_box .rank_and_used_champion .play_with_same_team .title {
+    height: 29px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid black;
+    background-color: rgb(40, 40, 47);
+}
+
+.main_page .detail_box .rank_and_used_champion .play_with_same_team .title > p {
+    color: gray;
+    font-size: 12px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    padding: 0 10px;
+}
+
+.main_page .detail_box .rank_and_used_champion .play_with_same_team .title #summoner {
+    width: 140px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+.main_page .detail_box .rank_and_used_champion .play_with_same_team .player {
+    height: 29px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid black;
+}
+
+.main_page .detail_box .rank_and_used_champion .play_with_same_team .player .player_name_and_icon {
+    height: 100%;
+    width: 140px;
+    display: flex;
+    align-items: center;
+    margin: 0 10px;
+}
+
+.main_page .detail_box .rank_and_used_champion .play_with_same_team .player .player_name_and_icon .player_icon {
+    width: 30px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main_page .detail_box .rank_and_used_champion .play_with_same_team .player .player_name_and_icon > a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.main_page .detail_box .rank_and_used_champion .play_with_same_team .player .player_name_and_icon > a .name{
+    color: white;
+    font-size: 12px;
+    margin-left: 8px;
+}
+
+.main_page .detail_box .rank_and_used_champion .play_with_same_team .player .player_name_and_icon > a .code{
+    color: gray;
+    font-size: 12px;
+    margin-left: 4px;
+}
+
+.main_page .detail_box .rank_and_used_champion .play_with_same_team .player > p {
+    width: 30px;
+    font-size: 12px;
+    color: gray;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10px;
+}
+
+
+
+
+
+
+
+.main_page .detail_box .detail_game_info {
+    margin-left: 10px;
+    width: 750px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 .main_page .detail_box .detail_game_info .total_game_info {
     width: 100%;
