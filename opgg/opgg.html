@@ -1,7 +1,8 @@
 <html>
     <head>
         <title>Hide on bush#KR1 - 게임 전적 - League of Legends</title>
-        <link rel="stylesheet" href="opgg.css">
+        <link rel="stylesheet/less" type="text/css" href="opgg.less">
+        <script src="https://cdn.jsdelivr.net/npm/less"></script>
     </head>
     <body>
         <header>
@@ -548,7 +549,7 @@
                             </div>
                             <p>2</p>
                             <p>2 - 0</p>
-                            <p>100%</p>
+                            <p id="winrate">100%</p>
                         </div>
                         <div class="player">
                             <div class="player_name_and_icon">
@@ -561,8 +562,8 @@
                                 </a>
                             </div>
                             <p>2</p>
-                            <p>1 - 1</p>
-                            <p>50%</p>
+                            <p>2 - 0</p>
+                            <p id="winrate">100%</p>
                         </div>
                         <div class="player">
                             <div class="player_name_and_icon">
@@ -576,7 +577,7 @@
                             </div>
                             <p>2</p>
                             <p>1 - 1</p>
-                            <p>50%</p>
+                            <p id="winrate">50%</p>
                         </div>
                         <div class="player">
                             <div class="player_name_and_icon">
@@ -590,7 +591,7 @@
                             </div>
                             <p>2</p>
                             <p>1 - 1</p>
-                            <p>50%</p>
+                            <p id="winrate">50%</p>
                         </div>
                         <div class="player">
                             <div class="player_name_and_icon">
@@ -604,18 +605,40 @@
                             </div>
                             <p>2</p>
                             <p>0 - 2</p>
-                            <p>0%</p>
+                            <p id="winrate">0%</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="detail_game_info">
                     <div class="total_game_info">
-                        
+                        <div class="choose_rank">
+                            <div class="button_collections">
+                                <button style="background-color: rgb(81, 81, 98);">전체</button>
+                                <button>솔로랭크</button>
+                                <button>자유랭크</button>
+                                <button>큐 타입 ▼</button>
+                            </div>
+                            <div class="search_champion">
+                                <div class="search_icon">
+                                    <img src="image/searchicon.svg" height="24px" width="24px">
+                                </div>
+                                <input type="text" placeholder="챔피언 검색">
+                            </div>
+                        </div>
+                        <div class="total_record_info">   
+                            <div class="win_and_lose">
+                                <p>20전 10승 10패</p>
+                                <div class="record_graph">
+                                    <div class="graph_center">
+                                        50%
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-
     </body>
 </html>

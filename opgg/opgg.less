@@ -135,7 +135,7 @@ body {
     padding: 10px 12px;
     font-size: 12px;
     border: none;
-
+    outline: none;
 }
 
 .search > button {
@@ -455,38 +455,38 @@ body {
     margin: 0 5px;
 }
 
-.button_collections {
+.player_info_detail .button_collections {
     height: 60px;
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-.button_collections > button {
+.player_info_detail .button_collections > button {
     height: 40px;
     padding: 0 15px;
     border: none;
     border-radius: 4px;
 }
 
-.button_collections #renewal {
+.player_info_detail .button_collections #renewal {
     color: white;
     background-color: rgb(94, 130, 255);
     cursor: pointer;
 }
 
-.button_collections #renewal:hover {
+.player_info_detail .button_collections #renewal:hover {
     background-color: rgb(76, 112, 207);
 }
 
-.button_collections #tier_graph {
+.player_info_detail .button_collections #tier_graph {
     color: rgb(63, 80, 133);
     border: 0.5px solid rgb(63, 80, 133);
     background-color: transparent;
     cursor: pointer;
 }
 
-.button_collections #tier_graph:hover {
+.player_info_detail .button_collections #tier_graph:hover {
     background-color: rgba(63, 80, 133, 0.3);
 }
 
@@ -1015,6 +1015,10 @@ body {
     justify-content: start;
 }
 
+.main_page .detail_box .rank_and_used_champion .play_with_same_team .title #winrate {
+    justify-content: end;
+}
+
 .main_page .detail_box .rank_and_used_champion .play_with_same_team .player {
     height: 29px;
     width: 100%;
@@ -1046,6 +1050,11 @@ body {
     text-decoration: none;
 }
 
+.main_page .detail_box .rank_and_used_champion .play_with_same_team .player .player_name_and_icon > a:hover > p{
+    text-decoration: underline;
+    text-decoration-color: white;
+}
+
 .main_page .detail_box .rank_and_used_champion .play_with_same_team .player .player_name_and_icon > a .name{
     color: white;
     font-size: 12px;
@@ -1069,11 +1078,9 @@ body {
     padding: 0 10px;
 }
 
-
-
-
-
-
+.main_page .detail_box .rank_and_used_champion .play_with_same_team .player #winrate {
+    justify-content: end;
+}
 
 .main_page .detail_box .detail_game_info {
     margin-left: 10px;
@@ -1087,5 +1094,105 @@ body {
     width: 100%;
     height: 180px;
     border-radius: 4px;
-    background-color: white;
+    background-color: rgb(49, 49, 59);
+}
+
+.main_page .detail_box .detail_game_info .total_game_info .choose_rank {
+    height: 34px;
+    border-bottom: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.main_page .detail_box .detail_game_info .total_game_info .choose_rank .button_collections {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    margin: 0 3px;
+}
+
+.main_page .detail_box .detail_game_info .total_game_info .choose_rank .button_collections > button {
+    height: 80%;
+    padding: 0 10px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    background-color: transparent;
+    border-radius: 4px;
+    margin-right: 5px;
+}
+
+.main_page .detail_box .detail_game_info .total_game_info .choose_rank .button_collections > button:hover {
+    background-color: rgb(40, 40, 47);
+}
+
+.main_page .detail_box .detail_game_info .total_game_info .choose_rank .search_champion {
+    display: flex;
+    align-items: center;
+    height: 80%;
+    width: 230px;
+    border-radius: 4px;
+    background-color: rgb(28, 28, 31);
+    margin: 0 3px;
+}
+
+.main_page .detail_box .detail_game_info .total_game_info .choose_rank .search_champion .search_icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 15%;
+    height: 80%;
+}
+
+.main_page .detail_box .detail_game_info .total_game_info .choose_rank .search_champion > input {
+    width: 85%;
+    height: 80%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: gray;
+}
+
+.main_page .detail_box .detail_game_info .total_game_info .total_record_info {
+    width: 100%;
+    height: 145px;
+    display: flex;
+}
+
+.main_page .detail_box .detail_game_info .total_game_info .total_record_info .win_and_lose {
+    height: 100%;
+    width: 140px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+}
+
+.main_page .detail_box .detail_game_info .total_game_info .total_record_info .win_and_lose > p {
+    color: gray;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+}
+
+.main_page .detail_box .detail_game_info .total_game_info .total_record_info .win_and_lose .record_graph {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: conic-gradient(rgb(214, 78, 91) 0% 50%, rgb(94, 130, 255) 50% 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main_page .detail_box .detail_game_info .total_game_info .total_record_info .win_and_lose .record_graph .graph_center {
+    width: 70px;
+    height: 70px;
+    background-color: rgb(49, 49, 59);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(94, 130, 255);
 }
