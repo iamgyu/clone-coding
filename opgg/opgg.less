@@ -42,148 +42,170 @@ table {
  border-spacing: 0;
 }
 
+@main-bg-color : rgb(28, 28, 31);
+@other-game-title-color : rgb(42, 52, 76);
+@main-title-color : rgb(94, 130, 255);
+
+@page-collection-height : 40px;
+
+.flex_align_center {
+    display: flex;
+    align-items: center;
+}
+
+.flex_align_justify_center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 body {
-    background-color: rgb(28, 28, 31);
+    background-color: @main-bg-color;
 }
 
 .page_collections {
-    position: relative;
-    display: flex;
-    align-items: center;
-    height: 40px;
-    background-color: rgb(42, 52, 76);
-}
+    .flex_align_center;
+    height: @page-collection-height;
+    background-color: @other-game-title-color;
 
-.page_collections > a {
-    width: 100px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: rgb(94, 130, 255);
-}
+    .main_logo {
+        .flex_align_justify_center;
+        width: 100px;
+        height: @page-collection-height;
+        background-color: @main-title-color;
+    }
 
-.pace_collections > nav {
-    display: flex;
-    align-items: center;
-}
+    nav {
+        ul {
+            overflow: hidden;
+            height: @page-collection-height;
 
-.page_collections > nav > ul {
-    overflow: hidden;
-    height: 40px;
-}
+            li {
+                .flex_align_center;
+                float: left;
+                margin-right: 20px;
 
-.page_collections > nav > ul > li {
-    float: left;
-    display: flex;
-    align-items: center;
-    margin-right: 20px;
-    height: 40px;
-}
+                .main_game {
+                    .flex_align_center;
+                    font-size: 12px;
+                    color: white;
+                    background-color: @main-title-color;
+                    height: @page-collection-height;
+                    padding-right: 10px;
 
-.page_collections > nav > ul > li > span {
-    display: flex;
-    align-items: center;
-    height: 40px;
-    font-size: 12px;
-    color: white;
-    padding: 0 10px 0 0;
-    background-color: rgb(94, 130, 255);
-}
+                    span {
+                        margin-left: 10px;
+                    }
+                }
 
-.page_collections > nav > ul > li > span > span {
-    margin-left: 10px;
-}
+                .other_game {
+                    .flex_align_center;
+                    text-decoration: none;
+                    font-size: 12px;
+                    height: 40px;
 
-.page_collections > nav > ul > li > a {
-    text-decoration: none;
-}
-
-.page_collections > nav > ul > li > a > span {
-    display: flex;
-    align-items: center;
-    height: 40px;
-    font-size: 12px;
-}
-
-.page_collections > nav > ul > li > a > span > span {
-    margin-left: 10px;
-    color: white;
+                    span {
+                        margin-left: 10px;
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
 }
 
 .search_box {
-    display: flex;
+    .flex_align_justify_center;
     height: 50px;
-    align-items: center;
-    justify-content: center;
-    background-color: rgb(94, 130, 255);
-}
+    overflow-x: clip;
+    background-color: @main-title-color;
 
-.search_box > a{
-    margin: 0 20 0 20;
-}
+    .img_and_search {
+        .flex_align_center;
+        height: 100%;
+        width: 1100px;
+        position: relative;
 
-.search {
-    display: flex;
-    position: relative;
-    width: 800px;
-}
+        .homeImg {
+            .flex_align_justify_center;
+            width: 10%;
+        }
 
-.search > input {
-    width: 100%;
-    border-radius: 0 8px 8px 0;
-    padding: 10px 12px;
-    font-size: 12px;
-    border: none;
-    outline: none;
-}
+        .search {
+            .flex_align_center;
+            position: relative;
+            width: 90%;
+            height: 100%;
 
-.search > button {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    border: none;
-    border-radius: 8px;
-    background-color: white;
-    height: 100%;
-    width: 50px;
-    font-size: 16px;
-}
+            .country {
+                .flex_align_center;
+                height: 100%;
 
-.search > button:hover {
-    cursor: pointer;
-}
+                button {
+                    height: 70%;
+                    width: 60px;
+                    border: none;
+                    border-radius: 8px 0 0 8px;
+                    background-color: rgb(237, 242, 254);
+                    color: rgb(94, 130, 225);
+                    font-size: 12px;
 
-.search > select {
-    float: left;
-}
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+            }
 
-.country > button {
-    border: none;
-    border-radius: 8px 0 0 8px;
-    height: 100%;
-    width: 60px;
-    background-color: none;
-}
+            input {
+                height: 70%;
+                width: 100%;
+                border-radius: 0 8px 8px 0;
+                padding: 10px 12px;
+                font-size: 12px;
+                border: none;
+                outline: none;
+            }
 
-.country > button:hover {
-    cursor: pointer;
-}
+            .search_button {
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                margin-bottom: 7.5px;
+                border: none;
+                border-radius: 8px;
+                background-color: white;
+                height: 70%;
+                width: 50px;
 
-.patchnote > button {
-    border: none;
-    border-radius: 16px;
-    margin-left: 10px;
-    height: 36px;
-    background-color: rgb(76, 112, 207);
-    display: flex;
-    align-items: center;
-    color: white;
-}
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
 
-.patchnote > button:hover {
-    cursor: pointer;
-    background-color: rgb(59, 93, 186);
+        .patchnote {
+            position: absolute;
+            left: 100%;
+
+            button {
+                .flex_align_center;
+                white-space: nowrap;
+                border: none;
+                border-radius: 16px;
+                margin-left: 10px;
+                padding: 0 10px;
+                height: 35px;
+                font-size: 12px;
+                background-color: rgb(76, 112, 207);
+                color: white;
+
+                &:hover {
+                    cursor: pointer;
+                    background-color: rgb(59, 93, 186);
+                }
+            }
+        }
+    }
 }
 
 .main_menu {
