@@ -182,7 +182,7 @@
             </div>
         </div>
         <div class="player_game_info">
-            <div>
+            <div class="button_collections">
                 <nav>
                     <ul>
                         <li><a href="#"><span id="total">종합</span></a></li>
@@ -191,7 +191,7 @@
                         <li><a href="#"><span style="color:#A88A67"><img src="image/tfticon_choco.svg" width="20px" height="20px">전략적 팀 전투</span></a></li>
                     </ul>
                 </nav>
-                <div>
+                <div class="op_score">
                     <span>OP스코어로 더 정확한 내 실력을 확인해 보세요</span>
                     <button>V</button>
                 </div>
@@ -204,7 +204,7 @@
             <div class="detail_box">
                 <div class="rank_and_used_champion">
                     <div class="solo_rank">
-                        <p>솔로랭크</p>
+                        <p id="word">솔로랭크</p>
                         <div>
                             <span id="tier_icon">
                                 <span><img src="image/grandmastericon.webp" width="72px" height="72px"></span>
@@ -230,7 +230,7 @@
                             <p style="color: gray; font-size: 14px; margin-left: 8px;">팀원 찾기 ></p>
                         </a>
                     </div>
-                    <div class="used_champion">
+                    <div class="used_champion">`
                         <div class="choose_rank">
                             <button style="background-color: rgb(81, 81, 98); font-weight: bolder;">S2024 S1</button>
                             <button>솔로랭크</button>
@@ -397,7 +397,7 @@
                                         <p>5패</p>
                                     </div>
                                 </div>
-                                <p>62%</p>
+                                <p id="winrate">62%</p>
                             </div>
                         </div>
                         <div class="champion_and_winrate_recent_version">
@@ -416,7 +416,7 @@
                                         <p>2패</p>
                                     </div>
                                 </div>
-                                <p>60%</p>
+                                <p id="winrate">60%</p>
                             </div>
                         </div>
                         <div class="champion_and_winrate_recent_version">
@@ -432,7 +432,7 @@
                                         <p>2승</p>
                                     </div>
                                 </div>
-                                <p>100%</p>
+                                <p id="winrate">100%</p>
                             </div>
                         </div>
                         <div class="champion_and_winrate_recent_version">
@@ -451,7 +451,7 @@
                                         <p>1패</p>
                                     </div>
                                 </div>
-                                <p>50%</p>
+                                <p id="winrate">50%</p>
                             </div>
                         </div>
                         <div class="champion_and_winrate_recent_version">
@@ -470,7 +470,7 @@
                                         <p>1패</p>
                                     </div>
                                 </div>
-                                <p>50%</p>
+                                <p id="winrate">50%</p>
                             </div>
                         </div>
                         <div class="champion_and_winrate_recent_version">
@@ -486,7 +486,7 @@
                                         <p>1승</p>
                                     </div>
                                 </div>
-                                <p>100%</p>
+                                <p id="winrate">100%</p>
                             </div>
                         </div>
                         <div class="champion_and_winrate_recent_version">
@@ -502,7 +502,7 @@
                                         <p>1패</p>
                                     </div>
                                 </div>
-                                <p>0%</p>
+                                <p id="winrate">0%</p>
                             </div>
                         </div>
                     </div>
@@ -529,8 +529,8 @@
                                     <p class="code">#KR12</p>
                                 </a>
                             </div>
-                            <p>2</p>
-                            <p>2 - 0</p>
+                            <p id="word">2</p>
+                            <p id="word">2 - 0</p>
                             <p id="winrate">100%</p>
                         </div>
                         <div class="player">
@@ -543,8 +543,8 @@
                                     <p class="code">#G170</p>
                                 </a>
                             </div>
-                            <p>2</p>
-                            <p>2 - 0</p>
+                            <p id="word">2</p>
+                            <p id="word">2 - 0</p>
                             <p id="winrate">100%</p>
                         </div>
                         <div class="player">
@@ -557,8 +557,8 @@
                                     <p class="code">#2005</p>
                                 </a>
                             </div>
-                            <p>2</p>
-                            <p>1 - 1</p>
+                            <p id="word">2</p>
+                            <p id="word">1 - 1</p>
                             <p id="winrate">50%</p>
                         </div>
                         <div class="player">
@@ -571,8 +571,8 @@
                                     <p class="code">#0102</p>
                                 </a>
                             </div>
-                            <p>2</p>
-                            <p>1 - 1</p>
+                            <p id="word">2</p>
+                            <p id="word">1 - 1</p>
                             <p id="winrate">50%</p>
                         </div>
                         <div class="player">
@@ -585,13 +585,12 @@
                                     <p class="code">#kr2</p>
                                 </a>
                             </div>
-                            <p>2</p>
-                            <p>0 - 2</p>
+                            <p id="word">2</p>
+                            <p id="word">0 - 2</p>
                             <p id="winrate">0%</p>
                         </div>
                     </div>
                 </div>
-
                 <div class="detail_game_info">
                     <div class="total_game_info">
                         <div class="choose_rank">

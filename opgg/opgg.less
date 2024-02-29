@@ -46,8 +46,13 @@ table {
 @other-game-title-color : rgb(42, 52, 76);
 @main-title-bg-color : rgb(94, 130, 255);
 @main-title-font-color : rgb(184, 204, 251);
+@adv-bg-color : rgb(244, 188, 65);
+@info-box-hover-color : rgb(40, 40, 47);
+@info-box-main-color : rgb(49, 49, 59);
+@font-gray-color : rgb(117, 116, 133);
 
 @page-collection-height : 40px;
+@main-width : 1100px;
 
 .flex_align_center {
     display: flex;
@@ -58,6 +63,12 @@ table {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.flex_align_center_justify_between {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 body {
@@ -124,7 +135,7 @@ body {
     .img_and_search {
         .flex_align_center;
         height: 100%;
-        width: 1100px;
+        width: @main-width;
         position: relative;
 
         .homeImg {
@@ -215,9 +226,8 @@ body {
     background-color: @main-title-bg-color;
 
     nav {
-        .flex_align_center;
-        justify-content: space-between;
-        width: 1100px;
+        .flex_align_center_justify_between;
+        width: @main-width;
     }
 
     .main_collections {
@@ -280,935 +290,852 @@ body {
 }
 
 .advertisement_sentence {
+    .flex_align_justify_center;
     height: 40px;
-    background-color: rgb(244, 188, 65);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+    background-color: @adv-bg-color;
 
-.advertisement_sentence > div {
-    width: 1100px;
-    height: 40px;
-    display: flex;
-}
+    div {
+        width: @main-width;
+        height: 40px;
 
-.advertisement_sentence > div > a {
-    width: 100%;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: black;
-    font-size: 14px;
-}
+        a {
+            .flex_align_center;
+            height: 40px;
+            text-decoration: none;
+            color: black;
+            font-size: 14px;
 
-.advertisement_sentence > div > a:hover {
-    text-decoration: underline;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
 }
 
 .player_rank_info {
+    .flex_align_justify_center;
     height: 250px;
-    background-color: rgb(49, 49, 59);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+    background-color: @info-box-main-color;
 
-.player_rank_info_box {
-    width: 1100px;
-    height: 250px;
-    display: flex;
-    align-items: center;
-}
+    .player_rank_info_box {
+        .flex_align_center;
+        width: @main-width;
+        height: 100%;
 
-.player_rank_info_box .player_icon {
-    height: 250px;
-    width: 11%;
-    display: flex;
-    position: relative;
-}
+        .player_icon {
+            width: 11%;
+            height: 100%;
+            position: relative;
 
-.player_rank_info_box .player_icon > img {
-    margin-top: 40px;
-    border-radius: 20px;
-}
+            img {
+                margin-top: 40px;
+                border-radius: 20px;
+            }
 
-.player_rank_info_box .player_icon > button {
-    position: absolute;
-    background-color: rgb(35, 45, 54);
-    color: white;
-    border: none;
-    border-radius: 8px;
-    top: 130px;
-    left: 32px;
-}
+            button {
+                position: absolute;
+                background-color: rgb(35, 45, 54);
+                color: white;
+                border: none;
+                border-radius: 8px;
+                top: 130px;
+                left: 32px;
+            }
+        }
 
-.player_info_detail {
-    display: flex;
-    flex-direction: column;
-    height: 250px;
-    width: 54%;
-}
+        .player_info_detail {
+            display: flex;
+            flex-direction: column;
+            width: 54%;
+            height: 100%;
 
-.player_tier {
-    display: flex;
-    align-items: center;
-    height: 40px;
-    gap: 5px;
-}
+            .player_tier {
+                .flex_align_center;
+                height: 40px;
+                gap: 5px;
 
-.player_tier > button {
-    background-color: rgb(28, 28, 31);
-    color: rgb(117, 116, 133);
-    border: none;
-    border-radius: 4px;
-    cursor: text;
-    font-size: 12px;
-}
+                button {
+                    background-color: rgb(28, 28, 31);
+                    color: @font-gray-color;
+                    border: none;
+                    border-radius: 4px;
+                    cursor: text;
+                    font-size: 12px;
+                }
 
-.player_tier .more_tier_button {
-    background-color: rgb(49, 49, 59);
-    color: rgb(117, 116, 133);
-    cursor: pointer;
-}
+                .more_tier_button {
+                    background-color: rgb(49, 49, 59);
+                    color: @font-gray-color;
+                    cursor: pointer;
 
-.player_tier .more_tier_button:hover {
-    background-color: rgb(28, 28, 31);
-}
+                    &:hover {
+                        background-color: rgb(28, 28, 31);
 
-.player_name {
-    font-size: 24px;
-    height: 32px;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
+                    }
+                }
+            }
 
-.player_name #name {
-    color: white;
-    font-weight: bolder;
-}
+            .player_name {
+                .flex_align_center;
+                height: 32px;
+                font-size: 24px;
+                gap: 5px;
 
-.player_name #hashcode {
-    color: rgb(117, 116, 133);
-}
+                #name {
+                    color: white;
+                    font-weight: bolder;
+                }
 
-.player_name > button {
-    margin-left: 5px;
-    text-align: center;
-    cursor: pointer;
-    border-radius: 4px;
-    border: none;
-    font-size: 23px;
-    background-color: rgb(49, 49, 59);
-    color: rgb(117, 116, 133);
-    border: 0.5px solid rgb(117, 116, 133);
-}
+                #hashcode {
+                    color: @font-gray-color;
+                }
 
-.prev_name_and_rank {
-    height: 25px;
-    display: flex;
-    align-items: center;
-    font-size: 12px;
-    gap: 5px;
-}
+                button {
+                    text-align: center;
+                    margin-left: 5px;
+                    cursor: pointer;
+                    border: 0.5px solid @font-gray-color;
+                    border-radius: 4px;
+                    font-size: 23px;
+                    color: @font-gray-color;
+                    background-color: @info-box-main-color;
+                }
+            }
 
-.prev_name_and_rank > a {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-}
+            .prev_name_and_rank {
+                .flex_align_center;
+                height: 25px;
+                font-size: 12px;
+                gap: 5px;
 
-.prev_name_and_rank > a:hover > #pro_name {
-    text-decoration: underline;
-    text-decoration-color: white;
-}
+                a {
+                    .flex_align_center;
+                    gap: 5px;
+                    text-decoration: none;
 
-.prev_name_and_rank > a:hover > #arrow {
-    color: white;
-}
+                    #pro_name {
+                        color: white;
+                    }
+    
+                    #arrow {
+                        margin-left: 5px;
+                        font-weight: bolder;
+                        color: @font-gray-color;
+                    }
 
-.prev_name_and_rank #pro_name {
-    color: white;
-}
+                    &:hover {
+                        #pro_name {
+                            text-decoration: underline;
+                            text-decoration-color: white;
+                        }
 
-.prev_name_and_rank #arrow {
-    color: rgb(117, 116, 133);
-    font-weight: bolder;
-    margin-left: 5px;
-}
+                        #arrow {
+                            color: white;
+                        }
+                    }
+                }
 
-.prev_name_and_rank > p {
-    color: rgb(117, 116, 133);
-}
+                p {
+                    color: @font-gray-color;
+                }
+            }
 
-.prev_name_and_rank > a > p {
-    color: gray;
-}
+            .setting_profile {
+                .flex_align_center;
+                height: 30px;
 
-.setting_profile {
-    height: 30px;
-    display: flex;
-    align-items: center;
-}
+                button {
+                    .flex_align_center;
+                    gap: 5px;
+                    padding: 5px;
+                    font-size: 12px;
+                    border: 0.5px solid @font-gray-color;
+                    border-radius: 4px;
+                    background-color: transparent;
+                    color: white;
+                    cursor: pointer;
 
-.setting_profile > button {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    padding: 5px;
-    font-size: 12px;
-    border: 0.5px solid rgb(117, 116, 133);
-    border-radius: 4px;
-    background-color: transparent;
-    color: white;
-    cursor: pointer;
-}
+                    #arrow {
+                        color: @font-gray-color;
+                        margin: 0 5px;
+                    }
+                }
+            }
 
-.setting_profile #arrow {
-    color: gray;
-    margin: 0 5px;
-}
+            .button_collections {
+                .flex_align_center;
+                height: 60px;
+                gap: 10px;
 
-.player_info_detail .button_collections {
-    height: 60px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
+                button {
+                    height: 40px;
+                    padding: 0 15px;
+                    border: none;
+                    border-radius: 4px;
+                }
 
-.player_info_detail .button_collections > button {
-    height: 40px;
-    padding: 0 15px;
-    border: none;
-    border-radius: 4px;
-}
+                #renewal {
+                    color: white;
+                    background-color: @main-title-bg-color;
+                    cursor: pointer;
 
-.player_info_detail .button_collections #renewal {
-    color: white;
-    background-color: rgb(94, 130, 255);
-    cursor: pointer;
-}
+                    &:hover {
+                        background-color: rgb(76, 112, 207);
 
-.player_info_detail .button_collections #renewal:hover {
-    background-color: rgb(76, 112, 207);
-}
+                    }
+                }
 
-.player_info_detail .button_collections #tier_graph {
-    color: rgb(63, 80, 133);
-    border: 0.5px solid rgb(63, 80, 133);
-    background-color: transparent;
-    cursor: pointer;
-}
+                #tier_graph {
+                    color: rgb(63, 80, 133);
+                    border: 0.5px solid rgb(63, 80, 133);
+                    background-color: transparent;
+                    cursor: pointer;
 
-.player_info_detail .button_collections #tier_graph:hover {
-    background-color: rgba(63, 80, 133, 0.3);
-}
+                    &:hover {
+                        background-color: rgba(63, 80, 133, 0.3);
+                    }
+                }
+            }
 
-.recent_update {
-    font-size: 12px;
-    display: flex;
-    align-items: center;
-    color: rgb(117, 116, 133);
-}
+            .recent_update {
+                .flex_align_center;
+                font-size: 12px;
+                color: @font-gray-color;
+            }
+        }
 
-.video_ad {
-    height: 250px;
-    width: 35%;
-    background-color: gray;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+        .video_ad {
+            .flex_align_justify_center;
+            height: 250px;
+            width: 35%;
+            background-color: @font-gray-color;
+        }
+    }
 }
 
 .player_game_info {
+    .flex_align_justify_center;
     height: 40px;
-    background-color:rgb(49, 49, 59);
-    border-top: 1px solid black;
-    display: flex;
-    justify-content: center;
-    align-items: center
-}
+    border-top : 1px solid black;
+    background-color: @info-box-main-color;
 
-.player_game_info > div {
-    height: 40px;
-    width: 1100px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
+    .button_collections {
+        .flex_align_center_justify_between;
+        width: @main-width;
+        height: 40px;
 
-.player_game_info > div > nav > ul > li {
-    height: 40px;
-    float: left;
-    display: flex;
-    align-items: center;
-}
+        nav {
+            ul {
+                li {
+                    .flex_align_center;
+                    height: 40px;
+                    float: left;
 
-.player_game_info > div > nav > ul > li > a{
-    display: flex;
-    align-items: center;
-    font-size: 14px;
-    color: white;
-    text-decoration: none;
-    height: 40px;
-}
+                    a {
+                        .flex_align_center;
+                        height: 40px;
+                        font-size: 14px;
+                        color: white;
+                        text-decoration: none;
 
-.player_game_info > div > nav > ul > li > a > span {
-    display: flex;
-    align-items: center;
-    height: 80%;
-    padding: 0 25px;
-    margin-right: 5px;
-}
+                        span {
+                            .flex_align_center;
+                            height: 80%;
+                            padding: 0 25px;
+                            margin-right: 5px;
+                        }
 
-.player_game_info #total {
-    background-color: rgb(81, 81, 98);
-    border-radius: 4px;
-}
+                        #total {
+                            border-radius: 4px;
+                            background-color: rgb(81, 81, 98);
+                        }
 
-.player_game_info > div> nav > ul > li > a:hover > span { 
-    background-color: rgb(40, 40, 47);
-    border-radius: 4px;
-}
+                        &:hover {
+                            span {
+                                background-color: @info-box-hover-color;
+                                border-radius: 4px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
 
-.player_game_info > div > div {
-    display: flex;
-    align-items: center;
-    color: white;
-    background-color: rgb(55, 65, 76);
-    height: 80%;
-    border-radius: 100px;
-    padding: 0 5px 0 20px;
-    gap: 10px;
-    font-size: 12px;
-}
+        .op_score {
+            display: flex;
+            align-items: center;
+            color: white;
+            background-color: rgb(55, 65, 76);
+            height: 80%;
+            border-radius: 100px;
+            padding: 0 5px 0 20px;
+            gap: 10px;
+            font-size: 12px;
 
-.player_game_info > div > div > span {
-    display: flex;
-    align-items: center;
-    height: 100%;
-}
+            span {
+                .flex_align_center;
+                height: 100%;
+            }
 
-.player_game_info > div > div > button {
-    height: 28px;
-    width: 28px;
-    border-radius: 50%;
-    cursor: pointer;
-    border: none;
-    color: gray;
-    background-color: rgb(35, 45, 54);
+            button {
+                height: 28px;
+                width: 28px;
+                border-radius: 50%;
+                cursor: pointer;
+                border: none;
+                color: gray;
+                background-color: rgb(35, 45, 54);
+            }
+        }
+    }
 }
 
 .main_page {
-    background-color: rgb(28, 28, 31);
-    display: flex;
+    .flex_align_center;
     flex-direction: column;
-    align-items: center;
-}
-
-.main_page .advertisement_box {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100px;
-    width: 1100px;
-    margin-top: 10px;
-    background-color: rgb(49, 49, 59);
-    border-radius: 4px;
-}
-
-.main_page .detail_box {
-    width: 1100px;
-    display: flex;
-    margin-top: 10px;
-}
-
-.main_page .detail_box .rank_and_used_champion {
-    width: 340px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.main_page .detail_box .rank_and_used_champion .solo_rank {
-    width: 100%;
-    height: 150px;
-    border-radius: 4px;
-    background-color: rgb(49, 49, 59);
-}
-
-.main_page .detail_box .rank_and_used_champion .solo_rank > p {
-    height: 34px;
-    border-bottom: 1px solid black;
-    color: white;
-    display: flex;
-    align-items: center;
-    font-size: 14px;
-    padding: 0px 10px;
-}
-
-.main_page .detail_box .rank_and_used_champion .solo_rank > div {
-    width: 100%;
-    height: 115px;
-    display: flex;
-    align-items: center;
-}
-
-.main_page .detail_box .rank_and_used_champion .solo_rank > div > #tier_icon {
-    width: 30%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.main_page .detail_box .rank_and_used_champion .solo_rank > div > #tier_icon > span {
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    background-color: rgb(40, 40, 47);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.main_page .detail_box .rank_and_used_champion .solo_rank > div > #tier_and_score {
-    width: 50%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.main_page .detail_box .rank_and_used_champion .solo_rank > div > #tier_and_score #tier_name {
-    color: white;
-    font-weight: bolder;
-    font-size: 20px
-}
-
-.main_page .detail_box .rank_and_used_champion .solo_rank > div > #tier_and_score #tier_score {
-    color: gray;
-    font-size: 12px;
-    margin-top: 8px;
-}
-
-.main_page .detail_box .rank_and_used_champion .solo_rank > div > #win_and_lose {
-    width: 20%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: right;
-}
-
-.main_page .detail_box .rank_and_used_champion .solo_rank > div > #win_and_lose > p {
-    color: gray;
-    font-size: 12px;
-    padding: 4px 8px;
-}
-
-.main_page .detail_box .rank_and_used_champion .free_rank {
-    width: 100%;
-    height: 30px;
-    margin-top: 10px;
-    background-color: rgb(49, 49, 59);
-    border-radius: 4px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.main_page .detail_box .rank_and_used_champion .free_rank #free_rank_ko {
-    color: white;
-    font-size: 14px;
-    padding: 0px 10px;
-}
-
-.main_page .detail_box .rank_and_used_champion .free_rank #unranked {
-    color: rgb(79, 79, 96);
-    font-size: 14px;
-    padding: 0px 10px;
-}
-
-.main_page .detail_box .rank_and_used_champion .find_duo {
-    width: 100%;
-    height: 30px;
-    margin-top: 10px;
-    background-color: rgb(40, 40, 47);
-    border-radius: 4px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.main_page .detail_box .rank_and_used_champion .find_duo > a {
-    width: 100%;
-    height: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-}
-
-.main_page .detail_box .rank_and_used_champion .used_champion {
-    width: 100%;
-    height: 435px;
-    border-radius: 4px;
-    background-color: rgb(49, 49, 59);
-    display: flex;
-    flex-direction: column;
-    margin-top: 10px;
-}
-
-.main_page .detail_box .rank_and_used_champion .used_champion .choose_rank {
-    height: 34px;
-    border-bottom: 1px solid black;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0px 5px;
-}
-
-.main_page .detail_box .rank_and_used_champion .used_champion .choose_rank > button {
-    height: 80%;
-    padding: 0px 28px;
-    border: none;
-    color: white;
-    cursor: pointer;
-    background-color: transparent;
-    border-radius: 4px;
-}
-
-.main_page .detail_box .rank_and_used_champion .used_champion .choose_rank > button:hover {
-    background-color: rgb(40, 40, 47);
-}
-
-.main_page .detail_box .rank_and_used_champion .used_champion .champion_info {
-    height: 49px;
-    border-bottom: 1px solid black;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.main_page .detail_box .rank_and_used_champion .used_champion .champion_info .champion_name_and_img {
-    height: 100%;
-    width: 140px;
-    display: flex;
-    align-items: center;
-}
-
-.main_page .detail_box .rank_and_used_champion .used_champion .champion_info .champion_name_and_img .champion_img {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background-color: gray;
-    margin: 0px 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.main_page .detail_box .rank_and_used_champion .used_champion .champion_info .champion_grade{
-    text-align: center;
-}
-
-
-.main_page .detail_box .rank_and_used_champion .used_champion .champion_info .champion_winrate {
-    text-align: right;
-    margin: 0px 10px;
-    width: 50px;
-}
-
-.main_page .detail_box .rank_and_used_champion .used_champion .show_another_season {
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.main_page .detail_box .rank_and_used_champion .used_champion .show_another_season > button {
-    width: 100%;
-    height: 100%;
-    border: none;
-    border-radius: 0 0 4px 4px;
-    cursor: pointer;
-    color: gray;
-    background-color: rgb(40, 40, 47);
-}
-
-.main_page .detail_box .rank_and_used_champion .recent_7day_winrate {
-    width: 100%;
-    height: 350px;
-    display: flex;
-    flex-direction: column;
-    border-radius: 4px;
-    background-color: rgb(49, 49, 59);
-    margin-top: 10px;
-}
-
-.main_page .detail_box .rank_and_used_champion .recent_7day_winrate #sentence {
-    width: 100%;
-    height: 39px;
-    display: flex;
-    align-items: center;
-    border-bottom: 1px solid black;
-}
-
-.main_page .detail_box .rank_and_used_champion .recent_7day_winrate #sentence > p {
-    padding: 0 10px;
-    font-size: 14px;
-    color: white;
-}
-
-.main_page .detail_box .rank_and_used_champion .recent_7day_winrate #champion_winrate_word {
-    width: 100%;
-    height: 29px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-bottom: 1px solid black;
-    background-color: rgb(40, 40, 47);
-}
-
-.main_page .detail_box .rank_and_used_champion .recent_7day_winrate #champion_winrate_word > p {
-    padding: 0 10px;
-    font-size: 12px;
-    color: gray;
-}
-
-.main_page .detail_box .rank_and_used_champion .recent_7day_winrate .champion_and_winrate_recent_version {
-    width: 100%;
-    height: 39px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-bottom: 1px solid black;
-}
-
-.main_page .detail_box .rank_and_used_champion .recent_7day_winrate .champion_and_winrate_recent_version .champion_name_and_img {
-    height: 100%;
-    width: 140px;
-    display: flex;
-    align-items: center;
-}
-
-.main_page .detail_box .rank_and_used_champion .recent_7day_winrate .champion_and_winrate_recent_version .champion_name_and_img .champion_img {
-    width: 30px;
-    height: 30px;
-    margin: 0px 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.main_page .detail_box .rank_and_used_champion .recent_7day_winrate .champion_and_winrate_recent_version .champion_name_and_img > a {
-    text-decoration: none;
-    font-size: 12px; 
-    color: white;
-}
-
-.main_page .detail_box .rank_and_used_champion .recent_7day_winrate .champion_and_winrate_recent_version .champion_name_and_img > a:hover {
-    text-decoration: underline;
-}
-
-.main_page .detail_box .rank_and_used_champion .recent_7day_winrate .champion_and_winrate_recent_version .winrate_and_bar {
-    height: 100%;
-    width: 180px;
-    display: flex;
-    align-items: center;
-}
-
-.main_page .detail_box .rank_and_used_champion .recent_7day_winrate .champion_and_winrate_recent_version .winrate_and_bar .win_and_lose_bar {
-    height: 60%;
-    width: 135px;
-}
-
-.main_page .detail_box .rank_and_used_champion .recent_7day_winrate .champion_and_winrate_recent_version .winrate_and_bar .win_and_lose_bar .winbar {
-    height: 100%;
-    float: left;
-    background-color: rgb(94, 130, 255);
-    display: flex;
-    align-items: center;
-    border-radius: 4px 0 0 4px;
-}
-
-.main_page .detail_box .rank_and_used_champion .recent_7day_winrate .champion_and_winrate_recent_version .winrate_and_bar .win_and_lose_bar .losebar {
-    height: 100%;
-    float: left;
-    background-color: rgb(214, 78, 91);
-    display: flex;
-    align-items: center;
-    justify-content: end;
-    border-radius: 0 4px 4px 0;
-}
-
-.main_page .detail_box .rank_and_used_champion .recent_7day_winrate .champion_and_winrate_recent_version .winrate_and_bar .win_and_lose_bar .winbar > p {
-    color: white;
-    font-size: 12px;
-    margin-left: 3px;
-}
-
-.main_page .detail_box .rank_and_used_champion .recent_7day_winrate .champion_and_winrate_recent_version .winrate_and_bar .win_and_lose_bar .losebar > p {
-    color: white;
-    font-size: 12px;
-    margin-right: 3px;
-}
-
-.main_page .detail_box .rank_and_used_champion .recent_7day_winrate .champion_and_winrate_recent_version .winrate_and_bar > p {
-    height: 100%;
-    width: 45px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: gray;
-    font-size: 12px;
-}
-
-.main_page .detail_box .rank_and_used_champion .small_advertisement_box {
-    height: 340px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 10px;
-    background-color: rgb(49, 49, 59);
-    border-radius: 4px;
-}
-
-.main_page .detail_box .rank_and_used_champion .play_with_same_team {
-    height: 220px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    margin-top: 10px;
-    background-color: rgb(49, 49, 59);
-    border-radius: 4px;
-}
-
-.main_page .detail_box .rank_and_used_champion .play_with_same_team .sentence {
-    height: 39px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    border-bottom: 1px solid black;
-}
-
-.main_page .detail_box .rank_and_used_champion .play_with_same_team .sentence > p {
-    padding: 0 10px;
-    font-size: 14px;
-    color: white;
-}
-
-.main_page .detail_box .rank_and_used_champion .play_with_same_team .title {
-    height: 29px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-bottom: 1px solid black;
-    background-color: rgb(40, 40, 47);
-}
-
-.main_page .detail_box .rank_and_used_champion .play_with_same_team .title > p {
-    color: gray;
-    font-size: 12px;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 30px;
-    padding: 0 10px;
-}
-
-.main_page .detail_box .rank_and_used_champion .play_with_same_team .title #summoner {
-    width: 140px;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: start;
-}
-
-.main_page .detail_box .rank_and_used_champion .play_with_same_team .title #winrate {
-    justify-content: end;
-}
-
-.main_page .detail_box .rank_and_used_champion .play_with_same_team .player {
-    height: 29px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-bottom: 1px solid black;
-}
-
-.main_page .detail_box .rank_and_used_champion .play_with_same_team .player .player_name_and_icon {
-    height: 100%;
-    width: 140px;
-    display: flex;
-    align-items: center;
-    margin: 0 10px;
-}
-
-.main_page .detail_box .rank_and_used_champion .play_with_same_team .player .player_name_and_icon .player_icon {
-    width: 30px;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.main_page .detail_box .rank_and_used_champion .play_with_same_team .player .player_name_and_icon > a {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-}
-
-.main_page .detail_box .rank_and_used_champion .play_with_same_team .player .player_name_and_icon > a:hover > p{
-    text-decoration: underline;
-    text-decoration-color: white;
-}
-
-.main_page .detail_box .rank_and_used_champion .play_with_same_team .player .player_name_and_icon > a .name{
-    color: white;
-    font-size: 12px;
-    margin-left: 8px;
-}
-
-.main_page .detail_box .rank_and_used_champion .play_with_same_team .player .player_name_and_icon > a .code{
-    color: gray;
-    font-size: 12px;
-    margin-left: 4px;
-}
-
-.main_page .detail_box .rank_and_used_champion .play_with_same_team .player > p {
-    width: 30px;
-    font-size: 12px;
-    color: gray;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0 10px;
-}
-
-.main_page .detail_box .rank_and_used_champion .play_with_same_team .player #winrate {
-    justify-content: end;
-}
-
-.main_page .detail_box .detail_game_info {
-    margin-left: 10px;
-    width: 750px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.main_page .detail_box .detail_game_info .total_game_info {
-    width: 100%;
-    height: 180px;
-    border-radius: 4px;
-    background-color: rgb(49, 49, 59);
-}
-
-.main_page .detail_box .detail_game_info .total_game_info .choose_rank {
-    height: 34px;
-    border-bottom: 1px solid black;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.main_page .detail_box .detail_game_info .total_game_info .choose_rank .button_collections {
-    display: flex;
-    align-items: center;
-    height: 100%;
-    margin: 0 3px;
-}
-
-.main_page .detail_box .detail_game_info .total_game_info .choose_rank .button_collections > button {
-    height: 80%;
-    padding: 0 10px;
-    border: none;
-    color: white;
-    cursor: pointer;
-    background-color: transparent;
-    border-radius: 4px;
-    margin-right: 5px;
-}
-
-.main_page .detail_box .detail_game_info .total_game_info .choose_rank .button_collections > button:hover {
-    background-color: rgb(40, 40, 47);
-}
-
-.main_page .detail_box .detail_game_info .total_game_info .choose_rank .search_champion {
-    display: flex;
-    align-items: center;
-    height: 80%;
-    width: 230px;
-    border-radius: 4px;
-    background-color: rgb(28, 28, 31);
-    margin: 0 3px;
-}
-
-.main_page .detail_box .detail_game_info .total_game_info .choose_rank .search_champion .search_icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 15%;
-    height: 80%;
-}
-
-.main_page .detail_box .detail_game_info .total_game_info .choose_rank .search_champion > input {
-    width: 85%;
-    height: 80%;
-    background-color: transparent;
-    border: none;
-    outline: none;
-    color: gray;
-}
-
-.main_page .detail_box .detail_game_info .total_game_info .total_record_info {
-    width: 100%;
-    height: 145px;
-    display: flex;
-}
-
-.main_page .detail_box .detail_game_info .total_game_info .total_record_info .win_and_lose {
-    height: 100%;
-    width: 140px;
-    display: flex;
-    flex-direction: column;
-    margin-left: 10px;
-}
-
-.main_page .detail_box .detail_game_info .total_game_info .total_record_info .win_and_lose > p {
-    color: gray;
-    height: 30px;
-    display: flex;
-    align-items: center;
-    font-size: 12px;
-}
-
-.main_page .detail_box .detail_game_info .total_game_info .total_record_info .win_and_lose .record_graph {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    background: conic-gradient(rgb(214, 78, 91) 0% 50%, rgb(94, 130, 255) 50% 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.main_page .detail_box .detail_game_info .total_game_info .total_record_info .win_and_lose .record_graph .graph_center {
-    width: 70px;
-    height: 70px;
-    background-color: rgb(49, 49, 59);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: rgb(94, 130, 255);
+    background-color: @main-bg-color;
+
+    .advertisement_box {
+        .flex_align_justify_center;
+        width: @main-width;
+        height: 100px;
+        margin-top: 10px;
+        border-radius: 4px;
+        background-color: @info-box-main-color;
+    }
+
+    .detail_box {
+        display: flex;
+        width: @main-width;
+        margin-top: 10px;
+
+        .rank_and_used_champion {
+            .flex_align_center;
+            flex-direction: column;
+            width: 340px;
+
+            .solo_rank {
+                width: 100%;
+                height: 150px;
+                border-radius: 4px;
+                background-color: @info-box-main-color;
+
+                #word {
+                    .flex_align_center;
+                    height: 34px;
+                    padding: 0px 10px;
+                    border-bottom: 1px solid black;
+                    font-size: 14px;
+                    color: white;
+                }
+
+                div {
+                    .flex_align_center;
+                    width: 100%;
+                    height: 115px;
+
+                    #tier_icon {
+                        .flex_align_justify_center;
+                        width: 30%;
+                        height: 100%;
+
+                        span {
+                            .flex_align_justify_center;
+                            width: 70px;
+                            height: 70px;
+                            border-radius: 50%;
+                            background-color: @info-box-hover-color;
+                        }
+                    }
+
+                    #tier_and_score {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        width: 50%;
+                        height: 100%;
+
+                        #tier_name {
+                            font-size: 20px;
+                            font-weight: bolder;
+                            color: white;
+                        }
+
+                        #tier_score {
+                            margin-top: 8px;
+                            font-size: 12px;
+                            color: @font-gray-color;
+                        }
+                    }
+
+                    #win_and_lose {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        width: 20%;
+                        height: 100%;
+                        text-align: right;
+
+                        p {
+                            padding: 4px 8px;
+                            font-size: 12px;
+                            color: @font-gray-color;
+                        }
+                    }
+                }
+            }
+
+            .free_rank {
+                .flex_align_center_justify_between;
+                width: 100%;
+                height: 30px;
+                margin-top: 10px;
+                border-radius: 4px;
+                background-color: @info-box-main-color;
+
+                #free_rank_ko {
+                    padding: 0px 10px;
+                    font-size: 14px;
+                    color: white;
+                }
+
+                #unranked {
+                    padding: 0 10px;
+                    font-size: 14px;
+                    color: @font-gray-color;
+                }
+            }
+
+            .find_duo {
+                .flex_align_justify_center;
+                width: 100%;
+                height: 30px;
+                margin-top: 10px;
+                border-radius: 4px;
+                background-color: @info-box-hover-color;
+
+                a {
+                    .flex_align_justify_center;
+                    width: 100%;
+                    height: 30px;
+                    text-decoration: none;
+                }
+            }
+
+            .used_champion {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                height: 435px;
+                margin-top: 10px;
+                border-radius: 4px;
+                background-color: @info-box-main-color;
+
+                .choose_rank {
+                    .flex_align_center_justify_between;
+                    height: 34px;
+                    padding: 0 5px;
+                    border-bottom: 1px solid black;
+
+                    button {
+                        height: 80%;
+                        padding: 0 28px;
+                        border: none;
+                        border-radius: 4px;
+                        cursor: pointer;
+                        color: white;
+                        background-color: transparent;
+
+                        &:hover {
+                            background-color: @info-box-hover-color;
+                        }
+                    }
+                }
+
+                .champion_info {
+                    .flex_align_center_justify_between;
+                    height: 49px;
+                    border-bottom: 1px solid black;
+
+                    .champion_name_and_img {
+                        .flex_align_center;
+                        width: 140px;
+                        height: 100%;
+
+                        .champion_img {
+                            .flex_align_justify_center;
+                            width: 30px;
+                            height: 30px;
+                            margin: 0px 10px;
+                            border-radius: 50%;
+                        }
+                    }
+
+                    .champion_grade {
+                        text-align: center;
+                    }
+
+                    .champion_winrate {
+                        width: 50px;
+                        margin: 0 10px;
+                        text-align: right;
+                    }
+                }
+
+                .show_another_season {
+                    .flex_align_justify_center;
+                    height: 50px;
+
+                    button {
+                        width: 100%;
+                        height: 100%;
+                        border: none;
+                        border-radius: 0 0 4px 4px;
+                        cursor: pointer;
+                        color: @font-gray-color;
+                        background-color: @info-box-hover-color;
+                    }
+                }
+            }
+
+            .recent_7day_winrate {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                height: 350px;
+                margin-top: 10px;
+                border-radius: 4px;
+                background-color: @info-box-main-color;
+
+                #sentence {
+                    .flex_align_center;
+                    width: 100%;
+                    height: 39px;
+                    border-bottom: 1px solid black;
+
+                    p {
+                        padding: 0 10px;
+                        font-size: 14px;
+                        color: white;
+                    }
+                }
+
+                #champion_winrate_word {
+                    .flex_align_center_justify_between;
+                    width: 100%;
+                    height: 29px;
+                    border-bottom: 1px solid black;
+                    background-color: @info-box-hover-color;
+
+                    p {
+                        padding: 0 10px;
+                        font-size: 12px;
+                        color: @font-gray-color;
+                    }
+                }
+
+                .champion_and_winrate_recent_version {
+                    .flex_align_center_justify_between;
+                    width: 100%;
+                    height: 39px;
+                    border-bottom: 1px solid black;
+
+                    .champion_name_and_img {
+                        .flex_align_center;
+                        width: 140px;
+                        height: 100%;
+
+                        .champion_img {
+                            .flex_align_justify_center;
+                            width: 30px;
+                            height: 30px;
+                            margin: 0px 10px;
+                        }
+
+                        a {
+                            text-decoration: none;
+                            font-size: 12px;
+                            color: white;
+
+                            &:hover {
+                                text-decoration: underline;
+                            }
+                        }
+                    }
+
+                    .winrate_and_bar {
+                        .flex_align_center;
+                        width: 180px;
+                        height: 100%;
+
+                        .win_and_lose_bar {
+                            width: 135px;
+                            height: 60%;
+                            
+                            .winbar {
+                                .flex_align_center;
+                                height: 100%;
+                                float: left;
+                                border-radius: 4px 0 0 4px;
+                                background-color: @main-title-bg-color;
+
+                                p {
+                                    margin-left: 3px;
+                                    font-size: 12px;
+                                    color: white;
+                                }
+                            }
+
+                            .losebar {
+                                .flex_align_center;
+                                justify-content: end;
+                                height: 100%;
+                                border-radius: 0 4px 4px 0;
+                                background-color: rgb(214, 78, 91);
+
+                                p {
+                                    margin-right: 3px;
+                                    font-size: 12px;
+                                    color: white;
+                                }
+                            }
+                        }
+
+                        #winrate {
+                            .flex_align_justify_center;
+                            width: 45px;
+                            height: 100%;
+                            font-size: 12px;
+                            color: @font-gray-color;
+                        }
+                    }
+                }
+            }
+
+            .small_advertisement_box {
+                .flex_align_justify_center;
+                width: 100%;
+                height: 340px;
+                margin-top: 10px;
+                border-radius: 4px;
+                background-color: @info-box-main-color;
+            }
+
+            .play_with_same_team {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                height: 220px;
+                margin-top: 10px;
+                border-radius: 4px;
+                background-color: @info-box-main-color;
+            }
+
+            .sentence {
+                .flex_align_center;
+                width: 100%;
+                height: 39px;
+                border-bottom: 1px solid black;
+
+                p {
+                    padding: 0 10px;
+                    font-size: 14px;
+                    color: white;
+                }
+            }
+
+            .title {
+                .flex_align_center_justify_between;
+                width: 100%;
+                height: 29px;
+                border-bottom: 1px solid black;
+                background-color: @info-box-hover-color;
+
+                p {
+                    .flex_align_justify_center;
+                    width: 30px;
+                    height: 100%;
+                    padding: 0 10px;
+                    font-size: 12px;
+                    color: @font-gray-color;
+                }
+
+                #summoner {
+                    justify-content: start;
+                    width: 140px;
+                    height: 100%;
+                }
+
+                #winrate {
+                    justify-content: end;
+                }
+            }
+
+            .player {
+                .flex_align_center_justify_between;
+                width: 100%;
+                height: 29px;
+                border-bottom: 1px solid black;
+
+                .player_name_and_icon {
+                    .flex_align_center;
+                    width: 140px;
+                    height: 100%;
+                    margin: 0 10px;
+
+                    .player_icon {
+                        .flex_align_justify_center;
+                        width: 30px;
+                        height: 100%;
+                    }
+
+                    a {
+                        .flex_align_center;
+                        text-decoration: none;
+
+                        &:hover {
+                            p {
+                                text-decoration: underline;
+                                text-decoration-color: white;
+                            }
+                        }
+
+                        .name {
+                            margin-left: 8px;
+                            font-size: 12px;
+                            color: white;
+                        }
+
+                        .code {
+                            margin-left: 4px;
+                            font-size: 12px;
+                            color: @font-gray-color;
+                        }
+                    }
+                }
+
+                #word {
+                    .flex_align_justify_center;
+                    width: 30px;
+                    height: 100%;
+                    padding: 0 10px;
+                    font-size: 12px;
+                    color: @font-gray-color;
+                }
+
+                #winrate {
+                    .flex_align_center;
+                    justify-content: end;
+                    width: 30px;
+                    height: 100%;
+                    padding: 0 10px;
+                    font-size: 12px;
+                    color: @font-gray-color;
+                }
+            }
+        }
+
+        .detail_game_info {
+            .flex_align_center;
+            flex-direction: column;
+            margin-left: 10px;
+            width: 750px;
+
+            .total_game_info {
+                width: 100%;
+                height: 180px;
+                border-radius: 4px;
+                background-color: @info-box-main-color;
+
+                .choose_rank {
+                    .flex_align_center_justify_between;
+                    height: 34px;
+                    border-bottom: 1px solid black;
+
+                    .button_collections {
+                        .flex_align_center;
+                        height: 100%;
+                        margin: 0 3px;
+
+                        button {
+                            height: 80%;
+                            padding: 0 10px;
+                            margin-right: 5px;
+                            border: none;
+                            border-radius: 4px;
+                            cursor: pointer;
+                            color: white;
+                            background-color: transparent;
+
+                            &:hover {
+                                background-color: @info-box-hover-color;
+                            }
+                        }
+                    }
+
+                    .search_champion {
+                        .flex_align_center;
+                        width: 230px;
+                        height: 80%;
+                        margin: 0 3px;
+                        border-radius: 4px;
+                        background-color: @main-bg-color;
+
+                        .search_icon {
+                            .flex_align_justify_center;
+                            width: 15%;
+                            height: 80%;
+                        }
+
+                        input {
+                            width: 85%;
+                            height: 80%;
+                            border: none;
+                            outline: none;
+                            color: @font-gray-color;
+                            background-color: transparent;
+                        }
+                    }
+                }
+
+                .total_record_info {
+                    display: flex;
+                    width: 100%;
+                    height: 145px;
+
+                    .win_and_lose {
+                        display: flex;
+                        flex-direction: column;
+                        width: 140px;
+                        height: 100%;
+                        margin-left: 10px;
+
+                        p {
+                            .flex_align_center;
+                            height: 30px;
+                            font-size: 12px;
+                            color: @font-gray-color;
+                        }
+
+                        .record_graph {
+                            .flex_align_justify_center;
+                            width: 100px;
+                            height: 100px;
+                            border-radius: 50%;
+                            background: conic-gradient(rgb(214, 78, 91) 0% 50%, rgb(94, 130, 255) 50% 100%);
+
+                            .graph_center {
+                                .flex_align_justify_center;
+                                width: 70px;
+                                height: 70px;
+                                border-radius: 50%;
+                                color: rgb(94, 130, 255);
+                                background-color: @info-box-main-color;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
