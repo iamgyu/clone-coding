@@ -90,7 +90,7 @@
                         <div class="country">
                             <button type="button">KR ▼</button>
                         </div>
-                        <input type="text" placeholder="플레이어 이름+ #KR1">
+                        <input id="player_name" type="text" placeholder="플레이어 이름+ #KR1">
                         <button class="search_button" type="button"><img src="image/ggicon.svg" width="40" height="28"></button>
                     </div>
                     <div class="patchnote">
@@ -230,7 +230,7 @@
                             <p style="color: gray; font-size: 14px; margin-left: 8px;">팀원 찾기 ></p>
                         </a>
                     </div>
-                    <div class="used_champion">`
+                    <div class="used_champion">
                         <div class="choose_rank">
                             <button style="background-color: rgb(81, 81, 98); font-weight: bolder;">S2024 S1</button>
                             <button>솔로랭크</button>
@@ -251,7 +251,7 @@
                                 <p style="color:gray; font-size: 11px; margin-top: 4px">5.5 / 3.5 / 7.2</p>
                             </div>
                             <div class="champion_winrate">
-                                <p style="color:gray; font-size: 12px;">54%</p>
+                                <p id="winrate" style="color:gray; font-size: 12px;">54%</p>
                                 <p style="color:gray; font-size: 11px; margin-top: 4px;">24 게임</p>
                             </div>
                         </div>
@@ -270,7 +270,7 @@
                                 <p style="color:gray; font-size: 11px; margin-top: 4px">4.7 / 4.7 / 9.3</p>
                             </div>
                             <div class="champion_winrate">
-                                <p style="color:rgb(203, 76, 89); font-size: 12px;">67%</p>
+                                <p id="winrate" style="color:rgb(203, 76, 89); font-size: 12px;">67%</p>
                                 <p style="color:gray; font-size: 11px; margin-top: 4px;">15 게임</p>
                             </div>
                         </div>
@@ -289,7 +289,7 @@
                                 <p style="color:gray; font-size: 11px; margin-top: 4px">6.5 / 3.5 / 7.5</p>
                             </div>
                             <div class="champion_winrate">
-                                <p style="color:rgb(203, 76, 89); font-size: 12px;">73%</p>
+                                <p id="winrate" style="color:rgb(203, 76, 89); font-size: 12px;">73%</p>
                                 <p style="color:gray; font-size: 11px; margin-top: 4px;">11 게임</p>
                             </div>
                         </div>
@@ -308,7 +308,7 @@
                                 <p style="color:gray; font-size: 11px; margin-top: 4px">6.4 / 4.3 / 7.3</p>
                             </div>
                             <div class="champion_winrate">
-                                <p style="color:rgb(203, 76, 89); font-size: 12px;">70%</p>
+                                <p id="winrate" style="color:rgb(203, 76, 89); font-size: 12px;">70%</p>
                                 <p style="color:gray; font-size: 11px; margin-top: 4px;">10 게임</p>
                             </div>
                         </div>
@@ -327,7 +327,7 @@
                                 <p style="color:gray; font-size: 11px; margin-top: 4px">4.9 / 2.7 / 7.6</p>
                             </div>
                             <div class="champion_winrate">
-                                <p style="color:rgb(203, 76, 89); font-size: 12px;">70%</p>
+                                <p id="winrate" style="color:rgb(203, 76, 89); font-size: 12px;">70%</p>
                                 <p style="color:gray; font-size: 11px; margin-top: 4px;">10 게임</p>
                             </div>
                         </div>
@@ -346,8 +346,8 @@
                                 <p style="color:gray; font-size: 11px; margin-top: 4px">6.7 / 4.3 / 7.6</p>
                             </div>
                             <div class="champion_winrate">
-                                <p style="color:gray; font-size: 12px;">70%</p>
-                                <p style="color:rgb(203, 76, 89); font-size: 11px; margin-top: 4px;">10 게임</p>
+                                <p id="winrate" style="color:rgb(203, 76, 89); font-size: 12px;">70%</p>
+                                <p style="color:gray; font-size: 11px; margin-top: 4px;">10 게임</p>
                             </div>
                         </div>
                         <div class="champion_info">
@@ -365,7 +365,7 @@
                                 <p style="color:gray; font-size: 11px; margin-top: 4px">7.7 / 3.0 / 7.7</p>
                             </div>
                             <div class="champion_winrate">
-                                <p style="color:gray; font-size: 12px;">56%</p>
+                                <p id="winrate" style="color:gray; font-size: 12px;">56%</p>
                                 <p style="color:gray; font-size: 11px; margin-top: 4px;">9 게임</p>
                             </div>
                         </div>
@@ -621,5 +621,6 @@
                 </div>
             </div>
         </div>
+        <script src="opgg.js"></script>
     </body>
 </html>
