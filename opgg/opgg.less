@@ -1269,7 +1269,7 @@ body {
                 flex-direction: column;
                 width: 100%;
 
-                .one_game {
+                .win_game {
                     .flex_align_center;
                     height: 100px;
                     width: 100%;
@@ -1499,7 +1499,7 @@ body {
                             border: none;
                             border-radius: 0 0 4px 0;
                             cursor: pointer;
-                            color: aqua;
+                            color: @main-title-bg-color;
                             background-color: rgb(51, 66, 107);
 
                             &:hover {
@@ -1508,7 +1508,273 @@ body {
                         }
                     }
                 }
+
+                .lose_game {
+                    .flex_align_center;
+                    height: 100px;
+                    width: 100%;
+                    margin-top: 10px;
+                    border-radius: 4px;
+                    background-color: rgb(84, 54, 59);
+
+                    .edge {
+                        width: 1%;
+                        height: 100%;
+                        border-radius: 4px 0 0 4px;
+                        background-color: rgb(214, 78, 91);
+                    }
+
+                    .contents {
+                        .flex_align_center;
+                        gap: 8px;
+                        margin: 0 8px;
+                        width: 100%;
+                        .rank_day_play_time {
+                            display: flex;
+                            flex-direction: column;
+                            width: 110px;
+                            gap: 8px;
+    
+                            .group {
+                                display: flex;
+                                flex-direction: column;
+                                
+                                p {
+                                    font-size: 12px;
+                                    line-height: 16px;
+                                    color: @font-gray-color;
+                                }
+    
+                                #rank {
+                                    font-weight: bolder;
+                                    color: rgb(214, 78, 91);
+                                }
+    
+                                #win_lose {
+                                    font-weight: bolder;
+                                }
+                            }
+                            
+                            .divider {
+                                width: 50px;
+                                height: 1px;
+                                background-color: rgb(47, 59, 92);
+                            }
+                        }
+    
+                        .all_info {
+                            display: flex;
+                            flex-direction: column;
+                            gap: 4px;
+                            height: 100%;
+    
+                            .main {
+                                .flex_align_center;
+        
+                                .info {
+                                    .flex_align_justify_center;
+                                    height: 60px;
+                                    gap: 4px;
+                                    
+                                    .champion {
+                                        .flex_align_justify_center;
+                                        position: relative;
+    
+                                        #level {
+                                            .flex_align_justify_center;
+                                            position: absolute;
+                                            bottom: 0;
+                                            right: 0;
+                                            width: 20px;
+                                            height: 20px;
+                                            border-radius: 50%;
+                                            font-size: 12px;
+                                            color: white;
+                                            background-color: rgb(35, 45, 54);
+                                        }
+                                    } 
+                                    
+                                    .spell_and_rune {
+                                        display: flex;
+                                        gap: 2px;
+    
+                                        .layout {
+                                            display: flex;
+                                            flex-direction: column;
+                                            gap: 2px;
+                                        }
+                                    }
+                                    
+                                    .kda_stat {
+                                        display: flex;
+                                        flex-direction: column;
+                                        width: 110px;
+                                        margin-left: 8px;
+                                        gap: 8px;
+    
+                                        .kda {
+                                            display: flex;
+                                            gap: 4px;
+                                            font-weight: bolder;
+    
+                                            #kill {
+                                                color: white;
+                                            }
+    
+                                            #dash {
+                                                color: @font-gray-color;
+                                            }
+    
+                                            #death {
+                                                color: rgb(214, 78, 91);
+                                            }
+    
+                                            #assist {
+                                                color: white;
+                                            }
+                                        }
+    
+                                        .avg_grade {
+                                            font-size: 12px;
+                                            color: @font-gray-color;
+                                        }
+                                    }
+    
+                                    .divider {
+                                        margin-top: 4px;
+                                        height: 56px;
+                                        width: 1px;
+                                        background-color: rgb(47, 59, 92);
+                                    }
+    
+                                    .sub_info {
+                                        display: flex;
+                                        flex-direction: column;
+                                        
+                                        p {
+                                            font-size: 12px;
+                                            line-height: 14px;
+                                            color: @font-gray-color;
+                                        }
+    
+                                        #kill_involvement {
+                                            color: rgb(214, 78, 91);
+                                        }
+                                    }
+                                }
+                            }
+    
+                            .sub {
+                                .flex_align_center;
+                                gap: 8px;
+    
+                                .item {
+                                    display: flex;
+                                    gap: 2px;
+    
+                                    img {
+                                        border-radius: 4px;
+                                    }
+                                }
+    
+                                .tag {
+                                    display: flex;
+                                    gap: 4px;
+    
+                                    button {
+                                        border: none;
+                                        border-radius: 50px;
+                                        padding: 0 6px;
+                                        font-size: 12px;
+                                        line-height: 20px;
+                                        color: white;
+                                        background-color: @font-gray-color;
+                                    }
+                                }
+                            }
+                        }
+    
+                        .players {
+                            display: flex;
+                            flex-flow: column wrap;
+                            padding: 0 4px;
+                            gap: 2px 8px;
+                            max-height: 88px;
+                            width: 170px;
+                            margin-left: 40px;
+    
+                            .player {
+                                .flex_align_center;
+                                gap: 4px;
+    
+                                p {
+                                    font-size: 12px;
+                                    line-height: 16px;
+                                    color: @font-gray-color;
+                                }
+                            }
+                        }
+                    }
+
+                    .buttons {
+                        display: flex;
+                        flex-direction: column;
+                        height: 100%;
+                        width: 40px;
+
+                        .record {
+                            height: 40px;
+                            border: none;
+                            border-radius: 0 4px 0 0;
+                            cursor: pointer;
+                            background-color: rgb(34, 58, 60);
+
+                            &:hover {
+                                background-color: rgb(42, 99, 108);
+                            }
+                        }
+                        
+                        .more_info {
+                            height: 60px;
+                            border: none;
+                            border-radius: 0 0 4px 0;
+                            cursor: pointer;
+                            color: rgb(214, 78, 91);
+                            background-color: rgb(105, 63, 71);
+
+                            &:hover {
+                                background-color: rgb(84, 54, 59);
+                            }
+                        }
+                    }
+                }
+
+                .show_more_game {
+                    .flex_align_center;
+                    height: 40px;
+                    width: 100%;
+                    margin-top: 10px;
+
+                    button {
+                        height: 100%;
+                        width: 100%;
+                        border: 0.5px solid gray;
+                        border-radius: 4px;
+                        cursor: pointer;
+                        color: white;
+                        background-color: rgb(49, 49, 59);
+                    }
+                }
             }
         }
+    }
+
+    .big_advertisement_box {
+        .flex_align_justify_center;
+        width: @main-width;
+        height: 250px;
+        margin-top: 20px;
+        border-radius: 4px;
+        background-color: @info-box-main-color;
     }
 }
