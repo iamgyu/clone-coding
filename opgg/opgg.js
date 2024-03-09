@@ -37,3 +37,16 @@ function enterKey(event) {
     }
 }
 
+
+function btnClick() {
+    var btn = document.querySelector(".win1_game .buttons .more_info")
+    var div = document.querySelector(".one_game .show_more_info");
+
+    if(div.style.display === 'flex') {
+        div.style.display = 'none';
+        btn.textContent = 'v';
+    } else {
+        div.style.display = 'flex';
+        btn.textContent = '^';
+    }
+}
