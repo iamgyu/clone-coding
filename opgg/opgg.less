@@ -1513,7 +1513,7 @@ body {
                     }
 
                     .show_more_info {
-                        display: flex;
+                        display: none;
                         flex-direction: column;
                         height: 720px;
                         width: 100%;
@@ -1811,7 +1811,6 @@ body {
 
                             .object_info {
                                 .flex_align_center_justify_between;
-                                height: 70px;
                                 width: 100%;
                                 padding: 8px 16px;
                                 box-sizing: border-box;
@@ -1883,7 +1882,7 @@ body {
                                 .lose_object_count {
                                     display: flex;
                                     flex-wrap: wrap;
-                                    width: 120px;
+                                    width: 110px;
                                     gap: 8px;
 
                                     .object {
@@ -2156,12 +2155,59 @@ body {
                                     }
                                 }
                             }
+
+                            .url {
+                                .flex_align_center;
+                                height: 35px;
+                                width: 100%;
+                                gap: 4px;
+                                padding: 0 4px;
+                                box-sizing: border-box;
+                                border-top: 1px solid black;
+                                border-radius: 0 0 4px 4px;
+                                background-color: @info-box-main-color;
+
+                                .box {
+                                    .flex_align_center;
+                                    flex: 1 1 0%;
+                                    height: 80%;
+                                    width: 90%;
+                                    border-radius: 4px;
+                                    background-color: @main-bg-color;
+
+                                    .link {
+                                        flex: 1 1 0%;
+                                        padding-right: 10px;
+                                        border: none;
+                                        outline: none;
+                                        text-overflow: ellipsis;
+                                        overflow: hidden;
+                                        font-size: 11px;
+                                        color: @font-gray-color;
+                                        background-color: transparent;
+                                    }
+                                }
+
+                                #copy_btn {
+                                    height: 80%;
+                                    width: 10%;
+                                    font-size: 12px;
+                                    border: none;
+                                    border-radius: 4px;
+                                    cursor: pointer;
+                                    color: white;
+                                    background-color: rgb(84, 184, 164);
+
+                                    &:hover {
+                                        background-color: rgb(72, 161, 153);
+                                    }
+                                }
+                            }
                         }
                         
                         .adv {
                             .flex_align_justify_center;
-                            height: 100px;
-                            width: 100%;
+                            flex: 1 1 0%;
                             margin-top: 10px;
                             border-radius: 4px;
                             background-color: @info-box-main-color;

@@ -50,3 +50,11 @@ function btnClick() {
         btn.textContent = '^';
     }
 }
+
+function copy_btnClick() {
+    var text = document.querySelector(".url .box .link");
+    window.navigator.clipboard.writeText(text.value);
+    var btn = document.getElementById("copy_btn");
+    btn.textContent = 'Copied';
+    btn.style.width = "8%";
+}
