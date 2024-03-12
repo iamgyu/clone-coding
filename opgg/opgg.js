@@ -37,17 +37,23 @@ function enterKey(event) {
     }
 }
 
+var btns = document.querySelectorAll(".one_game .buttons .more_info");
 
-function btnClick() {
-    var btn = document.querySelector(".win1_game .buttons .more_info")
-    var div = document.querySelector(".one_game .show_more_info");
+btns.forEach(function(btn, index){
+    btn.addEventListener('click', function(){
+        btnClick(index);
+    });
+});
 
-    if(div.style.display === 'flex') {
-        div.style.display = 'none';
-        btn.textContent = 'v';
+function btnClick(index) {
+    var divs = document.querySelectorAll(".one_game .show_more_info");
+
+    if(divs[index].style.display === 'flex') {
+        divs[index].style.display = 'none';
+        btns[index].textContent = 'v';
     } else {
-        div.style.display = 'flex';
-        btn.textContent = '^';
+        divs[index].style.display = 'flex';
+        btns[index].textContent = '^';
     }
 }
 
