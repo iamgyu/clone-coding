@@ -57,10 +57,18 @@ function btnClick(index) {
     }
 }
 
-function copy_btnClick() {
-    var text = document.querySelector(".url .box .link");
-    window.navigator.clipboard.writeText(text.value);
-    var btn = document.getElementById("copy_btn");
-    btn.textContent = 'Copied';
-    btn.style.width = "8%";
+var copy_btns = document.querySelectorAll(".show_more_info .contents .url .copy_btn")
+
+copy_btns.forEach(function(copy_btn, index){
+    copy_btn.addEventListener('click', function(){
+        copy_btnClick(index);
+    })
+})
+
+function copy_btnClick(index) {
+    var text = document.querySelectorAll(".url .box .link");
+    window.navigator.clipboard.writeText(text[index].value);
+
+    copy_btns[index].textContent = 'Copied';
+    copy_btns[index].style.width = "8%";
 }
