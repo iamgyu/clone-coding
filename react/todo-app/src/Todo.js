@@ -2,7 +2,7 @@ import React, { Component, useState } from 'react';
 import axios from 'axios';
 
 function AddTodo({onAdd}) {
-    const [todo, setTodo] = useState(null);
+    const [todo, setTodo] = useState('');
 
     const handleChange = (e) => {
         setTodo(e.target.value);
@@ -25,7 +25,7 @@ function AddTodo({onAdd}) {
         <div>
             <form onSubmit={handleSubmit}>
                 <label>
-                    <input type='text' placeholder='Add a new todo...' onChange={handleChange}/>
+                    <input type='text' value={todo} placeholder='Add a new todo...' onChange={handleChange}/>
                 </label>
                 <button type='submit'>Add</button>
             </form>
@@ -69,9 +69,19 @@ class Todo extends Component {
     }
 
     handleAddTodo(newTodo) {
-        const prevTodos = this.state.todos;
-        this.setState({
-            todos: [...prevTodos, newTodo]
+        this.setState(prevState => ({
+            todos: [...prevState.todos, newTodo]
+        }))
+    }
+
+    deleteTodo(id) {
+        axios.delete('http://127.0.0.1:5000/todos/' + id)
+        .then(res => {
+            console.log(res);
+            console.log(res.data);
+
+            const deleteTodos = this.state.todos.filter(todo => todo.id !== id);
+            this.setState({todos: deleteTodos});
         })
     }
 
@@ -83,6 +93,7 @@ class Todo extends Component {
                     <div key={todo.id}>
                         <input type='checkbox' defaultChecked={todo.status} onChange={() => this.checkClick(todo.id)}/>
                         <label>{todo.content}{' ' + String(todo.status)}</label>
+                        <button onClick={() => this.deleteTodo(todo.id)}>Delete</button>
                     </div>
                 )}
                 <AddTodo onAdd={this.handleAddTodo}/>
