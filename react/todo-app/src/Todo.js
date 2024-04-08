@@ -1,31 +1,53 @@
-import React, { Component, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
-function AddTodo({onAdd}) {
-    const [todo, setTodo] = useState('');
+function GetTodo({todos, setTodos}) {
+
+    useEffect(() => {
+        axios.get('http://127.0.0.1:5000/todos')
+        .then(res => {
+            const data = res.data;
+            setTodos(data);
+        })
+    }, [setTodos]);
+
+    return (
+        <div>
+            <h2>TODOs</h2>
+            {
+                todos?.map(todo => 
+                    <div key={todo.id}>
+                        <label>{todo.content}{' ' + todo.status}</label>
+                    </div>
+            )}
+        </div>
+    )
+}
+
+function PostTodo({setTodos}) {
+    const [newTodo, setNewTodo] = useState('');
 
     const handleChange = (e) => {
-        setTodo(e.target.value);
+        setNewTodo(e.target.value);
     }
 
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        axios.post('http://127.0.0.1:5000/todos', {content: todo})
+        axios.post('http://127.0.0.1:5000/todos', {content: newTodo})
         .then(res => {
-            console.log(res);
-            console.log(res.data);
-            onAdd(res.data);
+            setTodos(prevTodos =>
+                [...prevTodos, res.data]);
         })
 
-        setTodo('');
+        setNewTodo('');
     }
 
     return (
         <div>
             <form onSubmit={handleSubmit}>
                 <label>
-                    <input type='text' value={todo} placeholder='Add a new todo...' onChange={handleChange}/>
+                    <input type='text' value={newTodo} placeholder='Add a new todo...' onChange={handleChange}/>
                 </label>
                 <button type='submit'>Add</button>
             </form>
@@ -33,6 +55,18 @@ function AddTodo({onAdd}) {
     )
 }
 
+function Todo() {
+    const [todos, setTodos] = useState([]);
+
+    return (
+        <div>
+            <GetTodo todos={todos} setTodos={setTodos}/>
+            <PostTodo setTodos={setTodos}/>
+        </div>
+    )
+}
+
+/*
 class Todo extends Component {
     constructor(props) {
         super(props);
@@ -97,9 +131,10 @@ class Todo extends Component {
                     </div>
                 )}
                 <AddTodo onAdd={this.handleAddTodo}/>
+                <GetTodo />
             </div>
         );
     }
 }
-
+*/
 export default Todo;
