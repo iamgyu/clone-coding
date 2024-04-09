@@ -17,7 +17,9 @@ function GetTodo({todos, setTodos}) {
             {
                 todos?.map(todo => 
                     <div key={todo.id}>
+                        <PatchTodo todo={todo} setTodos={setTodos} />
                         <label>{todo.content}{' ' + todo.status}</label>
+                        <DeleteTodo todo={todo} setTodos={setTodos} />
                     </div>
             )}
         </div>
@@ -52,6 +54,43 @@ function PostTodo({setTodos}) {
                 <button type='submit'>Add</button>
             </form>
         </div>
+    )
+}
+
+function PatchTodo({todo, setTodos}) {
+
+    const checkClick = () => {
+        axios.patch('http://127.0.0.1:5000/todos/' + todo.id, {status: !todo.status})
+        .then(res => {
+            const updateTodo = res.data;
+            setTodos(prevTodos => 
+                prevTodos.map(todo => {
+                    if(todo.id === updateTodo.id) {
+                        return updateTodo;
+                    }
+                    return todo;
+                })
+            );
+        })
+    }
+
+    return (
+        <input type='checkbox' defaultChecked={todo.status} onChange={checkClick}/>
+    )
+}
+
+function DeleteTodo({todo, setTodos}) {
+
+    const buttonClick = () => {
+        axios.delete('http://127.0.0.1:5000/todos/' + todo.id)
+        .then(res => {
+            setTodos(prevTodos => 
+                prevTodos.filter(t => t.id !== todo.id));
+        })
+    }
+
+    return (
+        <button onClick={buttonClick}>Delete</button>
     )
 }
 
