@@ -9,6 +9,9 @@ function GetTodo({todos, setTodos}) {
             const data = res.data;
             setTodos(data);
         })
+        .catch(error => {
+            console.log(error);
+        })
     }, [setTodos]);
 
     return (
@@ -41,6 +44,9 @@ function PostTodo({setTodos}) {
             setTodos(prevTodos =>
                 [...prevTodos, res.data]);
         })
+        .catch(error => {
+            console.log(error);
+        })
 
         setNewTodo('');
     }
@@ -72,6 +78,9 @@ function PatchTodo({todo, setTodos}) {
                 })
             );
         })
+        .catch(error => {
+            console.log(error);
+        })
     }
 
     return (
@@ -86,6 +95,9 @@ function DeleteTodo({todo, setTodos}) {
         .then(res => {
             setTodos(prevTodos => 
                 prevTodos.filter(t => t.id !== todo.id));
+        })
+        .catch(error => {
+            console.log(error);
         })
     }
 
