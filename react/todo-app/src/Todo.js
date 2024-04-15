@@ -4,14 +4,15 @@ import axios from 'axios';
 function GetTodo({todos, setTodos}) {
 
     useEffect(() => {
-        axios.get('http://127.0.0.1:5000/todos')
-        .then(res => {
-            const data = res.data;
-            setTodos(data);
-        })
-        .catch(error => {
-            console.log(error);
-        })
+        const getData = async () => {
+            try{
+                const res = await axios.get('http://127.0.0.1:5000/todos');
+                setTodos(res.data);
+            }catch(error) {
+                console.log(error);
+            }
+        }
+        getData();
     }, [setTodos]);
 
     return (
@@ -36,17 +37,16 @@ function PostTodo({setTodos}) {
         setNewTodo(e.target.value);
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-
-        axios.post('http://127.0.0.1:5000/todos', {content: newTodo})
-        .then(res => {
+        
+        try {
+            const res = await axios.post('http://127.0.0.1:5000/todos', {content: newTodo});
             setTodos(prevTodos =>
                 [...prevTodos, res.data]);
-        })
-        .catch(error => {
+        } catch(error) {
             console.log(error);
-        })
+        }
 
         setNewTodo('');
     }
@@ -65,22 +65,20 @@ function PostTodo({setTodos}) {
 
 function PatchTodo({todo, setTodos}) {
 
-    const checkClick = () => {
-        axios.patch('http://127.0.0.1:5000/todos/' + todo.id, {status: !todo.status})
-        .then(res => {
-            const updateTodo = res.data;
+    const checkClick = async () => {
+        try {
+            const res = await axios.patch('http://127.0.0.1:5000/todos/' + todo.id, {status: !todo.status});
             setTodos(prevTodos => 
                 prevTodos.map(todo => {
-                    if(todo.id === updateTodo.id) {
-                        return updateTodo;
+                    if(todo.id === res.data.id) {
+                        return res.data;
                     }
                     return todo;
                 })
             );
-        })
-        .catch(error => {
+        } catch(error) {
             console.log(error);
-        })
+        }
     }
 
     return (
@@ -90,15 +88,14 @@ function PatchTodo({todo, setTodos}) {
 
 function DeleteTodo({todo, setTodos}) {
 
-    const buttonClick = () => {
-        axios.delete('http://127.0.0.1:5000/todos/' + todo.id)
-        .then(res => {
-            setTodos(prevTodos => 
+    const buttonClick = async () => {
+        try {
+            await axios.delete('http://127.0.0.1:5000/todos/' + todo.id);
+            setTodos(prevTodos =>
                 prevTodos.filter(t => t.id !== todo.id));
-        })
-        .catch(error => {
+        } catch(error) {
             console.log(error);
-        })
+        }
     }
 
     return (
