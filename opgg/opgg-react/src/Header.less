@@ -1,0 +1,170 @@
+@main-bg-color : rgb(28, 28, 31);
+@other-game-title-color : rgb(42, 52, 76);
+@main-title-bg-color : rgb(94, 130, 255);
+
+@page-collection-height : 40px;
+@main-width : 1100px;
+
+.flex_align_center {
+    display: flex;
+    align-items: center;
+}
+
+.flex_align_justify_center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex_align_center_justify_between {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header {
+    min-width: @main-width;
+}
+
+.page_collections {
+    .flex_align_center;
+    height: @page-collection-height;
+    background-color: @other-game-title-color;
+
+    .main_logo {
+        .flex_align_justify_center;
+        width: 100px;
+        height: @page-collection-height;
+        background-color: @main-title-bg-color;
+    }
+
+    .game_title {
+        overflow: hidden;
+        height: @page-collection-height;
+
+        li {
+            .flex_align_center;
+            float: left;
+            margin-right: 20px;
+        }
+
+        .main_game {
+            .flex_align_center;
+            height: @page-collection-height;
+            padding-right: 10px;
+            font-size: 12px;
+            color: white;
+            background-color: @main-title-bg-color;
+
+            span {
+                margin-left: 10px;
+            }
+        }
+
+        .other_game {
+            .flex_align_center;
+            height: @page-collection-height;
+            font-size: 12px;
+            text-decoration: none;
+
+            span {
+                margin-left: 10px;
+                color: white;
+            }
+        }
+    }
+}
+
+.search_box {
+    .flex_align_justify_center;
+    height: 50px;
+    overflow-x: clip;
+    background-color: @main-title-bg-color;
+
+    .img_and_search {
+        .flex_align_center;
+        position: relative;
+        height: 50px;
+        width: @main-width;
+
+        .homeImg {
+            .flex_align_justify_center;
+            width: 110px;
+        }
+
+        .search {
+            .flex_align_center;
+            position: relative;
+            width: 990px;
+            height: 50px;
+
+            .country {
+                .flex_align_center;
+                height: 100%;
+
+                button {
+                    height: 70%;
+                    width: 60px;
+                    border: none;
+                    border-radius: 8px 0 0 8px;
+                    font-size: 12px;
+                    background-color: rgb(237, 242, 254);
+                    color: @main-title-bg-color;
+
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+            }
+
+            #player_name {
+                height: 30%;
+                width: 100%;
+                border: none;
+                border-radius: 0 8px 8px 0;
+                outline: none;
+                padding: 10px 12px;
+                font-size: 12px;
+            }
+
+            .search_button {
+                position: absolute;
+                height: 70%;
+                width: 50px;
+                bottom: 0;
+                right: 0;
+                margin-bottom: 7.5px;
+                border: none;
+                border-radius: 8px;
+                background-color: white;
+
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+
+        .patchnote {
+            position: absolute;
+            left: 100%;
+
+            button {
+                .flex_align_center;
+                height: 35px;
+                white-space: nowrap;
+                border: none;
+                border-radius: 16px;
+                margin-left: 10px;
+                padding: 0 10px;
+                font-size: 12px;
+                color: white;
+                background-color: rgb(76, 112, 207);
+
+                &:hover {
+                    cursor: pointer;
+                    background-color: rgb(59, 93, 186);
+                }
+            }
+        }
+    }
+}
