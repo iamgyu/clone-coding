@@ -151,4 +151,70 @@ header {
   cursor: pointer;
   background-color: #3b5dba;
 }
+.main_menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  background-color: #5e82ff;
+}
+.main_menu nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 1100px;
+}
+.main_menu .main_collections {
+  height: 50px;
+  overflow: hidden;
+}
+.main_menu .main_collections li {
+  display: flex;
+  align-items: center;
+  float: left;
+  margin-right: 30px;
+}
+.main_menu .main_collections li a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #b8ccfb;
+}
+.main_menu .main_collections li a span {
+  display: flex;
+  align-items: center;
+  height: 47px;
+  border-bottom: 3px solid transparent;
+}
+.main_menu .main_collections li a span:hover {
+  color: white;
+  border-bottom: 3px solid white;
+}
+.main_menu .main_collections .gamemode {
+  color: aqua;
+}
+.main_menu .main_collections .gamemode:hover {
+  color: white;
+  border-bottom: 3px solid white;
+}
+.main_menu .my_page {
+  overflow: hidden;
+}
+.main_menu .my_page li {
+  display: flex;
+  align-items: center;
+}
+.main_menu .my_page li a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #b8ccfb;
+  gap: 8px;
+  height: 47px;
+  border-bottom: 3px solid transparent;
+}
+.main_menu .my_page li a:hover {
+  color: white;
+  border-bottom: 3px solid white;
+}
 /*# sourceMappingURL=Header.css.map */

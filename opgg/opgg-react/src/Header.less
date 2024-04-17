@@ -1,6 +1,7 @@
 @main-bg-color : rgb(28, 28, 31);
 @other-game-title-color : rgb(42, 52, 76);
 @main-title-bg-color : rgb(94, 130, 255);
+@main-title-font-color : rgb(184, 204, 251);
 
 @page-collection-height : 40px;
 @main-width : 1100px;
@@ -163,6 +164,76 @@ header {
                 &:hover {
                     cursor: pointer;
                     background-color: rgb(59, 93, 186);
+                }
+            }
+        }
+    }
+}
+
+.main_menu {
+    .flex_align_justify_center;
+    height: 50px;
+    background-color: @main-title-bg-color;
+
+    nav {
+        .flex_align_center_justify_between;
+        width: @main-width;
+    }
+
+    .main_collections {
+        height: 50px;
+        overflow: hidden;
+
+        li {
+            .flex_align_center;
+            float: left;
+            margin-right: 30px;
+
+            a {
+                .flex_align_center;
+                text-decoration: none;
+                color: @main-title-font-color;
+
+                span {
+                    .flex_align_center;
+                    height: 47px;
+                    border-bottom: 3px solid transparent;
+
+                    &:hover {
+                        color: white;
+                        border-bottom: 3px solid white;
+                    }
+                }
+            }
+        }
+
+        .gamemode {
+            color: aqua;
+
+            &:hover {
+                color: white;
+                border-bottom: 3px solid white;
+            }
+        }
+    }
+
+    .my_page {
+        overflow: hidden;
+
+        li {
+            .flex_align_center;
+
+            a {
+                .flex_align_center;
+                text-decoration: none;
+                color: @main-title-font-color;
+                gap: 8px;
+                height: 47px;
+                border-bottom: 3px solid transparent;
+
+                &:hover {
+                    color: white;
+                    border-bottom: 3px solid white;
                 }
             }
         }

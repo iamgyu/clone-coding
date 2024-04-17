@@ -1,0 +1,292 @@
+.flex_align_center {
+  display: flex;
+  align-items: center;
+}
+.flex_align_justify_center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.flex_align_center_justify_between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.advertisement_sentence {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  background-color: #f4bc41;
+}
+.advertisement_sentence div {
+  width: 1100px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.advertisement_sentence div:hover a {
+  text-decoration: underline;
+}
+.advertisement_sentence div a {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  text-decoration: none;
+  color: black;
+  font-size: 14px;
+}
+.advertisement_sentence div button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+.player_rank_info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 250px;
+  background-color: #31313b;
+}
+.player_rank_info .player_rank_info_box {
+  display: flex;
+  align-items: center;
+  width: 1100px;
+  height: 100%;
+}
+.player_rank_info .player_rank_info_box .player_icon {
+  width: 11%;
+  height: 100%;
+  position: relative;
+}
+.player_rank_info .player_rank_info_box .player_icon img {
+  margin-top: 40px;
+  border-radius: 20px;
+}
+.player_rank_info .player_rank_info_box .player_icon button {
+  position: absolute;
+  background-color: #232d36;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  top: 130px;
+  left: 32px;
+}
+.player_rank_info .player_rank_info_box .player_info_detail {
+  display: flex;
+  flex-direction: column;
+  width: 54%;
+  height: 100%;
+}
+.player_rank_info .player_rank_info_box .player_info_detail .player_tier {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  gap: 5px;
+}
+.player_rank_info .player_rank_info_box .player_info_detail .player_tier button {
+  background-color: #1c1c1f;
+  color: #757485;
+  border: none;
+  border-radius: 4px;
+  cursor: text;
+  font-size: 12px;
+}
+.player_rank_info .player_rank_info_box .player_info_detail .player_tier .more_tier_button {
+  background-color: #31313b;
+  color: #757485;
+  cursor: pointer;
+}
+.player_rank_info .player_rank_info_box .player_info_detail .player_tier .more_tier_button:hover {
+  background-color: #1c1c1f;
+}
+.player_rank_info .player_rank_info_box .player_info_detail .player_name {
+  display: flex;
+  align-items: center;
+  height: 32px;
+  font-size: 24px;
+  gap: 5px;
+}
+.player_rank_info .player_rank_info_box .player_info_detail .player_name #name {
+  color: white;
+  font-weight: bolder;
+}
+.player_rank_info .player_rank_info_box .player_info_detail .player_name #hashcode {
+  color: #757485;
+}
+.player_rank_info .player_rank_info_box .player_info_detail .player_name button {
+  text-align: center;
+  margin-left: 5px;
+  cursor: pointer;
+  border: 0.5px solid #757485;
+  border-radius: 4px;
+  font-size: 23px;
+  color: #757485;
+  background-color: #31313b;
+}
+.player_rank_info .player_rank_info_box .player_info_detail .prev_name_and_rank {
+  display: flex;
+  align-items: center;
+  height: 25px;
+  font-size: 12px;
+  gap: 5px;
+}
+.player_rank_info .player_rank_info_box .player_info_detail .prev_name_and_rank a {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  text-decoration: none;
+}
+.player_rank_info .player_rank_info_box .player_info_detail .prev_name_and_rank a #pro_name {
+  color: white;
+}
+.player_rank_info .player_rank_info_box .player_info_detail .prev_name_and_rank a #arrow {
+  margin-left: 5px;
+  font-weight: bolder;
+  color: #757485;
+}
+.player_rank_info .player_rank_info_box .player_info_detail .prev_name_and_rank a:hover #pro_name {
+  text-decoration: underline;
+  text-decoration-color: white;
+}
+.player_rank_info .player_rank_info_box .player_info_detail .prev_name_and_rank a:hover #arrow {
+  color: white;
+}
+.player_rank_info .player_rank_info_box .player_info_detail .prev_name_and_rank p {
+  color: #757485;
+}
+.player_rank_info .player_rank_info_box .player_info_detail .setting_profile {
+  display: flex;
+  align-items: center;
+  height: 30px;
+}
+.player_rank_info .player_rank_info_box .player_info_detail .setting_profile button {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px;
+  font-size: 12px;
+  border: 0.5px solid #757485;
+  border-radius: 4px;
+  background-color: transparent;
+  color: white;
+  cursor: pointer;
+}
+.player_rank_info .player_rank_info_box .player_info_detail .setting_profile button #arrow {
+  color: #757485;
+  margin: 0 5px;
+}
+.player_rank_info .player_rank_info_box .player_info_detail .button_collections {
+  display: flex;
+  align-items: center;
+  height: 60px;
+  gap: 10px;
+}
+.player_rank_info .player_rank_info_box .player_info_detail .button_collections button {
+  height: 40px;
+  padding: 0 15px;
+  border: none;
+  border-radius: 4px;
+}
+.player_rank_info .player_rank_info_box .player_info_detail .button_collections #renewal {
+  color: white;
+  background-color: #5e82ff;
+  cursor: pointer;
+}
+.player_rank_info .player_rank_info_box .player_info_detail .button_collections #renewal:hover {
+  background-color: #4c70cf;
+}
+.player_rank_info .player_rank_info_box .player_info_detail .button_collections #tier_graph {
+  color: #3f5085;
+  border: 0.5px solid #3f5085;
+  background-color: transparent;
+  cursor: pointer;
+}
+.player_rank_info .player_rank_info_box .player_info_detail .button_collections #tier_graph:hover {
+  background-color: rgba(63, 80, 133, 0.3);
+}
+.player_rank_info .player_rank_info_box .player_info_detail .recent_update {
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  color: #757485;
+}
+.player_rank_info .player_rank_info_box .video_ad {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 250px;
+  width: 35%;
+  background-color: #757485;
+}
+.player_game_info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  border-top: 1px solid black;
+  background-color: #31313b;
+}
+.player_game_info .button_collections {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 1100px;
+  height: 40px;
+}
+.player_game_info .button_collections nav ul li {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  float: left;
+}
+.player_game_info .button_collections nav ul li a {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  font-size: 14px;
+  color: white;
+  text-decoration: none;
+}
+.player_game_info .button_collections nav ul li a span {
+  display: flex;
+  align-items: center;
+  height: 80%;
+  padding: 0 25px;
+  margin-right: 5px;
+}
+.player_game_info .button_collections nav ul li a #total {
+  border-radius: 4px;
+  background-color: #515162;
+}
+.player_game_info .button_collections nav ul li a:hover span {
+  background-color: #28282f;
+  border-radius: 4px;
+}
+.player_game_info .button_collections .op_score {
+  display: flex;
+  align-items: center;
+  color: white;
+  background-color: #37414c;
+  height: 80%;
+  border-radius: 100px;
+  padding: 0 5px 0 20px;
+  gap: 10px;
+  font-size: 12px;
+}
+.player_game_info .button_collections .op_score span {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+.player_game_info .button_collections .op_score button {
+  height: 28px;
+  width: 28px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+  color: gray;
+  background-color: #232d36;
+}
+/*# sourceMappingURL=Main.css.map */

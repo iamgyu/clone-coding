@@ -75,11 +75,61 @@ function Search() {
     )
 }
 
+function Menu({title}) {
+    if (title === "게임 모드") {
+        return (
+            <li>
+                <a href="#!">
+                    <span className="gamemode">{title}</span>
+                </a>
+             </li>
+        )
+    }
+
+    return (
+        <li>
+            <a href="#!">
+                <span>{title}</span>
+            </a>
+        </li>
+    )
+}
+
+function MainMenu() {
+    return (
+        <div className="main_menu">
+            <nav>
+                <ul className="main_collections">
+                    <Menu title="홈" />
+                    <Menu title="챔피언 분석" />
+                    <Menu title="게임 모드" />
+                    <Menu title="우르프" />
+                    <Menu title="통계" />
+                    <Menu title="랭킹" />
+                    <Menu title="프로관전" />
+                    <Menu title="멀티서치" />
+                    <Menu title="커뮤니티" />
+                    <Menu title="강의" />
+                </ul>
+                <ul className="my_page">
+                    <li>
+                        <a href="#!">
+                            <img src={require('./image/duologo.svg').default} alt="duologo" width="24px" height="24px" />
+                            <span>마이페이지</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    )
+}
+
 function Header() {
     return(
         <header>
             <Navigation />
             <Search />
+            <MainMenu />
         </header>
     )
 }

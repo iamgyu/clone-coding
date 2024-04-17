@@ -1,0 +1,335 @@
+@adv-bg-color : rgb(244, 188, 65);
+@info-box-main-color : rgb(49, 49, 59);
+@font-gray-color : rgb(117, 116, 133);
+@main-title-bg-color : rgb(94, 130, 255);
+@info-box-hover-color : rgb(40, 40, 47);
+
+@main-width : 1100px;
+
+.flex_align_center {
+    display: flex;
+    align-items: center;
+}
+
+.flex_align_justify_center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex_align_center_justify_between {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.advertisement_sentence {
+    .flex_align_justify_center;
+    height: 40px;
+    background-color: @adv-bg-color;
+
+    div {
+        width: @main-width;
+        height: 40px;
+        .flex_align_center_justify_between;
+
+        &:hover {
+            a {
+                text-decoration: underline;
+            }
+        }
+
+        a {
+            .flex_align_center;
+            height: 40px;
+            text-decoration: none;
+            color: black;
+            font-size: 14px;
+        }
+
+        button {
+            border: none;
+            background-color: transparent;
+            cursor: pointer;
+        }
+    }
+}
+
+.player_rank_info {
+    .flex_align_justify_center;
+    height: 250px;
+    background-color: @info-box-main-color;
+
+    .player_rank_info_box {
+        .flex_align_center;
+        width: @main-width;
+        height: 100%;
+
+        .player_icon {
+            width: 11%;
+            height: 100%;
+            position: relative;
+
+            img {
+                margin-top: 40px;
+                border-radius: 20px;
+            }
+
+            button {
+                position: absolute;
+                background-color: rgb(35, 45, 54);
+                color: white;
+                border: none;
+                border-radius: 8px;
+                top: 130px;
+                left: 32px;
+            }
+        }
+
+        .player_info_detail {
+            display: flex;
+            flex-direction: column;
+            width: 54%;
+            height: 100%;
+
+            .player_tier {
+                .flex_align_center;
+                height: 40px;
+                gap: 5px;
+
+                button {
+                    background-color: rgb(28, 28, 31);
+                    color: @font-gray-color;
+                    border: none;
+                    border-radius: 4px;
+                    cursor: text;
+                    font-size: 12px;
+                }
+
+                .more_tier_button {
+                    background-color: rgb(49, 49, 59);
+                    color: @font-gray-color;
+                    cursor: pointer;
+
+                    &:hover {
+                        background-color: rgb(28, 28, 31);
+
+                    }
+                }
+            }
+
+            .player_name {
+                .flex_align_center;
+                height: 32px;
+                font-size: 24px;
+                gap: 5px;
+
+                #name {
+                    color: white;
+                    font-weight: bolder;
+                }
+
+                #hashcode {
+                    color: @font-gray-color;
+                }
+
+                button {
+                    text-align: center;
+                    margin-left: 5px;
+                    cursor: pointer;
+                    border: 0.5px solid @font-gray-color;
+                    border-radius: 4px;
+                    font-size: 23px;
+                    color: @font-gray-color;
+                    background-color: @info-box-main-color;
+                }
+            }
+
+            .prev_name_and_rank {
+                .flex_align_center;
+                height: 25px;
+                font-size: 12px;
+                gap: 5px;
+
+                a {
+                    .flex_align_center;
+                    gap: 5px;
+                    text-decoration: none;
+
+                    #pro_name {
+                        color: white;
+                    }
+    
+                    #arrow {
+                        margin-left: 5px;
+                        font-weight: bolder;
+                        color: @font-gray-color;
+                    }
+
+                    &:hover {
+                        #pro_name {
+                            text-decoration: underline;
+                            text-decoration-color: white;
+                        }
+
+                        #arrow {
+                            color: white;
+                        }
+                    }
+                }
+
+                p {
+                    color: @font-gray-color;
+                }
+            }
+
+            .setting_profile {
+                .flex_align_center;
+                height: 30px;
+
+                button {
+                    .flex_align_center;
+                    gap: 5px;
+                    padding: 5px;
+                    font-size: 12px;
+                    border: 0.5px solid @font-gray-color;
+                    border-radius: 4px;
+                    background-color: transparent;
+                    color: white;
+                    cursor: pointer;
+
+                    #arrow {
+                        color: @font-gray-color;
+                        margin: 0 5px;
+                    }
+                }
+            }
+
+            .button_collections {
+                .flex_align_center;
+                height: 60px;
+                gap: 10px;
+
+                button {
+                    height: 40px;
+                    padding: 0 15px;
+                    border: none;
+                    border-radius: 4px;
+                }
+
+                #renewal {
+                    color: white;
+                    background-color: @main-title-bg-color;
+                    cursor: pointer;
+
+                    &:hover {
+                        background-color: rgb(76, 112, 207);
+
+                    }
+                }
+
+                #tier_graph {
+                    color: rgb(63, 80, 133);
+                    border: 0.5px solid rgb(63, 80, 133);
+                    background-color: transparent;
+                    cursor: pointer;
+
+                    &:hover {
+                        background-color: rgba(63, 80, 133, 0.3);
+                    }
+                }
+            }
+
+            .recent_update {
+                .flex_align_center;
+                font-size: 12px;
+                color: @font-gray-color;
+            }
+        }
+
+        .video_ad {
+            .flex_align_justify_center;
+            height: 250px;
+            width: 35%;
+            background-color: @font-gray-color;
+        }
+    }
+}
+
+.player_game_info {
+    .flex_align_justify_center;
+    height: 40px;
+    border-top : 1px solid black;
+    background-color: @info-box-main-color;
+
+    .button_collections {
+        .flex_align_center_justify_between;
+        width: @main-width;
+        height: 40px;
+
+        nav {
+            ul {
+                li {
+                    .flex_align_center;
+                    height: 40px;
+                    float: left;
+
+                    a {
+                        .flex_align_center;
+                        height: 40px;
+                        font-size: 14px;
+                        color: white;
+                        text-decoration: none;
+
+                        span {
+                            .flex_align_center;
+                            height: 80%;
+                            padding: 0 25px;
+                            margin-right: 5px;
+                        }
+
+                        #total {
+                            border-radius: 4px;
+                            background-color: rgb(81, 81, 98);
+                        }
+
+                        &:hover {
+                            span {
+                                background-color: @info-box-hover-color;
+                                border-radius: 4px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .op_score {
+            display: flex;
+            align-items: center;
+            color: white;
+            background-color: rgb(55, 65, 76);
+            height: 80%;
+            border-radius: 100px;
+            padding: 0 5px 0 20px;
+            gap: 10px;
+            font-size: 12px;
+
+            span {
+                .flex_align_center;
+                height: 100%;
+            }
+
+            button {
+                height: 28px;
+                width: 28px;
+                border-radius: 50%;
+                cursor: pointer;
+                border: none;
+                color: gray;
+                background-color: rgb(35, 45, 54);
+            }
+        }
+    }
+}
