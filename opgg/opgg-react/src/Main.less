@@ -3,6 +3,7 @@
 @font-gray-color : rgb(117, 116, 133);
 @main-title-bg-color : rgb(94, 130, 255);
 @info-box-hover-color : rgb(40, 40, 47);
+@main-bg-color : rgb(28, 28, 31);
 
 @main-width : 1100px;
 
@@ -23,6 +24,9 @@
     justify-content: space-between;
 }
 
+.main_page {
+    min-width: @main-width;
+}
 
 .advertisement_sentence {
     .flex_align_justify_center;
@@ -331,5 +335,1897 @@
                 background-color: rgb(35, 45, 54);
             }
         }
+    }
+}
+
+.main_page {
+    .flex_align_center;
+    flex-direction: column;
+    background-color: @main-bg-color;
+
+    .advertisement_box {
+        .flex_align_justify_center;
+        width: @main-width;
+        height: 100px;
+        margin-top: 10px;
+        border-radius: 4px;
+        background-color: @info-box-main-color;
+    }
+
+    .detail_box {
+        display: flex;
+        width: @main-width;
+        margin-top: 10px;
+
+        .rank_and_used_champion {
+            .flex_align_center;
+            flex-direction: column;
+            width: 340px;
+
+            .solo_rank {
+                width: 100%;
+                height: 150px;
+                border-radius: 4px;
+                background-color: @info-box-main-color;
+
+                #word {
+                    .flex_align_center;
+                    height: 34px;
+                    padding: 0px 10px;
+                    border-bottom: 1px solid black;
+                    font-size: 14px;
+                    color: white;
+                }
+
+                div {
+                    .flex_align_center;
+                    width: 100%;
+                    height: 115px;
+
+                    #tier_icon {
+                        .flex_align_justify_center;
+                        width: 30%;
+                        height: 100%;
+
+                        span {
+                            .flex_align_justify_center;
+                            width: 70px;
+                            height: 70px;
+                            border-radius: 50%;
+                            background-color: @info-box-hover-color;
+                        }
+                    }
+
+                    #tier_and_score {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        width: 50%;
+                        height: 100%;
+
+                        #tier_name {
+                            font-size: 20px;
+                            font-weight: bolder;
+                            color: white;
+                        }
+
+                        #tier_score {
+                            margin-top: 8px;
+                            font-size: 12px;
+                            color: @font-gray-color;
+                        }
+                    }
+
+                    #win_and_lose {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        width: 20%;
+                        height: 100%;
+                        text-align: right;
+
+                        p {
+                            padding: 4px 8px;
+                            font-size: 12px;
+                            color: @font-gray-color;
+                        }
+                    }
+                }
+            }
+
+            .free_rank {
+                .flex_align_center_justify_between;
+                width: 100%;
+                height: 30px;
+                margin-top: 10px;
+                border-radius: 4px;
+                background-color: @info-box-main-color;
+
+                #free_rank_ko {
+                    padding: 0px 10px;
+                    font-size: 14px;
+                    color: white;
+                }
+
+                #unranked {
+                    padding: 0 10px;
+                    font-size: 14px;
+                    color: @font-gray-color;
+                }
+            }
+
+            .find_duo {
+                .flex_align_justify_center;
+                width: 100%;
+                height: 30px;
+                margin-top: 10px;
+                border-radius: 4px;
+                background-color: @info-box-hover-color;
+
+                a {
+                    .flex_align_justify_center;
+                    width: 100%;
+                    height: 30px;
+                    text-decoration: none;
+                }
+            }
+
+            .used_champion {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                height: 435px;
+                margin-top: 10px;
+                border-radius: 4px;
+                background-color: @info-box-main-color;
+
+                .choose_rank {
+                    .flex_align_center_justify_between;
+                    height: 34px;
+                    padding: 0 5px;
+                    border-bottom: 1px solid black;
+
+                    button {
+                        height: 80%;
+                        padding: 0 28px;
+                        border: none;
+                        border-radius: 4px;
+                        cursor: pointer;
+                        color: white;
+                        background-color: transparent;
+
+                        &:hover {
+                            background-color: @info-box-hover-color;
+                        }
+                    }
+                }
+
+                .champion_info {
+                    .flex_align_center_justify_between;
+                    height: 49px;
+                    border-bottom: 1px solid black;
+
+                    .champion_name_and_img {
+                        .flex_align_center;
+                        width: 140px;
+                        height: 100%;
+
+                        .champion_img {
+                            .flex_align_justify_center;
+                            width: 30px;
+                            height: 30px;
+                            margin: 0px 10px;
+                            border-radius: 50%;
+                        }
+                    }
+
+                    .champion_grade {
+                        text-align: center;
+                    }
+
+                    .champion_winrate {
+                        width: 50px;
+                        margin: 0 10px;
+                        text-align: right;
+                    }
+                }
+
+                .show_another_season {
+                    .flex_align_justify_center;
+                    height: 50px;
+
+                    button {
+                        width: 100%;
+                        height: 100%;
+                        border: none;
+                        border-radius: 0 0 4px 4px;
+                        cursor: pointer;
+                        color: @font-gray-color;
+                        background-color: @info-box-hover-color;
+                    }
+                }
+            }
+
+            .recent_7day_winrate {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                height: 350px;
+                margin-top: 10px;
+                border-radius: 4px;
+                background-color: @info-box-main-color;
+
+                #sentence {
+                    .flex_align_center;
+                    width: 100%;
+                    height: 39px;
+                    border-bottom: 1px solid black;
+
+                    p {
+                        padding: 0 10px;
+                        font-size: 14px;
+                        color: white;
+                    }
+                }
+
+                #champion_winrate_word {
+                    .flex_align_center_justify_between;
+                    width: 100%;
+                    height: 29px;
+                    border-bottom: 1px solid black;
+                    background-color: @info-box-hover-color;
+
+                    p {
+                        padding: 0 10px;
+                        font-size: 12px;
+                        color: @font-gray-color;
+                    }
+                }
+
+                .champion_and_winrate_recent_version {
+                    .flex_align_center_justify_between;
+                    width: 100%;
+                    height: 39px;
+                    border-bottom: 1px solid black;
+
+                    .champion_name_and_img {
+                        .flex_align_center;
+                        width: 140px;
+                        height: 100%;
+
+                        .champion_img {
+                            .flex_align_justify_center;
+                            width: 30px;
+                            height: 30px;
+                            margin: 0px 10px;
+                        }
+
+                        a {
+                            text-decoration: none;
+                            font-size: 12px;
+                            color: white;
+
+                            &:hover {
+                                text-decoration: underline;
+                            }
+                        }
+                    }
+
+                    .winrate_and_bar {
+                        .flex_align_center;
+                        width: 180px;
+                        height: 100%;
+
+                        .win_and_lose_bar {
+                            width: 135px;
+                            height: 60%;
+                            
+                            .winbar {
+                                .flex_align_center;
+                                height: 100%;
+                                float: left;
+                                border-radius: 4px 0 0 4px;
+                                background-color: @main-title-bg-color;
+
+                                p {
+                                    margin-left: 3px;
+                                    font-size: 12px;
+                                    color: white;
+                                }
+                            }
+
+                            .losebar {
+                                .flex_align_center;
+                                justify-content: end;
+                                height: 100%;
+                                border-radius: 0 4px 4px 0;
+                                background-color: rgb(214, 78, 91);
+
+                                p {
+                                    margin-right: 3px;
+                                    font-size: 12px;
+                                    color: white;
+                                }
+                            }
+                        }
+
+                        #winrate {
+                            .flex_align_justify_center;
+                            width: 45px;
+                            height: 100%;
+                            font-size: 12px;
+                            color: @font-gray-color;
+                        }
+                    }
+                }
+            }
+
+            .small_advertisement_box {
+                .flex_align_justify_center;
+                width: 100%;
+                height: 340px;
+                margin-top: 10px;
+                border-radius: 4px;
+                background-color: @info-box-main-color;
+            }
+
+            .play_with_same_team {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                height: 220px;
+                margin-top: 10px;
+                border-radius: 4px;
+                background-color: @info-box-main-color;
+            }
+
+            .sentence {
+                .flex_align_center;
+                width: 100%;
+                height: 39px;
+                border-bottom: 1px solid black;
+
+                p {
+                    padding: 0 10px;
+                    font-size: 14px;
+                    color: white;
+                }
+            }
+
+            .title {
+                .flex_align_center_justify_between;
+                width: 100%;
+                height: 29px;
+                border-bottom: 1px solid black;
+                background-color: @info-box-hover-color;
+
+                p {
+                    .flex_align_justify_center;
+                    width: 30px;
+                    height: 100%;
+                    padding: 0 10px;
+                    font-size: 12px;
+                    color: @font-gray-color;
+                }
+
+                #summoner {
+                    justify-content: start;
+                    width: 140px;
+                    height: 100%;
+                }
+
+                #winrate {
+                    justify-content: end;
+                }
+            }
+
+            .player {
+                .flex_align_center_justify_between;
+                width: 100%;
+                height: 29px;
+                border-bottom: 1px solid black;
+
+                .player_name_and_icon {
+                    .flex_align_center;
+                    width: 140px;
+                    height: 100%;
+                    margin: 0 10px;
+
+                    .player_icon {
+                        .flex_align_justify_center;
+                        width: 30px;
+                        height: 100%;
+                    }
+
+                    a {
+                        .flex_align_center;
+                        text-decoration: none;
+
+                        &:hover {
+                            p {
+                                text-decoration: underline;
+                                text-decoration-color: white;
+                            }
+                        }
+
+                        .name {
+                            margin-left: 8px;
+                            font-size: 12px;
+                            color: white;
+                        }
+
+                        .code {
+                            margin-left: 4px;
+                            font-size: 12px;
+                            color: @font-gray-color;
+                        }
+                    }
+                }
+
+                #word {
+                    .flex_align_justify_center;
+                    width: 30px;
+                    height: 100%;
+                    padding: 0 10px;
+                    font-size: 12px;
+                    color: @font-gray-color;
+                }
+
+                #winrate {
+                    .flex_align_center;
+                    justify-content: end;
+                    width: 30px;
+                    height: 100%;
+                    padding: 0 10px;
+                    font-size: 12px;
+                    color: @font-gray-color;
+                }
+            }
+        }
+
+        .detail_game_info {
+            .flex_align_center;
+            flex-direction: column;
+            margin-left: 10px;
+            width: 750px;
+
+            .total_game_info {
+                width: 100%;
+                height: 180px;
+                border-radius: 4px;
+                background-color: @info-box-main-color;
+
+                .choose_rank {
+                    .flex_align_center_justify_between;
+                    height: 34px;
+                    border-bottom: 1px solid black;
+
+                    .button_collections {
+                        .flex_align_center;
+                        height: 100%;
+                        margin: 0 3px;
+
+                        button {
+                            height: 80%;
+                            padding: 0 10px;
+                            margin-right: 5px;
+                            border: none;
+                            border-radius: 4px;
+                            cursor: pointer;
+                            color: white;
+                            background-color: transparent;
+
+                            &:hover {
+                                background-color: @info-box-hover-color;
+                            }
+                        }
+                    }
+
+                    .search_champion {
+                        .flex_align_center;
+                        width: 230px;
+                        height: 80%;
+                        margin: 0 3px;
+                        border-radius: 4px;
+                        background-color: @main-bg-color;
+
+                        .search_icon {
+                            .flex_align_justify_center;
+                            width: 15%;
+                            height: 80%;
+                        }
+
+                        input {
+                            width: 85%;
+                            height: 80%;
+                            border: none;
+                            outline: none;
+                            color: @font-gray-color;
+                            background-color: transparent;
+                        }
+                    }
+                }
+
+                .total_record_info {
+                    display: flex;
+                    width: 100%;
+                    height: 145px;
+
+                    .win_and_lose {
+                        display: flex;
+                        flex-direction: column;
+                        width: 30%;
+                        height: 100%;
+
+                        #recent_20_game {
+                            .flex_align_center;
+                            height: 30px;
+                            padding-left: 10px;
+                            font-size: 12px;
+                            color: @font-gray-color;
+                        }
+
+                        .graph_and_kill_death {
+                            .flex_align_center;
+                            height: 115px;
+                            padding-left: 10px;
+
+                            .record_graph {
+                                .flex_align_justify_center;
+                                width: 100px;
+                                height: 100px;
+                                border-radius: 50%;
+                                background: conic-gradient(rgb(214, 78, 91) 0% 50%, rgb(94, 130, 255) 50% 100%);
+    
+                                .graph_center {
+                                    .flex_align_justify_center;
+                                    width: 70px;
+                                    height: 70px;
+                                    border-radius: 50%;
+                                    color: rgb(94, 130, 255);
+                                    background-color: @info-box-main-color;
+                                }
+                            }
+
+                            .kill_death {
+                                margin-left: 30px;
+
+                                #kill_death_assist {
+                                    display: flex;
+                                    gap: 3px;
+                                    font-size: 12px;
+                                    color: gray;
+
+                                    #death {
+                                        color: rgb(214, 78, 91);
+                                    }
+                                }
+
+                                #avg_kill_death {
+                                    margin-top: 8px;
+                                    font-size: 20px;
+                                    font-weight: bolder;
+                                    color: white;
+                                }
+
+                                #kill_involvement {
+                                    margin-top: 8px;
+                                    font-size: 12px;
+                                    color: rgb(214, 78, 91);
+                                }
+                            }
+                        }
+                    }
+
+                    .used_champion_recent_20_game {
+                        display: flex;
+                        flex-direction: column;
+                        width: 35%;
+                        height: 100%;
+
+                        #word {
+                            .flex_align_center;
+                            height: 30px;
+                            padding-left: 30px;
+                            font-size: 12px;
+                            color: @font-gray-color;
+                        }
+
+                        .champions {
+                            display: flex;
+                            flex-direction: column;
+                            height: 115px;
+                            padding-left: 30px;
+                            
+                            .champion {
+                                .flex_align_center;
+                                margin-top: 8px;
+                                gap: 5px;
+
+                                img {
+                                    border-radius: 50%;
+                                }
+
+                                p {
+                                    font-size: 12px;
+                                }
+
+                                #winrate {
+                                    margin-left: 5px;
+                                    color: rgb(214, 78, 91);
+                                }
+
+                                #win_lose {
+                                    color: @font-gray-color;
+                                }
+
+                                #grade {
+                                    color: orange;
+                                }
+                            };
+                        }
+                    }
+
+                    .position_graph {
+                        display: flex;
+                        flex-direction: column;
+                        width: 35%;
+                        height: 100%;
+                        
+                        #word {
+                            .flex_align_justify_center;
+                            height: 30px;
+                            padding-left: 10px;
+                            font-size: 12px;
+                            color: @font-gray-color;
+                        }
+
+                        .graphs {
+                            .flex_align_center;
+                            justify-content: space-evenly;
+                            height: 115px;
+                            margin-top: 10px;
+
+                            .graph {
+                                .flex_align_center;
+                                flex-direction: column;
+                                width: 30px;
+                                height: 100%;
+                                gap: 5px;
+
+                                .bar {
+                                    display: flex;
+                                    align-items: flex-end;
+                                    width: 16px;
+                                    height: 70px;
+                                    background-color: rgb(66, 66, 83);
+
+                                    .play {
+                                        width: 16px;
+                                        height: 0%;
+                                        background-color: @main-title-bg-color;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .detail_one_game {
+                .flex_align_center;
+                flex-direction: column;
+                width: 100%;
+
+                .one_game {
+                    display: flex;
+                    flex-direction: column;
+                    width: 100%;
+                    margin-top: 10px;
+                    
+                    .win_game {
+                        .flex_align_center;
+                        border-radius: 4px;
+                        background-color: rgb(42, 52, 76);
+    
+                        .edge {
+                            width: 1%;
+                            height: 100%;
+                            border-radius: 4px 0 0 4px;
+                            background-color: @main-title-bg-color;
+                        }
+    
+                        .contents {
+                            .flex_align_center;
+                            gap: 8px;
+                            margin: 0 8px;
+                            width: 100%;
+                            .rank_day_play_time {
+                                display: flex;
+                                flex-direction: column;
+                                width: 110px;
+                                gap: 8px;
+        
+                                .group {
+                                    display: flex;
+                                    flex-direction: column;
+                                    
+                                    p {
+                                        font-size: 12px;
+                                        line-height: 16px;
+                                        color: @font-gray-color;
+                                    }
+        
+                                    #rank {
+                                        font-weight: bolder;
+                                        color: @main-title-bg-color;
+                                    }
+        
+                                    #win_lose {
+                                        font-weight: bolder;
+                                    }
+                                }
+                                
+                                .divider {
+                                    width: 50px;
+                                    height: 1px;
+                                    background-color: rgb(47, 59, 92);
+                                }
+                            }
+        
+                            .all_info {
+                                display: flex;
+                                flex-direction: column;
+                                gap: 4px;
+                                height: 100%;
+        
+                                .main {
+                                    .flex_align_center;
+            
+                                    .info {
+                                        .flex_align_justify_center;
+                                        height: 60px;
+                                        gap: 4px;
+                                        
+                                        .champion {
+                                            .flex_align_justify_center;
+                                            position: relative;
+        
+                                            #level {
+                                                .flex_align_justify_center;
+                                                position: absolute;
+                                                bottom: 0;
+                                                right: 0;
+                                                width: 20px;
+                                                height: 20px;
+                                                border-radius: 50%;
+                                                font-size: 12px;
+                                                color: white;
+                                                background-color: rgb(35, 45, 54);
+                                            }
+                                        } 
+                                        
+                                        .spell_and_rune {
+                                            display: flex;
+                                            gap: 2px;
+        
+                                            .layout {
+                                                display: flex;
+                                                flex-direction: column;
+                                                gap: 2px;
+                                            }
+                                        }
+                                        
+                                        .kda_stat {
+                                            display: flex;
+                                            flex-direction: column;
+                                            width: 110px;
+                                            margin-left: 8px;
+                                            gap: 8px;
+        
+                                            .kda {
+                                                display: flex;
+                                                gap: 4px;
+                                                font-weight: bolder;
+        
+                                                #kill {
+                                                    color: white;
+                                                }
+        
+                                                #dash {
+                                                    color: @font-gray-color;
+                                                }
+        
+                                                #death {
+                                                    color: rgb(214, 78, 91);
+                                                }
+        
+                                                #assist {
+                                                    color: white;
+                                                }
+                                            }
+        
+                                            .avg_grade {
+                                                font-size: 12px;
+                                                color: @font-gray-color;
+                                            }
+                                        }
+        
+                                        .divider {
+                                            margin-top: 4px;
+                                            height: 56px;
+                                            width: 1px;
+                                            background-color: rgb(47, 59, 92);
+                                        }
+        
+                                        .sub_info {
+                                            display: flex;
+                                            flex-direction: column;
+                                            
+                                            p {
+                                                font-size: 12px;
+                                                line-height: 14px;
+                                                color: @font-gray-color;
+                                            }
+        
+                                            #kill_involvement {
+                                                color: rgb(214, 78, 91);
+                                            }
+                                        }
+                                    }
+                                }
+        
+                                .sub {
+                                    .flex_align_center;
+                                    gap: 8px;
+        
+                                    .item {
+                                        display: flex;
+                                        gap: 2px;
+        
+                                        img {
+                                            border-radius: 4px;
+                                        }
+                                    }
+        
+                                    .tag {
+                                        display: flex;
+                                        gap: 4px;
+        
+                                        button {
+                                            border: none;
+                                            border-radius: 50px;
+                                            padding: 0 6px;
+                                            font-size: 12px;
+                                            line-height: 20px;
+                                            color: white;
+                                            background-color: @font-gray-color;
+                                        }
+                                    }
+                                }
+                            }
+        
+                            .players {
+                                display: flex;
+                                flex-flow: column wrap;
+                                padding: 0 4px;
+                                gap: 2px 8px;
+                                max-height: 88px;
+                                width: 170px;
+                                margin-left: 40px;
+        
+                                .player {
+                                    .flex_align_center;
+                                    gap: 4px;
+        
+                                    p {
+                                        font-size: 12px;
+                                        line-height: 16px;
+                                        color: @font-gray-color;
+                                    }
+                                }
+                            }
+                        }
+    
+                        .buttons {
+                            display: flex;
+                            flex-direction: column;
+                            height: 100%;
+                            width: 40px;
+    
+                            .record {
+                                height: 40px;
+                                border: none;
+                                border-radius: 0 4px 0 0;
+                                cursor: pointer;
+                                background-color: rgb(34, 58, 60);
+    
+                                &:hover {
+                                    background-color: rgb(42, 99, 108);
+                                }
+                            }
+                            
+                            .more_info {
+                                height: 60px;
+                                border: none;
+                                border-radius: 0 0 4px 0;
+                                cursor: pointer;
+                                color: @main-title-bg-color;
+                                background-color: rgb(51, 66, 107);
+    
+                                &:hover {
+                                    background-color: rgb(42, 52, 76);
+                                }
+                            }
+                        }
+                    }
+
+                    .lose_game{
+                        .flex_align_center;
+                        border-radius: 4px;
+                        background-color: rgb(84, 54, 59);
+    
+                        .edge {
+                            width: 1%;
+                            height: 100%;
+                            border-radius: 4px 0 0 4px;
+                            background-color: rgb(214, 78, 91);
+                        }
+    
+                        .contents {
+                            .flex_align_center;
+                            gap: 8px;
+                            margin: 0 8px;
+                            width: 100%;
+                            .rank_day_play_time {
+                                display: flex;
+                                flex-direction: column;
+                                width: 110px;
+                                gap: 8px;
+        
+                                .group {
+                                    display: flex;
+                                    flex-direction: column;
+                                    
+                                    p {
+                                        font-size: 12px;
+                                        line-height: 16px;
+                                        color: @font-gray-color;
+                                    }
+        
+                                    #rank {
+                                        font-weight: bolder;
+                                        color: rgb(214, 78, 91);
+                                    }
+        
+                                    #win_lose {
+                                        font-weight: bolder;
+                                    }
+                                }
+                                
+                                .divider {
+                                    width: 50px;
+                                    height: 1px;
+                                    background-color: rgb(105, 63, 71);
+                                }
+                            }
+        
+                            .all_info {
+                                display: flex;
+                                flex-direction: column;
+                                gap: 4px;
+                                height: 100%;
+        
+                                .main {
+                                    .flex_align_center;
+            
+                                    .info {
+                                        .flex_align_justify_center;
+                                        height: 60px;
+                                        gap: 4px;
+                                        
+                                        .champion {
+                                            .flex_align_justify_center;
+                                            position: relative;
+        
+                                            #level {
+                                                .flex_align_justify_center;
+                                                position: absolute;
+                                                bottom: 0;
+                                                right: 0;
+                                                width: 20px;
+                                                height: 20px;
+                                                border-radius: 50%;
+                                                font-size: 12px;
+                                                color: white;
+                                                background-color: rgb(35, 45, 54);
+                                            }
+                                        } 
+                                        
+                                        .spell_and_rune {
+                                            display: flex;
+                                            gap: 2px;
+        
+                                            .layout {
+                                                display: flex;
+                                                flex-direction: column;
+                                                gap: 2px;
+                                            }
+                                        }
+                                        
+                                        .kda_stat {
+                                            display: flex;
+                                            flex-direction: column;
+                                            width: 110px;
+                                            margin-left: 8px;
+                                            gap: 8px;
+        
+                                            .kda {
+                                                display: flex;
+                                                gap: 4px;
+                                                font-weight: bolder;
+        
+                                                #kill {
+                                                    color: white;
+                                                }
+        
+                                                #dash {
+                                                    color: @font-gray-color;
+                                                }
+        
+                                                #death {
+                                                    color: rgb(214, 78, 91);
+                                                }
+        
+                                                #assist {
+                                                    color: white;
+                                                }
+                                            }
+        
+                                            .avg_grade {
+                                                font-size: 12px;
+                                                color: @font-gray-color;
+                                            }
+                                        }
+        
+                                        .divider {
+                                            margin-top: 4px;
+                                            height: 56px;
+                                            width: 1px;
+                                            background-color: rgb(47, 59, 92);
+                                        }
+        
+                                        .sub_info {
+                                            display: flex;
+                                            flex-direction: column;
+                                            
+                                            p {
+                                                font-size: 12px;
+                                                line-height: 14px;
+                                                color: @font-gray-color;
+                                            }
+        
+                                            #kill_involvement {
+                                                color: rgb(214, 78, 91);
+                                            }
+                                        }
+                                    }
+                                }
+        
+                                .sub {
+                                    .flex_align_center;
+                                    gap: 8px;
+        
+                                    .item {
+                                        display: flex;
+                                        gap: 2px;
+        
+                                        img {
+                                            border-radius: 4px;
+                                        }
+                                    }
+        
+                                    .tag {
+                                        display: flex;
+                                        gap: 4px;
+        
+                                        button {
+                                            border: none;
+                                            border-radius: 50px;
+                                            padding: 0 6px;
+                                            font-size: 12px;
+                                            line-height: 20px;
+                                            color: white;
+                                            background-color: @font-gray-color;
+                                        }
+                                    }
+                                }
+                            }
+        
+                            .players {
+                                display: flex;
+                                flex-flow: column wrap;
+                                padding: 0 4px;
+                                gap: 2px 8px;
+                                max-height: 88px;
+                                width: 170px;
+                                margin-left: 40px;
+        
+                                .player {
+                                    .flex_align_center;
+                                    gap: 4px;
+        
+                                    p {
+                                        font-size: 12px;
+                                        line-height: 16px;
+                                        color: @font-gray-color;
+                                    }
+                                }
+                            }
+                        }
+    
+                        .buttons {
+                            display: flex;
+                            flex-direction: column;
+                            height: 100%;
+                            width: 40px;
+    
+                            .record {
+                                height: 40px;
+                                border: none;
+                                border-radius: 0 4px 0 0;
+                                cursor: pointer;
+                                background-color: rgb(34, 58, 60);
+    
+                                &:hover {
+                                    background-color: rgb(42, 99, 108);
+                                }
+                            }
+                            
+                            .more_info {
+                                height: 60px;
+                                border: none;
+                                border-radius: 0 0 4px 0;
+                                cursor: pointer;
+                                color: rgb(214, 78, 91);
+                                background-color: rgb(105, 63, 71);
+    
+                                &:hover {
+                                    background-color: rgb(84, 54, 59);
+                                }
+                            }
+                        }
+                    }
+
+                    .show_more_info {
+                        display: none;
+                        flex-direction: column;
+                        height: 720px;
+                        width: 100%;
+
+                        .button_colletions {
+                            display: flex;
+                            height: 35px;
+                            margin-top: 4px;
+                            padding: 4px;
+                            border-radius: 4px;
+                            box-sizing: border-box;
+                            background-color: @info-box-main-color;
+
+                            button {
+                                width: 25%;
+                                margin-left: 5px;
+                                border: none;
+                                border-radius: 4px;
+                                cursor: pointer;
+                                font-size: 14px;
+                                color: white;
+                                background-color: transparent;
+
+                                &:hover {
+                                    background-color: @info-box-hover-color;
+                                }
+                            }
+                        }
+
+                        .contents {
+                            display: flex;
+                            flex-direction: column;
+                            width: 100%;
+                            margin-top: 4px;
+
+                            .win_team {
+                                display: flex;
+                                flex-direction: column;
+                                height: 230px;
+                                width: 100%;
+                                
+                                .title {
+                                    .flex_align_center;
+                                    height: 30px;
+                                    width: 100%;
+                                    border-radius: 4px 4px 0 0;
+                                    background-color: @info-box-main-color;
+
+                                    p {
+                                        font-size: 12px;
+                                        text-align: center;
+                                        color: @font-gray-color;
+                                    }
+
+                                    #win {
+                                        padding-left: 20px;
+                                        width: 170px;
+                                        text-align: left;
+                                        box-sizing: border-box;
+                                        
+                                        span {
+                                            font-weight: bolder;
+                                            color: @main-title-bg-color;
+                                        }
+                                    }
+
+                                    #op_score {
+                                        width: 80px;
+                                    }
+                                    
+                                    #kda {
+                                        width: 80px;
+                                    }
+
+                                    #damage {
+                                        width: 140px;
+                                    }
+
+                                    #ward {
+                                        width: 50px;
+                                    }
+
+                                    #cs {
+                                        width: 50px;
+                                    }
+
+                                    #items {
+                                        width: 180px;
+                                    }
+                                }
+
+                                .main {
+                                    display: flex;
+                                    flex-direction: column;
+                                    height: 200px;
+                                    width: 100%;
+                                    border-top: 1px solid rgb(47, 59, 92);
+
+                                    .player {
+                                        .flex_align_center;
+                                        height: 40px;
+                                        width: 100%;
+                                        background-color: rgb(42, 52, 76);
+
+                                        .champion_spell_rune_name {
+                                            .flex_align_center;
+                                            height: 100%;
+                                            width: 170px;
+                                            padding-left: 10px;
+                                            box-sizing: border-box;
+
+                                            .champion {
+                                                .flex_align_justify_center;
+                                                position: relative;
+                                                width: 40px;
+                                                height: 40px;
+
+                                                #level {
+                                                    .flex_align_justify_center;
+                                                    position: absolute;
+                                                    bottom: 0;
+                                                    left: 0;
+                                                    width: 15px;
+                                                    height: 15px;
+                                                    font-size: 10px;
+                                                    border-radius: 50%;
+                                                    color: white;
+                                                    background-color:  rgb(35, 45, 54);
+                                                }
+                                            }
+
+                                            .spell_and_rune {
+                                                display: flex;
+                                                gap: 2px;
+
+                                                .layout {
+                                                    display: flex;
+                                                    flex-direction: column;
+                                                    gap: 2px;
+                                                }
+                                            }
+
+                                            .name {
+                                                display: flex;
+                                                flex-direction: column;
+                                                padding-left: 8px;
+                                                gap: 4px;
+                                                
+                                                #nickname {
+                                                    font-size: 12px;
+                                                    color: white
+                                                }
+
+                                                #tier {
+                                                    font-size: 10px;
+                                                    color: @font-gray-color;
+                                                }
+                                            }
+                                        }
+
+                                        .op_score {
+                                            .flex_align_justify_center;
+                                            width: 80px;
+                                            gap: 8px;
+
+                                            #score {
+                                                .flex_align_center;
+                                                font-style: italic;
+                                                font-size: 12px;
+                                                font-weight: bold;
+                                                color: white;
+                                            }
+
+                                            #rank {
+                                                border: none;
+                                                border-radius: 50px;
+                                                font-size: 12px;
+                                                color: white;
+                                                background-color: rgb(158, 158, 175);
+                                            }
+                                        }
+
+                                        .kda {
+                                            .flex_align_justify_center;
+                                            flex-direction: column;
+                                            width: 80px;
+                                            gap: 4px;
+
+                                            #total {
+                                                font-size: 11px;
+                                                color: @font-gray-color;
+                                            }
+
+                                            #avg {
+                                                font-size: 11px;
+                                                color: orange;
+                                            }
+                                        }
+
+                                        .damage {
+                                            .flex_align_center;
+                                            height: 100%;
+                                            width: 140px;
+
+                                            .given_damage {
+                                                .flex_align_center;
+                                                flex-direction: column;
+                                                gap: 4px;
+                                                width: 70px;
+
+                                                #num {
+                                                    font-size: 11px;
+                                                    color: gray;
+                                                }
+                                                
+                                                .total_bar {
+                                                    height: 6px;
+                                                    width: 55px;
+                                                    background-color: @info-box-main-color;
+                                                    
+                                                    .damage_bar {
+                                                        height: 100%;
+                                                        width: 70%;
+                                                        background-color: rgb(214, 78, 91);
+                                                    }
+                                                }
+                                            }
+
+                                            .received_damage {
+                                                .flex_align_center;
+                                                flex-direction: column;
+                                                gap: 4px;
+                                                width: 70px;
+
+                                                #num {
+                                                    font-size: 11px;
+                                                    color: gray
+                                                }
+                                                
+                                                .total_bar {
+                                                    height: 6px;
+                                                    width: 55px;
+                                                    background-color: @info-box-main-color;
+                                                    
+                                                    .damage_bar {
+                                                        height: 100%;
+                                                        width: 75%;
+                                                        background-color: gray;
+                                                    }
+                                                }
+                                            }
+                                        }
+
+                                        .ward {
+                                            .flex_align_justify_center;
+                                            flex-direction: column;
+                                            height: 100%;
+                                            width: 50px;
+                                            gap: 4px;
+
+                                            p {
+                                                font-size: 11px;
+                                                color: gray;
+                                            }
+                                        }
+
+                                        .cs {
+                                            .flex_align_justify_center;
+                                            flex-direction: column;
+                                            height: 100%;
+                                            width: 50px;
+                                            gap: 4px;
+
+                                            p {
+                                                font-size: 11px;
+                                                color: gray;
+                                            }
+                                        }
+
+                                        .items {
+                                           .flex_align_justify_center;
+                                            width: 180px;
+                                            gap: 2px;
+
+                                            .item {
+                                                width: 22px;
+                                                height: 22px;
+                                                border-radius: 4px;
+                                                background-color: rgb(47, 59, 92);
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            .object_info {
+                                .flex_align_center_justify_between;
+                                width: 100%;
+                                padding: 8px 16px;
+                                box-sizing: border-box;
+                                background-color: @info-box-hover-color;
+                                border-top: 1px solid black;
+                                border-bottom: 1px solid black;
+
+                                .win_object_count {
+                                    display: flex;
+                                    flex-wrap: wrap;
+                                    width: 110px;
+                                    gap: 8px;
+
+                                    .object {
+                                        .flex_align_center;
+                                        gap: 4px;
+                                        width: 30px;
+
+                                        #count {
+                                            font-size: 12px;
+                                            color: @font-gray-color;
+                                        }
+                                    }
+                                }
+
+                                .lose_object_count {
+                                    display: flex;
+                                    flex-wrap: wrap;
+                                    width: 110px;
+                                    gap: 8px;
+
+                                    .object {
+                                        .flex_align_center;
+                                        gap: 4px;
+
+                                        #count {
+                                            font-size: 12px;
+                                            color: @font-gray-color;
+                                        }
+                                    }
+                                }
+
+                                .total_kill_and_gold {
+                                    .flex_align_justify_center;
+                                    flex-direction: column;
+                                    gap: 4px;
+                                    width: 350px;
+
+                                    .bar {
+                                        .flex_align_center;
+                                        position: relative;
+                                        height: 16px;   
+                                        width: 100%;
+
+                                        p {
+                                            position: absolute;
+                                            width: 60px;
+                                            text-align: center;
+                                            left: 45%;
+                                            font-size: 12px;
+                                            font-weight: bold;
+                                            line-height: 16px;
+                                            color: white;
+                                        }
+
+                                        .win {
+                                            padding: 0 4px;
+                                            font-size: 12px;
+                                            text-align: start;
+                                            line-height: 16px;
+                                            color: white;
+                                            background-color: @main-title-bg-color;
+                                        }
+
+                                        .lose {
+                                            padding: 0 4px;
+                                            font-size: 12px;
+                                            text-align: end;
+                                            line-height: 16px;
+                                            color: white;
+                                            background-color: rgb(214, 78, 91);
+                                        }
+                                    }
+                                }
+                            }
+
+                            .lose_team {
+                                display: flex;
+                                flex-direction: column;
+                                height: 230px;
+                                width: 100%;
+                                
+                                .title {
+                                    .flex_align_center;
+                                    height: 30px;
+                                    width: 100%;
+                                    background-color: @info-box-main-color;
+
+                                    p {
+                                        font-size: 12px;
+                                        text-align: center;
+                                        color: @font-gray-color;
+                                    }
+
+                                    #lose {
+                                        padding-left: 20px;
+                                        width: 170px;
+                                        text-align: left;
+                                        box-sizing: border-box;
+                                        
+                                        span {
+                                            font-weight: bolder;
+                                            color: rgb(214, 78, 91);
+                                        }
+                                    }
+
+                                    #op_score {
+                                        width: 80px;
+                                    }
+                                    
+                                    #kda {
+                                        width: 80px;
+                                    }
+
+                                    #damage {
+                                        width: 140px;
+                                    }
+
+                                    #ward {
+                                        width: 50px;
+                                    }
+
+                                    #cs {
+                                        width: 50px;
+                                    }
+
+                                    #items {
+                                        width: 180px;
+                                    }
+                                }
+
+                                .main {
+                                    display: flex;
+                                    flex-direction: column;
+                                    height: 200px;
+                                    width: 100%;
+                                    border-top: 1px solid rgb(95, 58, 65);
+
+                                    .player {
+                                        .flex_align_center;
+                                        height: 40px;
+                                        width: 100%;
+                                        background-color: rgb(84, 54, 59);
+
+                                        .champion_spell_rune_name {
+                                            .flex_align_center;
+                                            height: 100%;
+                                            width: 170px;
+                                            padding-left: 10px;
+                                            box-sizing: border-box;
+
+                                            .champion {
+                                                .flex_align_justify_center;
+                                                position: relative;
+                                                width: 40px;
+                                                height: 40px;
+
+                                                #level {
+                                                    .flex_align_justify_center;
+                                                    position: absolute;
+                                                    bottom: 0;
+                                                    left: 0;
+                                                    width: 15px;
+                                                    height: 15px;
+                                                    font-size: 10px;
+                                                    border-radius: 50%;
+                                                    color: white;
+                                                    background-color:  rgb(35, 45, 54);
+                                                }
+                                            }
+
+                                            .spell_and_rune {
+                                                display: flex;
+                                                gap: 2px;
+
+                                                .layout {
+                                                    display: flex;
+                                                    flex-direction: column;
+                                                    gap: 2px;
+                                                }
+                                            }
+
+                                            .name {
+                                                display: flex;
+                                                flex-direction: column;
+                                                padding-left: 8px;
+                                                gap: 4px;
+                                                
+                                                #nickname {
+                                                    font-size: 12px;
+                                                    color: white
+                                                }
+
+                                                #tier {
+                                                    font-size: 10px;
+                                                    color: @font-gray-color;
+                                                }
+                                            }
+                                        }
+
+                                        .op_score {
+                                            .flex_align_justify_center;
+                                            width: 80px;
+                                            gap: 8px;
+
+                                            #score {
+                                                .flex_align_center;
+                                                font-style: italic;
+                                                font-size: 12px;
+                                                font-weight: bold;
+                                                color: white;
+                                            }
+
+                                            #rank {
+                                                border: none;
+                                                border-radius: 50px;
+                                                font-size: 12px;
+                                                color: white;
+                                                background-color: rgb(158, 158, 175);
+                                            }
+                                        }
+
+                                        .kda {
+                                            .flex_align_justify_center;
+                                            flex-direction: column;
+                                            width: 80px;
+                                            gap: 4px;
+
+                                            #total {
+                                                font-size: 11px;
+                                                color: @font-gray-color;
+                                            }
+
+                                            #avg {
+                                                font-size: 11px;
+                                                color: orange;
+                                            }
+                                        }
+
+                                        .damage {
+                                            .flex_align_center;
+                                            height: 100%;
+                                            width: 140px;
+
+                                            .given_damage {
+                                                .flex_align_center;
+                                                flex-direction: column;
+                                                gap: 4px;
+                                                width: 70px;
+
+                                                #num {
+                                                    font-size: 11px;
+                                                    color: gray;
+                                                }
+                                                
+                                                .total_bar {
+                                                    height: 6px;
+                                                    width: 55px;
+                                                    background-color: @info-box-main-color;
+                                                    
+                                                    .damage_bar {
+                                                        height: 100%;
+                                                        width: 70%;
+                                                        background-color: rgb(214, 78, 91);
+                                                    }
+                                                }
+                                            }
+
+                                            .received_damage {
+                                                .flex_align_center;
+                                                flex-direction: column;
+                                                gap: 4px;
+                                                width: 70px;
+
+                                                #num {
+                                                    font-size: 11px;
+                                                    color: gray
+                                                }
+                                                
+                                                .total_bar {
+                                                    height: 6px;
+                                                    width: 55px;
+                                                    background-color: @info-box-main-color;
+                                                    
+                                                    .damage_bar {
+                                                        height: 100%;
+                                                        width: 75%;
+                                                        background-color: gray;
+                                                    }
+                                                }
+                                            }
+                                        }
+
+                                        .ward {
+                                            .flex_align_justify_center;
+                                            flex-direction: column;
+                                            height: 100%;
+                                            width: 50px;
+                                            gap: 4px;
+
+                                            p {
+                                                font-size: 11px;
+                                                color: gray;
+                                            }
+                                        }
+
+                                        .cs {
+                                            .flex_align_justify_center;
+                                            flex-direction: column;
+                                            height: 100%;
+                                            width: 50px;
+                                            gap: 4px;
+
+                                            p {
+                                                font-size: 11px;
+                                                color: gray;
+                                            }
+                                        }
+
+                                        .items {
+                                           .flex_align_justify_center;
+                                            width: 180px;
+                                            gap: 2px;
+
+                                            .item {
+                                                width: 22px;
+                                                height: 22px;
+                                                border-radius: 4px;
+                                                background-color: rgb(103, 65, 71);
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            .url {
+                                .flex_align_center;
+                                height: 35px;
+                                width: 100%;
+                                gap: 4px;
+                                padding: 0 4px;
+                                box-sizing: border-box;
+                                border-top: 1px solid black;
+                                border-radius: 0 0 4px 4px;
+                                background-color: @info-box-main-color;
+
+                                .box {
+                                    .flex_align_center;
+                                    flex: 1 1 0%;
+                                    height: 80%;
+                                    width: 90%;
+                                    border-radius: 4px;
+                                    background-color: @main-bg-color;
+
+                                    .link {
+                                        flex: 1 1 0%;
+                                        padding-right: 10px;
+                                        border: none;
+                                        outline: none;
+                                        text-overflow: ellipsis;
+                                        overflow: hidden;
+                                        font-size: 11px;
+                                        color: @font-gray-color;
+                                        background-color: transparent;
+                                    }
+                                }
+
+                                .copy_btn {
+                                    height: 80%;
+                                    width: 10%;
+                                    font-size: 12px;
+                                    border: none;
+                                    border-radius: 4px;
+                                    cursor: pointer;
+                                    color: white;
+                                    background-color: rgb(84, 184, 164);
+
+                                    &:hover {
+                                        background-color: rgb(72, 161, 153);
+                                    }
+                                }
+                            }
+                        }
+                        
+                        .adv {
+                            .flex_align_justify_center;
+                            flex: 1 1 0%;
+                            margin-top: 10px;
+                            border-radius: 4px;
+                            background-color: @info-box-main-color;
+                        }
+                    }
+                }
+
+                .show_more_game {
+                    .flex_align_center;
+                    height: 40px;
+                    width: 100%;
+                    margin-top: 10px;
+
+                    button {
+                        height: 100%;
+                        width: 100%;
+                        border: 0.5px solid gray;
+                        border-radius: 4px;
+                        cursor: pointer;
+                        color: white;
+                        background-color: rgb(49, 49, 59);
+                    }
+                }
+            }
+        }
+    }
+
+    .big_advertisement_box {
+        .flex_align_justify_center;
+        width: @main-width;
+        height: 250px;
+        margin-top: 20px;
+        border-radius: 4px;
+        background-color: @info-box-main-color;
     }
 }

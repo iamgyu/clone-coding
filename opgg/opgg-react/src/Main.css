@@ -12,6 +12,9 @@
   align-items: center;
   justify-content: space-between;
 }
+.main_page {
+  min-width: 1100px;
+}
 .advertisement_sentence {
   display: flex;
   align-items: center;
@@ -288,5 +291,1758 @@
   border: none;
   color: gray;
   background-color: #232d36;
+}
+.main_page {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: #1c1c1f;
+}
+.main_page .advertisement_box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1100px;
+  height: 100px;
+  margin-top: 10px;
+  border-radius: 4px;
+  background-color: #31313b;
+}
+.main_page .detail_box {
+  display: flex;
+  width: 1100px;
+  margin-top: 10px;
+}
+.main_page .detail_box .rank_and_used_champion {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 340px;
+}
+.main_page .detail_box .rank_and_used_champion .solo_rank {
+  width: 100%;
+  height: 150px;
+  border-radius: 4px;
+  background-color: #31313b;
+}
+.main_page .detail_box .rank_and_used_champion .solo_rank #word {
+  display: flex;
+  align-items: center;
+  height: 34px;
+  padding: 0px 10px;
+  border-bottom: 1px solid black;
+  font-size: 14px;
+  color: white;
+}
+.main_page .detail_box .rank_and_used_champion .solo_rank div {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 115px;
+}
+.main_page .detail_box .rank_and_used_champion .solo_rank div #tier_icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30%;
+  height: 100%;
+}
+.main_page .detail_box .rank_and_used_champion .solo_rank div #tier_icon span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: #28282f;
+}
+.main_page .detail_box .rank_and_used_champion .solo_rank div #tier_and_score {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+  height: 100%;
+}
+.main_page .detail_box .rank_and_used_champion .solo_rank div #tier_and_score #tier_name {
+  font-size: 20px;
+  font-weight: bolder;
+  color: white;
+}
+.main_page .detail_box .rank_and_used_champion .solo_rank div #tier_and_score #tier_score {
+  margin-top: 8px;
+  font-size: 12px;
+  color: #757485;
+}
+.main_page .detail_box .rank_and_used_champion .solo_rank div #win_and_lose {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 20%;
+  height: 100%;
+  text-align: right;
+}
+.main_page .detail_box .rank_and_used_champion .solo_rank div #win_and_lose p {
+  padding: 4px 8px;
+  font-size: 12px;
+  color: #757485;
+}
+.main_page .detail_box .rank_and_used_champion .free_rank {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 30px;
+  margin-top: 10px;
+  border-radius: 4px;
+  background-color: #31313b;
+}
+.main_page .detail_box .rank_and_used_champion .free_rank #free_rank_ko {
+  padding: 0px 10px;
+  font-size: 14px;
+  color: white;
+}
+.main_page .detail_box .rank_and_used_champion .free_rank #unranked {
+  padding: 0 10px;
+  font-size: 14px;
+  color: #757485;
+}
+.main_page .detail_box .rank_and_used_champion .find_duo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 30px;
+  margin-top: 10px;
+  border-radius: 4px;
+  background-color: #28282f;
+}
+.main_page .detail_box .rank_and_used_champion .find_duo a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 30px;
+  text-decoration: none;
+}
+.main_page .detail_box .rank_and_used_champion .used_champion {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 435px;
+  margin-top: 10px;
+  border-radius: 4px;
+  background-color: #31313b;
+}
+.main_page .detail_box .rank_and_used_champion .used_champion .choose_rank {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 34px;
+  padding: 0 5px;
+  border-bottom: 1px solid black;
+}
+.main_page .detail_box .rank_and_used_champion .used_champion .choose_rank button {
+  height: 80%;
+  padding: 0 28px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  color: white;
+  background-color: transparent;
+}
+.main_page .detail_box .rank_and_used_champion .used_champion .choose_rank button:hover {
+  background-color: #28282f;
+}
+.main_page .detail_box .rank_and_used_champion .used_champion .champion_info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 49px;
+  border-bottom: 1px solid black;
+}
+.main_page .detail_box .rank_and_used_champion .used_champion .champion_info .champion_name_and_img {
+  display: flex;
+  align-items: center;
+  width: 140px;
+  height: 100%;
+}
+.main_page .detail_box .rank_and_used_champion .used_champion .champion_info .champion_name_and_img .champion_img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  margin: 0px 10px;
+  border-radius: 50%;
+}
+.main_page .detail_box .rank_and_used_champion .used_champion .champion_info .champion_grade {
+  text-align: center;
+}
+.main_page .detail_box .rank_and_used_champion .used_champion .champion_info .champion_winrate {
+  width: 50px;
+  margin: 0 10px;
+  text-align: right;
+}
+.main_page .detail_box .rank_and_used_champion .used_champion .show_another_season {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+}
+.main_page .detail_box .rank_and_used_champion .used_champion .show_another_season button {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 0 0 4px 4px;
+  cursor: pointer;
+  color: #757485;
+  background-color: #28282f;
+}
+.main_page .detail_box .rank_and_used_champion .recent_7day_winrate {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 350px;
+  margin-top: 10px;
+  border-radius: 4px;
+  background-color: #31313b;
+}
+.main_page .detail_box .rank_and_used_champion .recent_7day_winrate #sentence {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 39px;
+  border-bottom: 1px solid black;
+}
+.main_page .detail_box .rank_and_used_champion .recent_7day_winrate #sentence p {
+  padding: 0 10px;
+  font-size: 14px;
+  color: white;
+}
+.main_page .detail_box .rank_and_used_champion .recent_7day_winrate #champion_winrate_word {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 29px;
+  border-bottom: 1px solid black;
+  background-color: #28282f;
+}
+.main_page .detail_box .rank_and_used_champion .recent_7day_winrate #champion_winrate_word p {
+  padding: 0 10px;
+  font-size: 12px;
+  color: #757485;
+}
+.main_page .detail_box .rank_and_used_champion .recent_7day_winrate .champion_and_winrate_recent_version {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 39px;
+  border-bottom: 1px solid black;
+}
+.main_page .detail_box .rank_and_used_champion .recent_7day_winrate .champion_and_winrate_recent_version .champion_name_and_img {
+  display: flex;
+  align-items: center;
+  width: 140px;
+  height: 100%;
+}
+.main_page .detail_box .rank_and_used_champion .recent_7day_winrate .champion_and_winrate_recent_version .champion_name_and_img .champion_img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  margin: 0px 10px;
+}
+.main_page .detail_box .rank_and_used_champion .recent_7day_winrate .champion_and_winrate_recent_version .champion_name_and_img a {
+  text-decoration: none;
+  font-size: 12px;
+  color: white;
+}
+.main_page .detail_box .rank_and_used_champion .recent_7day_winrate .champion_and_winrate_recent_version .champion_name_and_img a:hover {
+  text-decoration: underline;
+}
+.main_page .detail_box .rank_and_used_champion .recent_7day_winrate .champion_and_winrate_recent_version .winrate_and_bar {
+  display: flex;
+  align-items: center;
+  width: 180px;
+  height: 100%;
+}
+.main_page .detail_box .rank_and_used_champion .recent_7day_winrate .champion_and_winrate_recent_version .winrate_and_bar .win_and_lose_bar {
+  width: 135px;
+  height: 60%;
+}
+.main_page .detail_box .rank_and_used_champion .recent_7day_winrate .champion_and_winrate_recent_version .winrate_and_bar .win_and_lose_bar .winbar {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  float: left;
+  border-radius: 4px 0 0 4px;
+  background-color: #5e82ff;
+}
+.main_page .detail_box .rank_and_used_champion .recent_7day_winrate .champion_and_winrate_recent_version .winrate_and_bar .win_and_lose_bar .winbar p {
+  margin-left: 3px;
+  font-size: 12px;
+  color: white;
+}
+.main_page .detail_box .rank_and_used_champion .recent_7day_winrate .champion_and_winrate_recent_version .winrate_and_bar .win_and_lose_bar .losebar {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  height: 100%;
+  border-radius: 0 4px 4px 0;
+  background-color: #d64e5b;
+}
+.main_page .detail_box .rank_and_used_champion .recent_7day_winrate .champion_and_winrate_recent_version .winrate_and_bar .win_and_lose_bar .losebar p {
+  margin-right: 3px;
+  font-size: 12px;
+  color: white;
+}
+.main_page .detail_box .rank_and_used_champion .recent_7day_winrate .champion_and_winrate_recent_version .winrate_and_bar #winrate {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 100%;
+  font-size: 12px;
+  color: #757485;
+}
+.main_page .detail_box .rank_and_used_champion .small_advertisement_box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 340px;
+  margin-top: 10px;
+  border-radius: 4px;
+  background-color: #31313b;
+}
+.main_page .detail_box .rank_and_used_champion .play_with_same_team {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 220px;
+  margin-top: 10px;
+  border-radius: 4px;
+  background-color: #31313b;
+}
+.main_page .detail_box .rank_and_used_champion .sentence {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 39px;
+  border-bottom: 1px solid black;
+}
+.main_page .detail_box .rank_and_used_champion .sentence p {
+  padding: 0 10px;
+  font-size: 14px;
+  color: white;
+}
+.main_page .detail_box .rank_and_used_champion .title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 29px;
+  border-bottom: 1px solid black;
+  background-color: #28282f;
+}
+.main_page .detail_box .rank_and_used_champion .title p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 100%;
+  padding: 0 10px;
+  font-size: 12px;
+  color: #757485;
+}
+.main_page .detail_box .rank_and_used_champion .title #summoner {
+  justify-content: start;
+  width: 140px;
+  height: 100%;
+}
+.main_page .detail_box .rank_and_used_champion .title #winrate {
+  justify-content: end;
+}
+.main_page .detail_box .rank_and_used_champion .player {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 29px;
+  border-bottom: 1px solid black;
+}
+.main_page .detail_box .rank_and_used_champion .player .player_name_and_icon {
+  display: flex;
+  align-items: center;
+  width: 140px;
+  height: 100%;
+  margin: 0 10px;
+}
+.main_page .detail_box .rank_and_used_champion .player .player_name_and_icon .player_icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 100%;
+}
+.main_page .detail_box .rank_and_used_champion .player .player_name_and_icon a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+.main_page .detail_box .rank_and_used_champion .player .player_name_and_icon a:hover p {
+  text-decoration: underline;
+  text-decoration-color: white;
+}
+.main_page .detail_box .rank_and_used_champion .player .player_name_and_icon a .name {
+  margin-left: 8px;
+  font-size: 12px;
+  color: white;
+}
+.main_page .detail_box .rank_and_used_champion .player .player_name_and_icon a .code {
+  margin-left: 4px;
+  font-size: 12px;
+  color: #757485;
+}
+.main_page .detail_box .rank_and_used_champion .player #word {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 100%;
+  padding: 0 10px;
+  font-size: 12px;
+  color: #757485;
+}
+.main_page .detail_box .rank_and_used_champion .player #winrate {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  width: 30px;
+  height: 100%;
+  padding: 0 10px;
+  font-size: 12px;
+  color: #757485;
+}
+.main_page .detail_box .detail_game_info {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-left: 10px;
+  width: 750px;
+}
+.main_page .detail_box .detail_game_info .total_game_info {
+  width: 100%;
+  height: 180px;
+  border-radius: 4px;
+  background-color: #31313b;
+}
+.main_page .detail_box .detail_game_info .total_game_info .choose_rank {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 34px;
+  border-bottom: 1px solid black;
+}
+.main_page .detail_box .detail_game_info .total_game_info .choose_rank .button_collections {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  margin: 0 3px;
+}
+.main_page .detail_box .detail_game_info .total_game_info .choose_rank .button_collections button {
+  height: 80%;
+  padding: 0 10px;
+  margin-right: 5px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  color: white;
+  background-color: transparent;
+}
+.main_page .detail_box .detail_game_info .total_game_info .choose_rank .button_collections button:hover {
+  background-color: #28282f;
+}
+.main_page .detail_box .detail_game_info .total_game_info .choose_rank .search_champion {
+  display: flex;
+  align-items: center;
+  width: 230px;
+  height: 80%;
+  margin: 0 3px;
+  border-radius: 4px;
+  background-color: #1c1c1f;
+}
+.main_page .detail_box .detail_game_info .total_game_info .choose_rank .search_champion .search_icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 15%;
+  height: 80%;
+}
+.main_page .detail_box .detail_game_info .total_game_info .choose_rank .search_champion input {
+  width: 85%;
+  height: 80%;
+  border: none;
+  outline: none;
+  color: #757485;
+  background-color: transparent;
+}
+.main_page .detail_box .detail_game_info .total_game_info .total_record_info {
+  display: flex;
+  width: 100%;
+  height: 145px;
+}
+.main_page .detail_box .detail_game_info .total_game_info .total_record_info .win_and_lose {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  height: 100%;
+}
+.main_page .detail_box .detail_game_info .total_game_info .total_record_info .win_and_lose #recent_20_game {
+  display: flex;
+  align-items: center;
+  height: 30px;
+  padding-left: 10px;
+  font-size: 12px;
+  color: #757485;
+}
+.main_page .detail_box .detail_game_info .total_game_info .total_record_info .win_and_lose .graph_and_kill_death {
+  display: flex;
+  align-items: center;
+  height: 115px;
+  padding-left: 10px;
+}
+.main_page .detail_box .detail_game_info .total_game_info .total_record_info .win_and_lose .graph_and_kill_death .record_graph {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: conic-gradient(#d64e5b 0% 50%, #5e82ff 50% 100%);
+}
+.main_page .detail_box .detail_game_info .total_game_info .total_record_info .win_and_lose .graph_and_kill_death .record_graph .graph_center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  color: #5e82ff;
+  background-color: #31313b;
+}
+.main_page .detail_box .detail_game_info .total_game_info .total_record_info .win_and_lose .graph_and_kill_death .kill_death {
+  margin-left: 30px;
+}
+.main_page .detail_box .detail_game_info .total_game_info .total_record_info .win_and_lose .graph_and_kill_death .kill_death #kill_death_assist {
+  display: flex;
+  gap: 3px;
+  font-size: 12px;
+  color: gray;
+}
+.main_page .detail_box .detail_game_info .total_game_info .total_record_info .win_and_lose .graph_and_kill_death .kill_death #kill_death_assist #death {
+  color: #d64e5b;
+}
+.main_page .detail_box .detail_game_info .total_game_info .total_record_info .win_and_lose .graph_and_kill_death .kill_death #avg_kill_death {
+  margin-top: 8px;
+  font-size: 20px;
+  font-weight: bolder;
+  color: white;
+}
+.main_page .detail_box .detail_game_info .total_game_info .total_record_info .win_and_lose .graph_and_kill_death .kill_death #kill_involvement {
+  margin-top: 8px;
+  font-size: 12px;
+  color: #d64e5b;
+}
+.main_page .detail_box .detail_game_info .total_game_info .total_record_info .used_champion_recent_20_game {
+  display: flex;
+  flex-direction: column;
+  width: 35%;
+  height: 100%;
+}
+.main_page .detail_box .detail_game_info .total_game_info .total_record_info .used_champion_recent_20_game #word {
+  display: flex;
+  align-items: center;
+  height: 30px;
+  padding-left: 30px;
+  font-size: 12px;
+  color: #757485;
+}
+.main_page .detail_box .detail_game_info .total_game_info .total_record_info .used_champion_recent_20_game .champions {
+  display: flex;
+  flex-direction: column;
+  height: 115px;
+  padding-left: 30px;
+}
+.main_page .detail_box .detail_game_info .total_game_info .total_record_info .used_champion_recent_20_game .champions .champion {
+  display: flex;
+  align-items: center;
+  margin-top: 8px;
+  gap: 5px;
+}
+.main_page .detail_box .detail_game_info .total_game_info .total_record_info .used_champion_recent_20_game .champions .champion img {
+  border-radius: 50%;
+}
+.main_page .detail_box .detail_game_info .total_game_info .total_record_info .used_champion_recent_20_game .champions .champion p {
+  font-size: 12px;
+}
+.main_page .detail_box .detail_game_info .total_game_info .total_record_info .used_champion_recent_20_game .champions .champion #winrate {
+  margin-left: 5px;
+  color: #d64e5b;
+}
+.main_page .detail_box .detail_game_info .total_game_info .total_record_info .used_champion_recent_20_game .champions .champion #win_lose {
+  color: #757485;
+}
+.main_page .detail_box .detail_game_info .total_game_info .total_record_info .used_champion_recent_20_game .champions .champion #grade {
+  color: orange;
+}
+.main_page .detail_box .detail_game_info .total_game_info .total_record_info .position_graph {
+  display: flex;
+  flex-direction: column;
+  width: 35%;
+  height: 100%;
+}
+.main_page .detail_box .detail_game_info .total_game_info .total_record_info .position_graph #word {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  padding-left: 10px;
+  font-size: 12px;
+  color: #757485;
+}
+.main_page .detail_box .detail_game_info .total_game_info .total_record_info .position_graph .graphs {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 115px;
+  margin-top: 10px;
+}
+.main_page .detail_box .detail_game_info .total_game_info .total_record_info .position_graph .graphs .graph {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 30px;
+  height: 100%;
+  gap: 5px;
+}
+.main_page .detail_box .detail_game_info .total_game_info .total_record_info .position_graph .graphs .graph .bar {
+  display: flex;
+  align-items: flex-end;
+  width: 16px;
+  height: 70px;
+  background-color: #424253;
+}
+.main_page .detail_box .detail_game_info .total_game_info .total_record_info .position_graph .graphs .graph .bar .play {
+  width: 16px;
+  height: 0%;
+  background-color: #5e82ff;
+}
+.main_page .detail_box .detail_game_info .detail_one_game {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 10px;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .win_game {
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+  background-color: #2a344c;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .win_game .edge {
+  width: 1%;
+  height: 100%;
+  border-radius: 4px 0 0 4px;
+  background-color: #5e82ff;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .win_game .contents {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 8px;
+  width: 100%;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .win_game .contents .rank_day_play_time {
+  display: flex;
+  flex-direction: column;
+  width: 110px;
+  gap: 8px;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .win_game .contents .rank_day_play_time .group {
+  display: flex;
+  flex-direction: column;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .win_game .contents .rank_day_play_time .group p {
+  font-size: 12px;
+  line-height: 16px;
+  color: #757485;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .win_game .contents .rank_day_play_time .group #rank {
+  font-weight: bolder;
+  color: #5e82ff;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .win_game .contents .rank_day_play_time .group #win_lose {
+  font-weight: bolder;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .win_game .contents .rank_day_play_time .divider {
+  width: 50px;
+  height: 1px;
+  background-color: #2f3b5c;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .win_game .contents .all_info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  height: 100%;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .win_game .contents .all_info .main {
+  display: flex;
+  align-items: center;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .win_game .contents .all_info .main .info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  gap: 4px;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .win_game .contents .all_info .main .info .champion {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .win_game .contents .all_info .main .info .champion #level {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  font-size: 12px;
+  color: white;
+  background-color: #232d36;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .win_game .contents .all_info .main .info .spell_and_rune {
+  display: flex;
+  gap: 2px;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .win_game .contents .all_info .main .info .spell_and_rune .layout {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .win_game .contents .all_info .main .info .kda_stat {
+  display: flex;
+  flex-direction: column;
+  width: 110px;
+  margin-left: 8px;
+  gap: 8px;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .win_game .contents .all_info .main .info .kda_stat .kda {
+  display: flex;
+  gap: 4px;
+  font-weight: bolder;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .win_game .contents .all_info .main .info .kda_stat .kda #kill {
+  color: white;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .win_game .contents .all_info .main .info .kda_stat .kda #dash {
+  color: #757485;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .win_game .contents .all_info .main .info .kda_stat .kda #death {
+  color: #d64e5b;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .win_game .contents .all_info .main .info .kda_stat .kda #assist {
+  color: white;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .win_game .contents .all_info .main .info .kda_stat .avg_grade {
+  font-size: 12px;
+  color: #757485;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .win_game .contents .all_info .main .info .divider {
+  margin-top: 4px;
+  height: 56px;
+  width: 1px;
+  background-color: #2f3b5c;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .win_game .contents .all_info .main .info .sub_info {
+  display: flex;
+  flex-direction: column;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .win_game .contents .all_info .main .info .sub_info p {
+  font-size: 12px;
+  line-height: 14px;
+  color: #757485;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .win_game .contents .all_info .main .info .sub_info #kill_involvement {
+  color: #d64e5b;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .win_game .contents .all_info .sub {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .win_game .contents .all_info .sub .item {
+  display: flex;
+  gap: 2px;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .win_game .contents .all_info .sub .item img {
+  border-radius: 4px;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .win_game .contents .all_info .sub .tag {
+  display: flex;
+  gap: 4px;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .win_game .contents .all_info .sub .tag button {
+  border: none;
+  border-radius: 50px;
+  padding: 0 6px;
+  font-size: 12px;
+  line-height: 20px;
+  color: white;
+  background-color: #757485;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .win_game .contents .players {
+  display: flex;
+  flex-flow: column wrap;
+  padding: 0 4px;
+  gap: 2px 8px;
+  max-height: 88px;
+  width: 170px;
+  margin-left: 40px;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .win_game .contents .players .player {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .win_game .contents .players .player p {
+  font-size: 12px;
+  line-height: 16px;
+  color: #757485;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .win_game .buttons {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 40px;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .win_game .buttons .record {
+  height: 40px;
+  border: none;
+  border-radius: 0 4px 0 0;
+  cursor: pointer;
+  background-color: #223a3c;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .win_game .buttons .record:hover {
+  background-color: #2a636c;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .win_game .buttons .more_info {
+  height: 60px;
+  border: none;
+  border-radius: 0 0 4px 0;
+  cursor: pointer;
+  color: #5e82ff;
+  background-color: #33426b;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .win_game .buttons .more_info:hover {
+  background-color: #2a344c;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .lose_game {
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+  background-color: #54363b;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .lose_game .edge {
+  width: 1%;
+  height: 100%;
+  border-radius: 4px 0 0 4px;
+  background-color: #d64e5b;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .lose_game .contents {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 8px;
+  width: 100%;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .lose_game .contents .rank_day_play_time {
+  display: flex;
+  flex-direction: column;
+  width: 110px;
+  gap: 8px;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .lose_game .contents .rank_day_play_time .group {
+  display: flex;
+  flex-direction: column;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .lose_game .contents .rank_day_play_time .group p {
+  font-size: 12px;
+  line-height: 16px;
+  color: #757485;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .lose_game .contents .rank_day_play_time .group #rank {
+  font-weight: bolder;
+  color: #d64e5b;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .lose_game .contents .rank_day_play_time .group #win_lose {
+  font-weight: bolder;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .lose_game .contents .rank_day_play_time .divider {
+  width: 50px;
+  height: 1px;
+  background-color: #693f47;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .lose_game .contents .all_info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  height: 100%;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .lose_game .contents .all_info .main {
+  display: flex;
+  align-items: center;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .lose_game .contents .all_info .main .info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  gap: 4px;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .lose_game .contents .all_info .main .info .champion {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .lose_game .contents .all_info .main .info .champion #level {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  font-size: 12px;
+  color: white;
+  background-color: #232d36;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .lose_game .contents .all_info .main .info .spell_and_rune {
+  display: flex;
+  gap: 2px;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .lose_game .contents .all_info .main .info .spell_and_rune .layout {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .lose_game .contents .all_info .main .info .kda_stat {
+  display: flex;
+  flex-direction: column;
+  width: 110px;
+  margin-left: 8px;
+  gap: 8px;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .lose_game .contents .all_info .main .info .kda_stat .kda {
+  display: flex;
+  gap: 4px;
+  font-weight: bolder;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .lose_game .contents .all_info .main .info .kda_stat .kda #kill {
+  color: white;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .lose_game .contents .all_info .main .info .kda_stat .kda #dash {
+  color: #757485;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .lose_game .contents .all_info .main .info .kda_stat .kda #death {
+  color: #d64e5b;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .lose_game .contents .all_info .main .info .kda_stat .kda #assist {
+  color: white;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .lose_game .contents .all_info .main .info .kda_stat .avg_grade {
+  font-size: 12px;
+  color: #757485;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .lose_game .contents .all_info .main .info .divider {
+  margin-top: 4px;
+  height: 56px;
+  width: 1px;
+  background-color: #2f3b5c;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .lose_game .contents .all_info .main .info .sub_info {
+  display: flex;
+  flex-direction: column;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .lose_game .contents .all_info .main .info .sub_info p {
+  font-size: 12px;
+  line-height: 14px;
+  color: #757485;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .lose_game .contents .all_info .main .info .sub_info #kill_involvement {
+  color: #d64e5b;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .lose_game .contents .all_info .sub {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .lose_game .contents .all_info .sub .item {
+  display: flex;
+  gap: 2px;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .lose_game .contents .all_info .sub .item img {
+  border-radius: 4px;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .lose_game .contents .all_info .sub .tag {
+  display: flex;
+  gap: 4px;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .lose_game .contents .all_info .sub .tag button {
+  border: none;
+  border-radius: 50px;
+  padding: 0 6px;
+  font-size: 12px;
+  line-height: 20px;
+  color: white;
+  background-color: #757485;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .lose_game .contents .players {
+  display: flex;
+  flex-flow: column wrap;
+  padding: 0 4px;
+  gap: 2px 8px;
+  max-height: 88px;
+  width: 170px;
+  margin-left: 40px;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .lose_game .contents .players .player {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .lose_game .contents .players .player p {
+  font-size: 12px;
+  line-height: 16px;
+  color: #757485;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .lose_game .buttons {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 40px;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .lose_game .buttons .record {
+  height: 40px;
+  border: none;
+  border-radius: 0 4px 0 0;
+  cursor: pointer;
+  background-color: #223a3c;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .lose_game .buttons .record:hover {
+  background-color: #2a636c;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .lose_game .buttons .more_info {
+  height: 60px;
+  border: none;
+  border-radius: 0 0 4px 0;
+  cursor: pointer;
+  color: #d64e5b;
+  background-color: #693f47;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .lose_game .buttons .more_info:hover {
+  background-color: #54363b;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .show_more_info {
+  display: none;
+  flex-direction: column;
+  height: 720px;
+  width: 100%;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .show_more_info .button_colletions {
+  display: flex;
+  height: 35px;
+  margin-top: 4px;
+  padding: 4px;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: #31313b;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .show_more_info .button_colletions button {
+  width: 25%;
+  margin-left: 5px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  color: white;
+  background-color: transparent;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .show_more_info .button_colletions button:hover {
+  background-color: #28282f;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .show_more_info .contents {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 4px;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .show_more_info .contents .win_team {
+  display: flex;
+  flex-direction: column;
+  height: 230px;
+  width: 100%;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .show_more_info .contents .win_team .title {
+  display: flex;
+  align-items: center;
+  height: 30px;
+  width: 100%;
+  border-radius: 4px 4px 0 0;
+  background-color: #31313b;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .show_more_info .contents .win_team .title p {
+  font-size: 12px;
+  text-align: center;
+  color: #757485;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .show_more_info .contents .win_team .title #win {
+  padding-left: 20px;
+  width: 170px;
+  text-align: left;
+  box-sizing: border-box;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .show_more_info .contents .win_team .title #win span {
+  font-weight: bolder;
+  color: #5e82ff;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .show_more_info .contents .win_team .title #op_score {
+  width: 80px;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .show_more_info .contents .win_team .title #kda {
+  width: 80px;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .show_more_info .contents .win_team .title #damage {
+  width: 140px;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .show_more_info .contents .win_team .title #ward {
+  width: 50px;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .show_more_info .contents .win_team .title #cs {
+  width: 50px;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .show_more_info .contents .win_team .title #items {
+  width: 180px;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .show_more_info .contents .win_team .main {
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+  width: 100%;
+  border-top: 1px solid #2f3b5c;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .show_more_info .contents .win_team .main .player {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  width: 100%;
+  background-color: #2a344c;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .show_more_info .contents .win_team .main .player .champion_spell_rune_name {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 170px;
+  padding-left: 10px;
+  box-sizing: border-box;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .show_more_info .contents .win_team .main .player .champion_spell_rune_name .champion {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 40px;
+  height: 40px;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .show_more_info .contents .win_team .main .player .champion_spell_rune_name .champion #level {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 15px;
+  height: 15px;
+  font-size: 10px;
+  border-radius: 50%;
+  color: white;
+  background-color: #232d36;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .show_more_info .contents .win_team .main .player .champion_spell_rune_name .spell_and_rune {
+  display: flex;
+  gap: 2px;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .show_more_info .contents .win_team .main .player .champion_spell_rune_name .spell_and_rune .layout {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .show_more_info .contents .win_team .main .player .champion_spell_rune_name .name {
+  display: flex;
+  flex-direction: column;
+  padding-left: 8px;
+  gap: 4px;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .show_more_info .contents .win_team .main .player .champion_spell_rune_name .name #nickname {
+  font-size: 12px;
+  color: white;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .show_more_info .contents .win_team .main .player .champion_spell_rune_name .name #tier {
+  font-size: 10px;
+  color: #757485;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .show_more_info .contents .win_team .main .player .op_score {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  gap: 8px;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .show_more_info .contents .win_team .main .player .op_score #score {
+  display: flex;
+  align-items: center;
+  font-style: italic;
+  font-size: 12px;
+  font-weight: bold;
+  color: white;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .show_more_info .contents .win_team .main .player .op_score #rank {
+  border: none;
+  border-radius: 50px;
+  font-size: 12px;
+  color: white;
+  background-color: #9e9eaf;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .show_more_info .contents .win_team .main .player .kda {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 80px;
+  gap: 4px;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .show_more_info .contents .win_team .main .player .kda #total {
+  font-size: 11px;
+  color: #757485;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .show_more_info .contents .win_team .main .player .kda #avg {
+  font-size: 11px;
+  color: orange;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .show_more_info .contents .win_team .main .player .damage {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 140px;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .show_more_info .contents .win_team .main .player .damage .given_damage {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 4px;
+  width: 70px;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .show_more_info .contents .win_team .main .player .damage .given_damage #num {
+  font-size: 11px;
+  color: gray;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .show_more_info .contents .win_team .main .player .damage .given_damage .total_bar {
+  height: 6px;
+  width: 55px;
+  background-color: #31313b;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .show_more_info .contents .win_team .main .player .damage .given_damage .total_bar .damage_bar {
+  height: 100%;
+  width: 70%;
+  background-color: #d64e5b;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .show_more_info .contents .win_team .main .player .damage .received_damage {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 4px;
+  width: 70px;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .show_more_info .contents .win_team .main .player .damage .received_damage #num {
+  font-size: 11px;
+  color: gray;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .show_more_info .contents .win_team .main .player .damage .received_damage .total_bar {
+  height: 6px;
+  width: 55px;
+  background-color: #31313b;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .show_more_info .contents .win_team .main .player .damage .received_damage .total_bar .damage_bar {
+  height: 100%;
+  width: 75%;
+  background-color: gray;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .show_more_info .contents .win_team .main .player .ward {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+  width: 50px;
+  gap: 4px;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .show_more_info .contents .win_team .main .player .ward p {
+  font-size: 11px;
+  color: gray;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .show_more_info .contents .win_team .main .player .cs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+  width: 50px;
+  gap: 4px;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .show_more_info .contents .win_team .main .player .cs p {
+  font-size: 11px;
+  color: gray;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .show_more_info .contents .win_team .main .player .items {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 180px;
+  gap: 2px;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .show_more_info .contents .win_team .main .player .items .item {
+  width: 22px;
+  height: 22px;
+  border-radius: 4px;
+  background-color: #2f3b5c;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .show_more_info .contents .object_info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 8px 16px;
+  box-sizing: border-box;
+  background-color: #28282f;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .show_more_info .contents .object_info .win_object_count {
+  display: flex;
+  flex-wrap: wrap;
+  width: 110px;
+  gap: 8px;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .show_more_info .contents .object_info .win_object_count .object {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  width: 30px;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .show_more_info .contents .object_info .win_object_count .object #count {
+  font-size: 12px;
+  color: #757485;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .show_more_info .contents .object_info .lose_object_count {
+  display: flex;
+  flex-wrap: wrap;
+  width: 110px;
+  gap: 8px;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .show_more_info .contents .object_info .lose_object_count .object {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .show_more_info .contents .object_info .lose_object_count .object #count {
+  font-size: 12px;
+  color: #757485;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .show_more_info .contents .object_info .total_kill_and_gold {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 4px;
+  width: 350px;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .show_more_info .contents .object_info .total_kill_and_gold .bar {
+  display: flex;
+  align-items: center;
+  position: relative;
+  height: 16px;
+  width: 100%;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .show_more_info .contents .object_info .total_kill_and_gold .bar p {
+  position: absolute;
+  width: 60px;
+  text-align: center;
+  left: 45%;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 16px;
+  color: white;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .show_more_info .contents .object_info .total_kill_and_gold .bar .win {
+  padding: 0 4px;
+  font-size: 12px;
+  text-align: start;
+  line-height: 16px;
+  color: white;
+  background-color: #5e82ff;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .show_more_info .contents .object_info .total_kill_and_gold .bar .lose {
+  padding: 0 4px;
+  font-size: 12px;
+  text-align: end;
+  line-height: 16px;
+  color: white;
+  background-color: #d64e5b;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .show_more_info .contents .lose_team {
+  display: flex;
+  flex-direction: column;
+  height: 230px;
+  width: 100%;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .show_more_info .contents .lose_team .title {
+  display: flex;
+  align-items: center;
+  height: 30px;
+  width: 100%;
+  background-color: #31313b;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .show_more_info .contents .lose_team .title p {
+  font-size: 12px;
+  text-align: center;
+  color: #757485;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .show_more_info .contents .lose_team .title #lose {
+  padding-left: 20px;
+  width: 170px;
+  text-align: left;
+  box-sizing: border-box;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .show_more_info .contents .lose_team .title #lose span {
+  font-weight: bolder;
+  color: #d64e5b;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .show_more_info .contents .lose_team .title #op_score {
+  width: 80px;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .show_more_info .contents .lose_team .title #kda {
+  width: 80px;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .show_more_info .contents .lose_team .title #damage {
+  width: 140px;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .show_more_info .contents .lose_team .title #ward {
+  width: 50px;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .show_more_info .contents .lose_team .title #cs {
+  width: 50px;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .show_more_info .contents .lose_team .title #items {
+  width: 180px;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .show_more_info .contents .lose_team .main {
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+  width: 100%;
+  border-top: 1px solid #5f3a41;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .show_more_info .contents .lose_team .main .player {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  width: 100%;
+  background-color: #54363b;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .show_more_info .contents .lose_team .main .player .champion_spell_rune_name {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 170px;
+  padding-left: 10px;
+  box-sizing: border-box;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .show_more_info .contents .lose_team .main .player .champion_spell_rune_name .champion {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 40px;
+  height: 40px;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .show_more_info .contents .lose_team .main .player .champion_spell_rune_name .champion #level {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 15px;
+  height: 15px;
+  font-size: 10px;
+  border-radius: 50%;
+  color: white;
+  background-color: #232d36;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .show_more_info .contents .lose_team .main .player .champion_spell_rune_name .spell_and_rune {
+  display: flex;
+  gap: 2px;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .show_more_info .contents .lose_team .main .player .champion_spell_rune_name .spell_and_rune .layout {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .show_more_info .contents .lose_team .main .player .champion_spell_rune_name .name {
+  display: flex;
+  flex-direction: column;
+  padding-left: 8px;
+  gap: 4px;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .show_more_info .contents .lose_team .main .player .champion_spell_rune_name .name #nickname {
+  font-size: 12px;
+  color: white;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .show_more_info .contents .lose_team .main .player .champion_spell_rune_name .name #tier {
+  font-size: 10px;
+  color: #757485;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .show_more_info .contents .lose_team .main .player .op_score {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  gap: 8px;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .show_more_info .contents .lose_team .main .player .op_score #score {
+  display: flex;
+  align-items: center;
+  font-style: italic;
+  font-size: 12px;
+  font-weight: bold;
+  color: white;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .show_more_info .contents .lose_team .main .player .op_score #rank {
+  border: none;
+  border-radius: 50px;
+  font-size: 12px;
+  color: white;
+  background-color: #9e9eaf;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .show_more_info .contents .lose_team .main .player .kda {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 80px;
+  gap: 4px;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .show_more_info .contents .lose_team .main .player .kda #total {
+  font-size: 11px;
+  color: #757485;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .show_more_info .contents .lose_team .main .player .kda #avg {
+  font-size: 11px;
+  color: orange;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .show_more_info .contents .lose_team .main .player .damage {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 140px;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .show_more_info .contents .lose_team .main .player .damage .given_damage {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 4px;
+  width: 70px;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .show_more_info .contents .lose_team .main .player .damage .given_damage #num {
+  font-size: 11px;
+  color: gray;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .show_more_info .contents .lose_team .main .player .damage .given_damage .total_bar {
+  height: 6px;
+  width: 55px;
+  background-color: #31313b;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .show_more_info .contents .lose_team .main .player .damage .given_damage .total_bar .damage_bar {
+  height: 100%;
+  width: 70%;
+  background-color: #d64e5b;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .show_more_info .contents .lose_team .main .player .damage .received_damage {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 4px;
+  width: 70px;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .show_more_info .contents .lose_team .main .player .damage .received_damage #num {
+  font-size: 11px;
+  color: gray;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .show_more_info .contents .lose_team .main .player .damage .received_damage .total_bar {
+  height: 6px;
+  width: 55px;
+  background-color: #31313b;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .show_more_info .contents .lose_team .main .player .damage .received_damage .total_bar .damage_bar {
+  height: 100%;
+  width: 75%;
+  background-color: gray;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .show_more_info .contents .lose_team .main .player .ward {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+  width: 50px;
+  gap: 4px;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .show_more_info .contents .lose_team .main .player .ward p {
+  font-size: 11px;
+  color: gray;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .show_more_info .contents .lose_team .main .player .cs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+  width: 50px;
+  gap: 4px;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .show_more_info .contents .lose_team .main .player .cs p {
+  font-size: 11px;
+  color: gray;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .show_more_info .contents .lose_team .main .player .items {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 180px;
+  gap: 2px;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .show_more_info .contents .lose_team .main .player .items .item {
+  width: 22px;
+  height: 22px;
+  border-radius: 4px;
+  background-color: #674147;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .show_more_info .contents .url {
+  display: flex;
+  align-items: center;
+  height: 35px;
+  width: 100%;
+  gap: 4px;
+  padding: 0 4px;
+  box-sizing: border-box;
+  border-top: 1px solid black;
+  border-radius: 0 0 4px 4px;
+  background-color: #31313b;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .show_more_info .contents .url .box {
+  display: flex;
+  align-items: center;
+  flex: 1 1 0%;
+  height: 80%;
+  width: 90%;
+  border-radius: 4px;
+  background-color: #1c1c1f;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .show_more_info .contents .url .box .link {
+  flex: 1 1 0%;
+  padding-right: 10px;
+  border: none;
+  outline: none;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-size: 11px;
+  color: #757485;
+  background-color: transparent;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .show_more_info .contents .url .copy_btn {
+  height: 80%;
+  width: 10%;
+  font-size: 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  color: white;
+  background-color: #54b8a4;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .show_more_info .contents .url .copy_btn:hover {
+  background-color: #48a199;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .one_game .show_more_info .adv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1 1 0%;
+  margin-top: 10px;
+  border-radius: 4px;
+  background-color: #31313b;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .show_more_game {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  width: 100%;
+  margin-top: 10px;
+}
+.main_page .detail_box .detail_game_info .detail_one_game .show_more_game button {
+  height: 100%;
+  width: 100%;
+  border: 0.5px solid gray;
+  border-radius: 4px;
+  cursor: pointer;
+  color: white;
+  background-color: #31313b;
+}
+.main_page .big_advertisement_box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1100px;
+  height: 250px;
+  margin-top: 20px;
+  border-radius: 4px;
+  background-color: #31313b;
 }
 /*# sourceMappingURL=Main.css.map */
