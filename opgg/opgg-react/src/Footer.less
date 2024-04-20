@@ -1,0 +1,58 @@
+@font-gray-color : rgb(117, 116, 133);
+
+.footer {
+    margin-top: 50px;
+    padding: 50px 0;
+
+    .total {
+        width: 1100px;
+        margin: 0 auto;
+
+        section {
+            display: flex;
+            justify-content: space-between;
+
+            .title {
+                font-size: 14px;
+                font-weight: bold;
+                color: white;
+            }
+
+            .list {
+                display: flex;
+                flex-direction: column;
+                margin-top: 16px;
+                gap: 4px;
+                font-size: 14px;
+                line-height: 20px;
+                
+                a {
+                    text-decoration: none;
+                    color: @font-gray-color;
+                }
+            }
+        }
+
+        .footer_bottom {
+            margin-top: 24px;
+            padding-top: 24px;
+            border-top: 1px solid @font-gray-color;
+
+            .company_info {
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+
+                p {
+                    font-size: 12px;
+                    color: @font-gray-color;
+                }
+            }
+
+            .sns{
+                display: flex;
+                gap: 10px;
+            }
+        }
+    }
+}

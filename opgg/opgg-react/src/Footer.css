@@ -1,0 +1,48 @@
+.footer {
+  margin-top: 50px;
+  padding: 50px 0;
+}
+.footer .total {
+  width: 1100px;
+  margin: 0 auto;
+}
+.footer .total section {
+  display: flex;
+  justify-content: space-between;
+}
+.footer .total section .title {
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+}
+.footer .total section .list {
+  display: flex;
+  flex-direction: column;
+  margin-top: 16px;
+  gap: 4px;
+  font-size: 14px;
+  line-height: 20px;
+}
+.footer .total section .list a {
+  text-decoration: none;
+  color: #757485;
+}
+.footer .total .footer_bottom {
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid #757485;
+}
+.footer .total .footer_bottom .company_info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.footer .total .footer_bottom .company_info p {
+  font-size: 12px;
+  color: #757485;
+}
+.footer .total .footer_bottom .sns {
+  display: flex;
+  gap: 10px;
+}
+/*# sourceMappingURL=Footer.css.map */
