@@ -48,7 +48,12 @@ function Navigation() {
     )
 }
 
-function Search() {
+function Search({setName}) {
+    const handleSubmit = (event) => {
+        setName(event.target.elements.player_name.value);
+        console.log(event.target.elements.player_name.value);
+    }
+
     return (
         <div className="search_box">
             <div className="img_and_search">
@@ -59,10 +64,12 @@ function Search() {
                     <div class="country">
                         <button type="button">KR ▼</button>
                     </div>
-                    <input id="player_name" type="text" placeholder="플레이어 이름+ #KR1"/>
-                    <button class="search_button" type="button">
-                        <img src={require('./image/ggicon.svg').default} alt="ggcion" width="40" height="28"/>
-                    </button>
+                    <form onSubmit={handleSubmit}>
+                        <input id="player_name" type="text" placeholder="플레이어 이름+ #KR1"/>
+                        <button class="search_button" type="submit">
+                            <img src={require('./image/ggicon.svg').default} alt="ggcion" width="40" height="28"/>
+                        </button>
+                    </form>
                 </div>
                 <div class="patchnote">
                     <button type="button">
@@ -124,11 +131,11 @@ function MainMenu() {
     )
 }
 
-function Header() {
+function Header({setName}) {
     return(
         <header>
             <Navigation />
-            <Search />
+            <Search setName={setName}/>
             <MainMenu />
         </header>
     )

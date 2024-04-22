@@ -107,7 +107,14 @@ header {
 .search_box .img_and_search .search .country button:hover {
   cursor: pointer;
 }
-.search_box .img_and_search .search #player_name {
+.search_box .img_and_search .search form {
+  display: flex;
+  align-items: center;
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+.search_box .img_and_search .search form #player_name {
   height: 30%;
   width: 100%;
   border: none;
@@ -116,7 +123,7 @@ header {
   padding: 10px 12px;
   font-size: 12px;
 }
-.search_box .img_and_search .search .search_button {
+.search_box .img_and_search .search form .search_button {
   position: absolute;
   height: 70%;
   width: 50px;
@@ -127,7 +134,7 @@ header {
   border-radius: 8px;
   background-color: white;
 }
-.search_box .img_and_search .search .search_button:hover {
+.search_box .img_and_search .search form .search_button:hover {
   cursor: pointer;
 }
 .search_box .img_and_search .patchnote {

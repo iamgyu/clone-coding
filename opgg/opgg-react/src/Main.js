@@ -40,7 +40,7 @@ function PlayerLevel({level}) {
     )
 }
 
-function PlayerInfoDetail() {
+function PlayerInfoDetail({name}) {
     return (
         <>
             <div className="player_info_detail">
@@ -51,7 +51,7 @@ function PlayerInfoDetail() {
                     <button class="more_tier_button">More Season Tier ▼</button>
                 </div>
                 <div className="player_name">
-                    <p id="name">Hide on bush</p>
+                    <p id="name">{name}</p>
                     <p id="hashcode">#KR1</p>
                     <button>☆</button>
                 </div>
@@ -111,13 +111,13 @@ function PlayerGameInfoBtn() {
     )
 }
 
-function PlayerInfo() {
+function PlayerInfo({name}) {
     return(
         <>
             <div className="player_rank_info">
                 <div className="player_rank_info_box">
                     <PlayerLevel level={744} />
-                    <PlayerInfoDetail />
+                    <PlayerInfoDetail name={name}/>
                 </div>
             </div>
             <PlayerGameInfoBtn />
@@ -622,7 +622,7 @@ function ShowMoreInfoWinGame() {
                 <ObjectInfo />
                 <div className="lose_team">
                     <div className="title">
-                        <p id="win"><span>승리</span>(레드팀)</p>
+                        <p id="lose"><span>패배</span>(레드팀)</p>
                         <p id="op_score">OP 스코어</p>
                         <p id="kda">KDA</p>
                         <p id="damage">피해량</p>
@@ -666,7 +666,7 @@ function ShowMoreInfoLoseGame() {
             <div className="contents">
                 <div className="lose_team">
                     <div className="title">
-                        <p id="win"><span>승리</span>(레드팀)</p>
+                        <p id="lose"><span>패배</span>(레드팀)</p>
                         <p id="op_score">OP 스코어</p>
                         <p id="kda">KDA</p>
                         <p id="damage">피해량</p>
@@ -717,6 +717,20 @@ function ShowMoreInfoLoseGame() {
 }
 
 function OneGame({outcome}) {
+
+    const [infoOpen, setInfoOpen] = useState(false);
+    const [buttonDir, setButtonDir] = useState('v');
+
+    function btnClick() {
+        if (infoOpen === false) {
+            setInfoOpen(true);
+            setButtonDir('^');
+        } else {
+            setInfoOpen(false);
+            setButtonDir('v');
+        }
+    }
+
     const flag = () => {
         if (outcome === "win_game") {
             return true;
@@ -746,10 +760,10 @@ function OneGame({outcome}) {
                 </div>
                 <div className="buttons">
                     <button className="record"><img src={require('./image/recordicon.svg').default} alt="recordicon"/></button>
-                    <button className="more_info">v</button>
+                    <button className="more_info" onClick={btnClick}>{buttonDir}</button>
                 </div>
             </div>
-            {flag ? <ShowMoreInfoWinGame /> : <ShowMoreInfoLoseGame />}
+            {infoOpen && (flag() ? <ShowMoreInfoWinGame /> : <ShowMoreInfoLoseGame />)}
         </div>
     )
 }
@@ -812,11 +826,11 @@ function MainPage() {
     )
 }
 
-function Main() {
+function Main({name}) {
     return(
-        <div className="main_page">
+        <div className="main_box">
             <YellowAdvBox sentence="게임 메이트와 한 게임 어때요? 첫 게임 99% 할인!" />
-            <PlayerInfo />
+            <PlayerInfo name={name}/>
             <MainPage />
         </div>
     )
