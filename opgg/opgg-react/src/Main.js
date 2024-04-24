@@ -125,7 +125,9 @@ function PlayerInfo({name}) {
     )
 }
 
-function SoloRankInfo() {
+function SoloRankInfo({player}) {
+    const winrate = Math.round(player.win / (player.win + player.lose) * 100);
+    
     return (
         <div className="solo_rank">
             <p id="word">솔로랭크</p>
@@ -135,11 +137,11 @@ function SoloRankInfo() {
                 </span>
                 <span id="tier_and_score">
                     <p id="tier_name">Grandmaster</p>
-                    <p id="tier_score">568LP</p>
+                    <p id="tier_score">{player.point}LP</p>
                 </span>
                 <span id="win_and_lose">
-                    <p>87승 60패</p>
-                    <p>승률 59%</p>
+                    <p>{player.win}승 {player.lose}패</p>
+                    <p>승률 {winrate}%</p>
                 </span>
             </div>
         </div>
@@ -798,7 +800,7 @@ function DetailOneGame() {
     )
 }
 
-function MainPage() {
+function MainPage({player}) {
     return (
         <div className="main_page">
             <div className="advertisement_box">
@@ -806,7 +808,7 @@ function MainPage() {
             </div>
             <div className="detail_box">
                 <div className="rank_and_used_champion">
-                    <SoloRankInfo />
+                    <SoloRankInfo player={player}/>
                     <FreeRankInfo />
                     <FindDuo />
                     <UsedChampion />
@@ -826,12 +828,12 @@ function MainPage() {
     )
 }
 
-function Main({name}) {
+function Main({player}) {
     return(
         <div className="main_box">
             <YellowAdvBox sentence="게임 메이트와 한 게임 어때요? 첫 게임 99% 할인!" />
-            <PlayerInfo name={name}/>
-            <MainPage />
+            <PlayerInfo name={player.name}/>
+            <MainPage player={player}/>
         </div>
     )
 }

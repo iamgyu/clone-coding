@@ -4,12 +4,17 @@ import Main from './Main';
 import Footer from './Footer';
 
 function App() {
-    const [name, setName] = useState('Hide on bush');
+    const [player, setPlayer] = useState({
+        name:"Hide on bush", 
+        point: 568, 
+        win: 87, 
+        lose: 60
+    });
 
     return(
         <div>
-            <Header setName={setName}/>
-            <Main name={name}/>
+            <Header setPlayer={setPlayer}/>
+            <Main player={player}/>
             <Footer />
         </div>
     )

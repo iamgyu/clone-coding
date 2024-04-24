@@ -48,9 +48,13 @@ function Navigation() {
     )
 }
 
-function Search({setName}) {
+function Search({setPlayer}) {
+    const randomNum = Math.floor(Math.random() * 2000);
+    const randomWin = Math.floor(Math.random() * 1000);
+    const randomLose = Math.floor(Math.random() * 1000);
+
     const handleSubmit = (event) => {
-        setName(event.target.elements.player_name.value);
+        setPlayer({name: event.target.elements.player_name.value, point: randomNum, win: randomWin, lose: randomLose});
         console.log(event.target.elements.player_name.value);
     }
 
@@ -131,11 +135,11 @@ function MainMenu() {
     )
 }
 
-function Header({setName}) {
+function Header({setPlayer}) {
     return(
         <header>
             <Navigation />
-            <Search setName={setName}/>
+            <Search setPlayer={setPlayer}/>
             <MainMenu />
         </header>
     )
