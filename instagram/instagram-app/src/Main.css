@@ -1,0 +1,53 @@
+.main {
+  display: flex;
+  margin-left: 245px;
+}
+.main .main_contents {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 840px;
+}
+.main .main_contents .story_collection {
+  display: flex;
+  padding-top: 30px;
+  padding-left: 20px;
+  width: 620px;
+  overflow-x: auto;
+  gap: 15px;
+}
+.main .main_contents .story_collection::-webkit-scrollbar {
+  display: none;
+}
+.main .main_contents .story_collection .one_story {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.main .main_contents .story_collection .one_story .story_img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  background-image: linear-gradient(black, black), linear-gradient(45deg, yellow 0%, red 100%);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+}
+.main .main_contents .story_collection .one_story .story_img img {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+}
+.main .main_contents .story_collection .one_story p {
+  padding-top: 6px;
+  font-size: 12px;
+  color: white;
+}
+.main .sub_contents {
+  flex: 1;
+  background-color: gray;
+}
+/*# sourceMappingURL=Main.css.map */
