@@ -29,7 +29,7 @@ function Navigation() {
         <div className="navigation">
             <nav className="nav">
                 <ul>
-                    <Menu src={require('./image/home.svg').default} alt="homeicon" title="홈"/>
+                    <Menu src={require('./image/home.svg').default} alt="homeicon" title={"홈"}/>
                     <Menu src={require('./image/search.svg').default} alt="searchicon" title={"검색"}/>
                     <Menu src={require('./image/compass.svg').default} alt="compasscion" title={"탐색 탭"}/>
                     <Menu src={require('./image/reels.svg').default} alt="reelsicon" title={"릴스"}/>

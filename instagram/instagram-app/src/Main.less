@@ -4,6 +4,7 @@
 
     .main_contents {
         display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
         width: 840px;
@@ -49,6 +50,158 @@
                     padding-top: 6px;
                     font-size: 12px;
                     color: white;
+                }
+            }
+        }
+
+        .feed_collection {
+            display: flex;
+            flex-direction: column;
+            width: 460px;
+            margin-top: 15px;
+
+            .feed {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+
+                .head {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    width: 100%;
+                    height: 60px;
+
+                    .user_info {
+                        display: flex;
+                        align-items: center;
+
+                        img {
+                            width: 34px;
+                            height: 34px;
+                            border-radius: 50%;
+                            padding-left: 8px;
+                        }
+    
+                        .name {
+                            padding-left: 12px;
+                            font-weight: bold;
+                            font-size: 14px;
+                            color: white;
+                        }
+    
+                        .time {
+                            color: gray;
+                            font-size: 14px;
+    
+                            a {
+                                text-decoration: none;
+                                color: gray;
+                            }
+                        }
+                    }
+
+                    .more_option {
+                        text-align: right;
+                        border: none;
+                        background-color: transparent;
+                        color: white;
+
+                        &:active {
+                            color: gray;
+                        }
+                    }
+                }
+
+                .main_img {
+                    width: 100%;
+                    height: 585px;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 4px;
+                        border: 1px solid rgb(19, 19, 19);
+                    }
+                }
+
+                .bottom {
+                    width: 100%;
+                    flex: 1;
+
+                    .button_collection {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        padding: 10px 0;
+
+                        .left_button {
+                            display: flex;
+                            gap: 10px;
+                        }
+
+                        img {
+                            width: 24px;
+                            height: 24px;
+                            
+                            &:hover {
+                                filter: brightness(0.7);
+                                cursor: pointer;
+                            }
+                        }
+                    }
+
+                    .text_collection {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 5px;
+
+                        .like {
+                            font-size: 14px;
+                            font-weight: bold;
+                            color: white;
+                        }
+
+                        .main_text {
+                            display: flex;
+                            align-items: center;
+                            font-size: 14px;
+                            gap: 3px;
+                            color: white;
+
+                            .name {
+                                font-weight: bold;
+                            }
+
+                            .show_more_btn {
+                                border: none;
+                                font-size: 14px;
+                                background-color: transparent;
+                                color: gray;
+                                cursor: pointer;
+                            }
+                        }
+
+                        .show_all_comment_btn {
+                            font-size: 14px;
+                            color: gray;
+                            cursor: pointer;
+                        }
+
+                        .input_comment {
+                            padding-left: 0;
+                            border: none;
+                            outline: none;
+                            font-size: 14px;
+                            background-color: transparent;
+                            color: white;
+                        }
+                    }
+
+                    .empty {
+                        height: 20px;
+                        border-bottom: 1px solid gray;
+                    }
                 }
             }
         }
