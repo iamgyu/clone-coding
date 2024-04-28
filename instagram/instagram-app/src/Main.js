@@ -88,10 +88,83 @@ function MainContents() {
     )
 }
 
+function Profile({name}) {
+    return (
+        <div className="user_profile">
+            <img src={hwei} alt="user_img" />
+            <div className="id_name">
+                <p className="id">donggyu</p>
+                <p className="name">{name}</p>
+            </div>
+        </div>
+    )
+}
+
+function ProfileChange() {
+    return (
+        <div className="profile_change">
+            <Profile name={"김동규"}/>
+            <button className="change">전환</button>
+        </div>
+    )
+}
+
+function ProfileFollow() {
+    return (
+        <div className="profile_follow">
+            <Profile name={"회원님을 위한 추천"}/>
+            <button className="follow">팔로우</button>
+        </div>
+    )
+}
+function SuggestToUser() {
+    return (
+        <div className="suggest_to_user">
+            <div className="title">
+                <p>회원님을 위한 추천</p>
+                <button className="show_all">모두 보기</button>
+            </div>
+            <ProfileFollow />
+            <ProfileFollow />
+            <ProfileFollow />
+            <ProfileFollow />
+            <ProfileFollow />
+        </div>
+    )
+}
+
+function Foot() {
+    return (
+        <div className="foot">
+            <div className="url_collection">
+                <ul>
+                    <li><a href="#!" alt="url">소개</a></li>
+                    <li><a href="#!" alt="url">도움말</a></li>
+                    <li><a href="#!" alt="url">홍보 센터</a></li>
+                    <li><a href="#!" alt="url">API</a></li>
+                    <li><a href="#!" alt="url">채용 정보</a></li>
+                </ul>
+                <ul>
+                    <li><a href="#!" alt="url">개인정보처리방침</a></li>
+                    <li><a href="#!" alt="url">약관</a></li>
+                    <li><a href="#!" alt="url">위치</a></li>
+                    <li><a href="#!" alt="url">언어</a></li>
+                    <li className="last"><a href="#!" alt="url">Meta Verified</a></li>
+                </ul>
+            </div>
+            <div className="end_word">© 2024 INSTAGRAM FROM META</div>
+        </div>
+    )
+}
+
 function SubContents() {
     return (
         <div className="sub_contents">
-            ㅇㅇ
+            <div className="contents_box">
+                <ProfileChange />
+                <SuggestToUser />
+                <Foot />
+            </div>
         </div>
     )
 }
