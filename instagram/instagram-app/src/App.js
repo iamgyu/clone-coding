@@ -1,7 +1,8 @@
 // import MenuBar from "./MenuBar";
 // import Main from "./Main";
 // import LoginPage from "./LoginPage";
-import CreateAccountPage from "./CreateAccountPage";
+// import CreateAccountPage from "./CreateAccountPage";
+import Posting from "./Posting";
 import "./App.css";
 
 function App() {
@@ -13,7 +14,7 @@ function App() {
         <Main />
       </div>
       */}
-      <CreateAccountPage />
+      <Posting />
     </div>
   );
 }

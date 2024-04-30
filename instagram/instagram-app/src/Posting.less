@@ -1,0 +1,46 @@
+.posting {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    color: white;
+    background-color: black;
+
+    .post_form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 500px;
+        height: 700px;
+        gap: 20px;
+        border: 1px solid gray;
+
+        .img_box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            #image {
+                visibility: hidden;
+            }
+        }
+
+        .text_box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .upload_btn {
+            width: 100px;
+            height: 30px;
+            border: none;
+            color: white;
+            background-color: rgb(65, 147, 239);
+            cursor: pointer;
+        }
+    }
+}
