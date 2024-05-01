@@ -1,21 +1,21 @@
 // import MenuBar from "./MenuBar";
 // import Main from "./Main";
-// import LoginPage from "./LoginPage";
-// import CreateAccountPage from "./CreateAccountPage";
-import Posting from "./Posting";
+ import LoginPage from "./LoginPage";
+ import CreateAccountPage from "./CreateAccountPage";
+//import Posting from "./Posting";
 import "./App.css";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
 
 function App() {
   return (
-    <div>
-      {/* 
-      <div className="main_page">
-        <MenuBar />
-        <Main />
-      </div>
-      */}
-      <Posting />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        {/* 로그인 페이지*/}
+        <Route path="/" element={<LoginPage />} />
+        {/* 회원가입 페이지 */}
+        <Route path="/createAccount" element={<CreateAccountPage />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

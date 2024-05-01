@@ -17,37 +17,50 @@
         gap: 8px;
         border: 1px solid rgb(218, 218, 218);
 
-        img {
-            width: 200px;
-            height: 70px;
-            padding: 40px;
-        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
 
-        .input_box {
-            width: 260px;
-            height: 30px;
-            border-radius: 2px;
-            border: 1px solid rgb(219, 219, 219);
-            background-color: rgb(250, 250, 250);
-
-            &::placeholder {
-                padding: 0px 4px;
-                font-size: 12px;
+            img {
+                width: 200px;
+                height: 70px;
+                padding: 40px;
+            }
+    
+            .input_box {
+                width: 260px;
+                height: 30px;
+                border-radius: 2px;
+                border: 1px solid rgb(219, 219, 219);
+                background-color: rgb(250, 250, 250);
+    
+                &::placeholder {
+                    padding: 0px 4px;
+                    font-size: 12px;
+                }
+            }
+    
+            .create_btn {
+                width: 270px;
+                height: 30px;
+                margin-top: 20px;
+                border: none;
+                border-radius: 8px;
+                background-color: rgb(65, 147, 239);
+                color: white;
+    
+                &:hover {
+                    background-color: rgb(57, 117, 234);
+                }
             }
         }
-
-        .create_btn {
-            width: 270px;
-            height: 30px;
-            margin-top: 20px;
-            border: none;
-            border-radius: 8px;
-            background-color: rgb(65, 147, 239);
-            color: white;
-
-            &:hover {
-                background-color: rgb(57, 117, 234);
-            }
+        
+        .singup_message {
+            margin-top: 10px;
+            font-size: 14px;
+            font-weight: bold;
         }
 
         .go_login {

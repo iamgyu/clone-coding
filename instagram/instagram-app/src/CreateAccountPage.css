@@ -17,23 +17,29 @@
   gap: 8px;
   border: 1px solid #dadada;
 }
-.create_account_page .create_account_box img {
+.create_account_page .create_account_box form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+.create_account_page .create_account_box form img {
   width: 200px;
   height: 70px;
   padding: 40px;
 }
-.create_account_page .create_account_box .input_box {
+.create_account_page .create_account_box form .input_box {
   width: 260px;
   height: 30px;
   border-radius: 2px;
   border: 1px solid #dbdbdb;
   background-color: #fafafa;
 }
-.create_account_page .create_account_box .input_box::placeholder {
+.create_account_page .create_account_box form .input_box::placeholder {
   padding: 0px 4px;
   font-size: 12px;
 }
-.create_account_page .create_account_box .create_btn {
+.create_account_page .create_account_box form .create_btn {
   width: 270px;
   height: 30px;
   margin-top: 20px;
@@ -42,8 +48,13 @@
   background-color: #4193ef;
   color: white;
 }
-.create_account_page .create_account_box .create_btn:hover {
+.create_account_page .create_account_box form .create_btn:hover {
   background-color: #3975ea;
+}
+.create_account_page .create_account_box .singup_message {
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: bold;
 }
 .create_account_page .create_account_box .go_login {
   display: flex;
