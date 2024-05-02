@@ -22,7 +22,13 @@ function LoginPage() {
             password: password
         })
         .then(res => {
+            console.log(res.data);
             setMessage(res.data.result);
+
+            if (res.data.result === "로그인 성공") {
+                localStorage.setItem("key", res.data.jwt);
+                movePage("/main");
+            }
         })
         .catch(error => {
             console.log(error);
