@@ -26,7 +26,10 @@ function LoginPage() {
             setMessage(res.data.result);
 
             if (res.data.result === "로그인 성공") {
-                localStorage.setItem("key", res.data.jwt);
+                axios.defaults.headers.common[
+                    "Authorization"
+                  ] = `Bearer ${res.data.jwt}`;
+                localStorage.setItem("jwt", res.data.jwt);
                 movePage("/main");
             }
         })

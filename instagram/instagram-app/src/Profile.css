@@ -1,0 +1,73 @@
+.profile {
+  display: flex;
+  margin-left: 245px;
+  height: 100dvh;
+}
+.profile .content_box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.profile .content_box .profile_box {
+  display: flex;
+  align-items: center;
+  width: 900px;
+  height: 200px;
+}
+.profile .content_box .profile_box .user_img {
+  display: flex;
+  align-items: center;
+  height: center;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  margin: 0 80px;
+}
+.profile .content_box .profile_box .user_img img {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+}
+.profile .content_box .profile_box .profile_info {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.profile .content_box .profile_box .profile_info .nickname_and_btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.profile .content_box .profile_box .profile_info .nickname_and_btn p {
+  font-size: 20px;
+  margin-right: 5px;
+  color: white;
+}
+.profile .content_box .profile_box .profile_info .nickname_and_btn button {
+  border: none;
+  border-radius: 4px;
+  color: white;
+  padding: 6px 12px;
+  background-color: #363636;
+  cursor: pointer;
+}
+.profile .content_box .profile_box .profile_info .nickname_and_btn button:hover {
+  background-color: #262626;
+}
+.profile .content_box .profile_box .profile_info .various_numbers {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  gap: 50px;
+}
+.profile .content_box .profile_box .profile_info .various_numbers div {
+  display: flex;
+  gap: 4px;
+  color: white;
+}
+.profile .content_box .profile_box .profile_info .user_name {
+  margin-top: 10px;
+  color: white;
+}
+/*# sourceMappingURL=Profile.css.map */

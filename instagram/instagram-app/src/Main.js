@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Main.css"
 import hwei from './image/Hwei.webp';
 import feedImg from './image/img.jpg';
+import axios from "axios";
+import { Link, useNavigate } from "react-router-dom";
 
 function OneStory() {
     return (
@@ -88,12 +90,16 @@ function MainContents() {
     )
 }
 
-function Profile({name}) {
+function Profile({name, nickname}) {
     return (
         <div className="user_profile">
-            <img src={hwei} alt="user_img" />
+            <Link to={"/profile"} state={{nickname: nickname}}>
+                <img src={hwei} alt="user_img" />
+            </Link>
             <div className="id_name">
-                <p className="id">donggyu</p>
+                <Link to={"/profile"} state={{nickname: nickname}}>
+                    <p className="id">{nickname}</p>
+                </Link>
                 <p className="name">{name}</p>
             </div>
         </div>
@@ -101,9 +107,35 @@ function Profile({name}) {
 }
 
 function ProfileChange() {
+    const [name, setName] = useState('');
+    const [nickname, setNickname] = useState('');
+
+    const movePage = useNavigate();
+
+    const config = {
+        headers: {
+            'Content-Type': 'application/json',
+            Authorization: localStorage.getItem("jwt"),
+        },
+      };
+      
+    axios.get('http://127.0.0.1:5001/users', config)
+    .then(res => {
+        if (res.data.result === "로그인 실패"){
+            localStorage.removeItem("jwt");
+            movePage("/");
+
+        }
+        setName(res.data.name);
+        setNickname(res.data.nickname);
+    })
+    .catch(error => {
+        console.log(error);
+    })
+    
     return (
         <div className="profile_change">
-            <Profile name={"김동규"}/>
+            <Profile name={name} nickname={nickname}/>
             <button className="change">전환</button>
         </div>
     )
@@ -112,7 +144,7 @@ function ProfileChange() {
 function ProfileFollow() {
     return (
         <div className="profile_follow">
-            <Profile name={"회원님을 위한 추천"}/>
+            <Profile name={"회원님을 위한 추천"} nickname={"donggyu"}/>
             <button className="follow">팔로우</button>
         </div>
     )

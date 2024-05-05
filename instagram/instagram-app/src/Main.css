@@ -207,7 +207,10 @@
   padding-left: 8px;
   gap: 4px;
 }
-.main .sub_contents .contents_box .profile_change .user_profile .id_name .id {
+.main .sub_contents .contents_box .profile_change .user_profile .id_name a {
+  text-decoration: none;
+}
+.main .sub_contents .contents_box .profile_change .user_profile .id_name a .id {
   font-size: 16px;
   font-weight: bold;
   color: white;
@@ -278,7 +281,10 @@
   padding-left: 8px;
   gap: 4px;
 }
-.main .sub_contents .contents_box .suggest_to_user .profile_follow .user_profile .id_name .id {
+.main .sub_contents .contents_box .suggest_to_user .profile_follow .user_profile .id_name a {
+  text-decoration: none;
+}
+.main .sub_contents .contents_box .suggest_to_user .profile_follow .user_profile .id_name a .id {
   font-size: 14px;
   font-weight: bold;
   color: white;
