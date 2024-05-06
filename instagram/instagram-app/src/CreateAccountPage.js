@@ -28,6 +28,10 @@ function CreateAccountPage() {
         .then(res => {
             console.log(res.data)
             setMessage(res.data.result);
+            
+            if (res.data.result === "회원가입 성공") {
+                movePage("/");
+            }
         })
         .catch(error => {
             console.log(error);

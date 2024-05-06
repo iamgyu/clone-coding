@@ -1,0 +1,9 @@
+.post_page {
+  background-color: black;
+  min-height: 100vh;
+}
+.post_page img {
+  height: 500px;
+  width: 500px;
+}
+/*# sourceMappingURL=PostPage.css.map */

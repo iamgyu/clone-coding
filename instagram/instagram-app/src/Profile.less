@@ -1,7 +1,7 @@
 .profile {
     display: flex;
     margin-left: 245px;
-    height: 100dvh;
+    min-height: 100vh;
 
     .content_box {
         display: flex;
@@ -77,6 +77,29 @@
                 .user_name {
                     margin-top: 10px;
                     color: white;
+                }
+            }
+        }
+
+        .post_collection {
+            display: flex;
+            flex-wrap: wrap;
+            width: 900px;
+            margin-top: 50px;
+            gap: 5px;
+
+            .one_post {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 290px;
+                height: 290px;
+                background-color: gray;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
                 }
             }
         }

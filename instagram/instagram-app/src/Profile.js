@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Profile.css"
 import hwei from './image/Hwei.webp';
 import axios from "axios";
@@ -18,22 +18,25 @@ function ProfileBoxUsers({nickname}) {
             Authorization: localStorage.getItem("jwt"),
         },
     };
-      
-    axios.get('http://127.0.0.1:5001/users/' + nickname, config)
-    .then(res => {
-        if (res.data.result === "로그인 실패"){
-            localStorage.removeItem("jwt");
-            movePage("/");
-        }
-        
-        setName(res.data.name);
-        setPostNumber(res.data.post_number);
-        setFollowerNumber(res.data.follower_number);
-        setFollowingNumber(res.data.following_number);
-    })
-    .catch(error => {
-        console.log(error);
-    })
+    
+    useEffect(() => {
+        axios.get('http://127.0.0.1:5001/users/' + nickname, config)
+        .then(res => {
+            if (res.data.result === "로그인 실패"){
+                localStorage.removeItem("jwt");
+                movePage("/");
+            }
+            
+            setName(res.data.name);
+            setPostNumber(res.data.post_number);
+            setFollowerNumber(res.data.follower_number);
+            setFollowingNumber(res.data.following_number);
+        })
+        .catch(error => {
+            console.log(error);
+        })
+    });
+
 
     const logout = () => {
         localStorage.removeItem("jwt");
@@ -77,8 +80,8 @@ function ProfileBoxOthers({nickname}) {
             'Content-Type': 'application/json',
             Authorization: localStorage.getItem("jwt"),
         },
-      };
-      
+    };
+
     axios.get('http://127.0.0.1:5001/users/' + nickname, config)
     .then(res => {
         if (res.data.result === "로그인 실패"){
@@ -96,10 +99,29 @@ function ProfileBoxOthers({nickname}) {
         console.log(error);
     })
 
-    const handleFollow = () => {
+    const handleFollow = (e) => {
+        e.preventDefault();
+
         axios.post('http://127.0.0.1:5001/follows/' + id, {}, config)
         .then(res => {
-            console.log(res);
+            console.log(res.data);
+            setFollowerNumber(res.data.follwer_number);
+        })
+        .catch(error => {
+            console.log(error);
+        })
+    }
+
+    const handleUnfollow = (e) => {
+        e.preventDefault();
+
+        axios.delete('http://127.0.0.1:5001/follows/' + id, config)
+        .then(res => {
+            console.log(res.data);
+            setFollowerNumber(res.data.follwer_number);
+        })
+        .catch(error => {
+            console.log(error);
         })
     }
 
@@ -112,6 +134,7 @@ function ProfileBoxOthers({nickname}) {
                 <div className="nickname_and_btn">
                     <p>{nickname}</p>
                     <button onClick={handleFollow}>팔로우</button>
+                    <button onClick={handleUnfollow}>언팔로우</button>
                 </div>
                 <div className="various_numbers">
                     <div>게시물 <p style={{fontWeight: "bold"}}>{postNumber}</p></div>
@@ -124,23 +147,87 @@ function ProfileBoxOthers({nickname}) {
     )
 }
 
+function PostCollection({nickname}) {
+    const [datas, setDatas] = useState([]); // 게시물 데이터
+    const [id, setId] = useState(''); // 해당 프로필 유저 id
+
+    const movePage = useNavigate();
+    
+    useEffect(() => {
+        const config = {
+            headers: {
+                'Content-Type': 'application/json',
+                Authorization: localStorage.getItem("jwt"),
+            },
+        };
+
+        axios.get('http://127.0.0.1:5001/users/' + nickname, config)
+        .then(res => {
+            if (res.data.result === "로그인 실패"){
+                localStorage.removeItem("jwt");
+                movePage("/");
+            }
+            setId(res.data.id);
+        })
+        .catch(error => {
+            console.log(error);
+        });
+
+    }, [setId, movePage, nickname])
+
+    useEffect(() => {
+        const config = {
+            headers: {
+                'Content-Type': 'application/json',
+                Authorization: localStorage.getItem("jwt"),
+            },
+        };
+        if (id !== ''){
+            axios.get('http://127.0.0.1:5001/posts/user/' + id, config)
+            .then(res => {
+                setDatas(res.data.reverse());
+            })
+            .catch(error => {
+                console.log(error);
+            });
+        }
+    }, [setDatas, nickname, id])
+
+    const showPostHandle = (postId) => {
+        movePage('/postpage', {state:{postId: postId}})
+    }
+
+    return (
+        <div className="post_collection">
+            {
+                datas?.map(data => 
+                    <div className="one_post" key={data.id} onClick={() => showPostHandle(data.id)}>
+                        <img src={data.image} alt="post_img" />
+                    </div>
+            )}
+        </div>
+    )
+}
+
 function ContentBox({nickname}) {
     const [loginNickname, setLoginNickname] = useState('');
     let isUser = false;
 
-    const config = {
-        headers: {
-            'Content-Type': 'application/json',
-            Authorization: localStorage.getItem("jwt"),
-        },
-      };
-    
-    axios.get('http://127.0.0.1:5001/users', config)
-    .then(res => {
-        setLoginNickname(res.data.nickname);
-    })
-    .catch(error => {
-        console.log(error);
+    useEffect(() => {
+        const config = {
+            headers: {
+                'Content-Type': 'application/json',
+                Authorization: localStorage.getItem("jwt"),
+            },
+        };
+        
+        axios.get('http://127.0.0.1:5001/users', config)
+        .then(res => {
+            setLoginNickname(res.data.nickname);
+        })
+        .catch(error => {
+            console.log(error);
+        })
     })
     
     if (loginNickname === nickname) {
@@ -150,6 +237,7 @@ function ContentBox({nickname}) {
     return (
         <div className="content_box">
             {isUser ? <ProfileBoxUsers nickname={nickname}/> : <ProfileBoxOthers nickname={nickname} />}
+            <PostCollection nickname={nickname} />
         </div>
     )
 }

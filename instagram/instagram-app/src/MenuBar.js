@@ -15,7 +15,7 @@ function Profile({src, iconName, title}) {
             Authorization: localStorage.getItem("jwt"),
         },
       };
-      
+    
     axios.get('http://127.0.0.1:5001/users', config)
     .then(res => {
         if (res.data.result === "로그인 실패"){
