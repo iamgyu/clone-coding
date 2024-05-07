@@ -2,7 +2,7 @@ import LoginPage from "./LoginPage";
 import CreateAccountPage from "./CreateAccountPage";
 import Posting from "./Posting";
 import "./App.css";
-import { Routes, Route, BrowserRouter } from "react-router-dom";
+import { Routes, Route, BrowserRouter} from "react-router-dom";
 import MainPage from "./MainPage";
 import ProfilePage from "./ProfilePage";
 import SearchPage from "./SearchPage";

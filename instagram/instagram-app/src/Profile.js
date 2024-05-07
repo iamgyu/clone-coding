@@ -152,7 +152,6 @@ function PostCollection({nickname}) {
     const [id, setId] = useState(''); // 해당 프로필 유저 id
 
     const movePage = useNavigate();
-    
     useEffect(() => {
         const config = {
             headers: {
@@ -182,6 +181,7 @@ function PostCollection({nickname}) {
                 Authorization: localStorage.getItem("jwt"),
             },
         };
+
         if (id !== ''){
             axios.get('http://127.0.0.1:5001/posts/user/' + id, config)
             .then(res => {
@@ -194,7 +194,7 @@ function PostCollection({nickname}) {
     }, [setDatas, nickname, id])
 
     const showPostHandle = (postId) => {
-        movePage('/postpage', {state:{postId: postId}})
+        movePage('/postpage', {state:{postId: postId, userId: id}})
     }
 
     return (

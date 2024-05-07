@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./MenuBar.css";
 import hwei from './image/Hwei.webp';
 import { Link, useNavigate } from "react-router-dom";
@@ -8,6 +8,8 @@ function Profile({src, iconName, title}) {
     const [nickname, setNickname] = useState('');
 
     const movePage = useNavigate();
+    
+    useEffect(() => {
 
     const config = {
         headers: {
@@ -15,19 +17,22 @@ function Profile({src, iconName, title}) {
             Authorization: localStorage.getItem("jwt"),
         },
       };
-    
-    axios.get('http://127.0.0.1:5001/users', config)
-    .then(res => {
-        if (res.data.result === "로그인 실패"){
-            localStorage.removeItem("jwt");
-            movePage("/");
 
-        }
-        setNickname(res.data.nickname);
-    })
-    .catch(error => {
-        console.log(error);
-    })
+        axios.get('http://127.0.0.1:5001/users', config)
+        .then(res => {
+            if (res.data.result === "로그인 실패"){
+                localStorage.removeItem("jwt");
+                movePage("/");
+    
+            }
+            console.log(res.data);
+            setNickname(res.data.nickname);
+        })
+        .catch(error => {
+            console.log(error);
+        })
+    }, [movePage]);
+
 
     return(
         <li>
