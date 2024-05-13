@@ -191,7 +191,7 @@ function PostCollection({nickname}) {
                 console.log(error);
             });
         }
-    }, [setDatas, nickname, id])
+    }, [setDatas, id])
 
     const showPostHandle = (postId) => {
         movePage('/postpage', {state:{postId: postId, userId: id}})

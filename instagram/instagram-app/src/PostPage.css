@@ -141,7 +141,7 @@
   justify-content: space-between;
   height: 10%;
 }
-.post_page .detail_box .input_box .input_box {
+.post_page .detail_box .input_box .input {
   width: 500px;
   height: 32px;
   font-size: 15px;

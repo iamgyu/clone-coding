@@ -25,7 +25,6 @@ function Profile({src, iconName, title}) {
                 movePage("/");
     
             }
-            console.log(res.data);
             setNickname(res.data.nickname);
         })
         .catch(error => {

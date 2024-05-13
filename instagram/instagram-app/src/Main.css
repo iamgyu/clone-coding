@@ -1,6 +1,7 @@
 .main {
   display: flex;
   margin-left: 245px;
+  min-height: 100vh;
 }
 .main .main_contents {
   display: flex;
@@ -99,6 +100,9 @@
   color: gray;
 }
 .main .main_contents .feed_collection .feed .main_img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   height: 585px;
 }
@@ -106,6 +110,7 @@
   width: 100%;
   height: 100%;
   border-radius: 4px;
+  object-fit: cover;
   border: 1px solid #131313;
 }
 .main .main_contents .feed_collection .feed .bottom {
@@ -157,18 +162,36 @@
   color: gray;
   cursor: pointer;
 }
-.main .main_contents .feed_collection .feed .bottom .text_collection .show_all_comment_btn {
-  font-size: 14px;
-  color: gray;
-  cursor: pointer;
+.main .main_contents .feed_collection .feed .bottom .text_collection .all_comments {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 12px;
 }
-.main .main_contents .feed_collection .feed .bottom .text_collection .input_comment {
-  padding-left: 0;
+.main .main_contents .feed_collection .feed .bottom .text_collection .all_comments .one_comment {
+  display: flex;
+  justify-content: space-between;
+  color: white;
+}
+.main .main_contents .feed_collection .feed .bottom .text_collection .all_comments .one_comment .comment_info {
+  display: flex;
+  gap: 10px;
+  max-width: 400px;
+}
+.main .main_contents .feed_collection .feed .bottom .text_collection .input_box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 10%;
+}
+.main .main_contents .feed_collection .feed .bottom .text_collection .input_box .input_comment {
+  width: 300px;
+  height: 32px;
+  font-size: 15px;
   border: none;
   outline: none;
-  font-size: 14px;
-  background-color: transparent;
   color: white;
+  background-color: transparent;
 }
 .main .main_contents .feed_collection .feed .bottom .empty {
   height: 20px;

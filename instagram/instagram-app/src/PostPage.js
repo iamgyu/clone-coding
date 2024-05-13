@@ -215,7 +215,7 @@ function PostPage() {
                     <p className="post_time">{data.created_at}</p>
                 </div>
                 <div className="input_box">
-                    <input className="input_box" type="text" placeholder="댓글 달기..." onChange={(e) => setContent(e.target.value)} />
+                    <input className="input" type="text" placeholder="댓글 달기..." onChange={(e) => setContent(e.target.value)} />
                     <button onClick={commentPost}>게시</button>
                 </div>
             </div>
