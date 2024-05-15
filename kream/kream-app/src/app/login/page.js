@@ -22,7 +22,7 @@ function Login() {
                 </div>
                 <button className={styles.button}>로그인</button>
                 <div className={styles.joinNav}>
-                    <Link href="/">이메일 가입</Link>
+                    <Link href="/join">이메일 가입</Link>
                     <Link href="/">이메일 찾기</Link>
                     <Link href="/">비밀번호 찾기</Link>
                 </div>
