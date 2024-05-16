@@ -1,5 +1,4 @@
 'use client'
-import Link from "next/link";
 import styles from "./join.module.css";
 import { useEffect, useState } from "react";
 
@@ -7,7 +6,27 @@ function ModalPage({clickModal}) {
     return (
         <div className={styles.modalPage} onClick={clickModal}>
             <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
-                <p>사이즈 선택</p>
+                <p className={styles.word}>사이즈 선택</p>
+                <div className={styles.sizeBox}>
+                    <button className={styles.size}>220</button>
+                    <button className={styles.size}>225</button>
+                    <button className={styles.size}>230</button>
+                    <button className={styles.size}>235</button>
+                    <button className={styles.size}>240</button>
+                    <button className={styles.size}>245</button>
+                    <button className={styles.size}>250</button>
+                    <button className={styles.size}>255</button>
+                    <button className={styles.size}>260</button>
+                    <button className={styles.size}>265</button>
+                    <button className={styles.size}>270</button>
+                    <button className={styles.size}>275</button>
+                    <button className={styles.size}>280</button>
+                    <button className={styles.size}>285</button>
+                    <button className={styles.size}>290</button>
+                    <button className={styles.size}>295</button>
+                    <button className={styles.size}>300</button>
+                </div>
+                <button className={styles.okBtn} onClick={clickModal}>확인</button>
             </div>
         </div>
     )
@@ -51,10 +70,10 @@ export default function Join() {
                         </label>
                         <label>
                             <input type='checkbox'id='my_checkbox' />
-                            [필수] 만 14세 이상이며 모두 동의합니다.
+                            [선택] 광고성 정보 수신에 모두 동의합니다.
                         </label>
                     </div>
-                    <button className={styles.button}>로그인</button>
+                    <button className={styles.button}>가입하기</button>
                 </div>
             </div>
             {showModal && <ModalPage clickModal={clickModal}/>}

@@ -88,6 +88,7 @@ body {
 body {
   color: rgb(var(--foreground-rgb));
   background: rgb(var(--background-start-rgb));
+  min-width: 1500px;
 }
 
 a {
@@ -103,6 +104,8 @@ a {
 
 .navbar_total {
   position: fixed;
+  overflow: auto;
+  min-width: 1500px;
   width: 100%;
   background-color: white;
   z-index: 10;

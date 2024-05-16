@@ -1,94 +1,73 @@
-import Image from "next/image";
+'use client'
+
+import { useState } from "react";
 import styles from "./page.module.css";
+import Link from "next/link";
+
+function OneProductBox() {
+  return (
+    <div className={styles.oneProductBox}>
+      <div className={styles.imgBox}>
+        <div className={styles.numberBox}>1</div>
+        <div className={styles.volumeNum}>거래 204</div>
+        <button className={styles.saveBtn}>저장</button>
+      </div>
+      <div className={styles.brandAndName}>
+        <p className={styles.brand}>Nike</p>
+        <p className={styles.name}>Nike Cortez Midnight Navy</p>
+      </div>
+      <div className={styles.priceBox}>
+        <p className={styles.price}>82,000원</p>
+        <p className={styles.word}>즉시 구매가</p>
+      </div>
+    </div>
+  )
+}
+
+function ProductRank() {
+  const [productCount, setProductCount] = useState(5);
+
+  const addMoreProducts = () => {
+    setProductCount(prevCount => prevCount + 5);
+  };
+
+  return (
+      <div className={styles.productRank}>
+        <p className={styles.title}>남성 신발 인기 순위</p>
+        <div className={styles.wordAndBtn}>
+          <p>조회, 관심, 거래 급상승(최근 3일)</p>
+          <p className={styles.btn}>더보기</p>
+        </div>
+        <div className={styles.productCollection}>
+          {
+            [...Array(productCount)].map((_, index) => (
+            <OneProductBox key={index} />
+          ))}
+        </div>
+        <div className={styles.showMoreBtn}>
+          <button className={styles.btn} onClick={addMoreProducts}>더보기</button>
+        </div>
+      </div>
+  );
+}
 
 export default function Home() {
   return (
     <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.js</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
+      <div className={styles.navigation}>
+          <Link className={styles.bit} href="/">24렙비트</Link>
+          <Link href="/">추천</Link>
+          <Link className={styles.rank} href="/">랭킹</Link>
+          <Link href="/">럭셔리</Link>
+          <Link href="/">남성</Link>
+          <Link href="/">여성</Link>
+          <Link href="/">발견</Link>
+          <Link href="/">이벤트</Link>
       </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+      <div className={styles.productMainPage}>
+        <ProductRank />
+        <ProductRank />
+        <ProductRank />
       </div>
     </main>
   );
