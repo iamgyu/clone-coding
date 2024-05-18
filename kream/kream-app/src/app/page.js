@@ -41,7 +41,9 @@ function ProductRank() {
         <div className={styles.productCollection}>
           {
             [...Array(productCount)].map((_, index) => (
-            <OneProductBox key={index} />
+              <Link href="/products">
+                <OneProductBox key={index} />
+              </Link>
           ))}
         </div>
         <div className={styles.showMoreBtn}>
