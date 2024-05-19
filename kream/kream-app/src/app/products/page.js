@@ -4,30 +4,69 @@ import styles from "./products.module.css";
 import Image from "next/image";
 import shoes from "/public/shoes.webp";
 import { useState } from "react";
+import Link from "next/link";
 
-function ModalPage({clickModal}) {
+function ModalBuyPage({clickBuyModal}){
+    const [selectBuySize, setSelectBuySize] = useState(0);
+
+    const clickBuySize = (size) => {
+        setSelectBuySize(size);
+    }
+    return (
+        <div className={styles.modalBuyPage} onClick={clickBuyModal}>
+            <div className={styles.buyModalContent} onClick={(e) => e.stopPropagation()}>
+                <div className={styles.mainTitle}>
+                    <p className={styles.main}>구매하기</p>
+                    <p className={styles.sub}>(가격단위 : 원)</p>
+                </div>
+                <div className={styles.productInfo}>
+                    <div className={styles.img}>
+                        <Image src={shoes} alt="shoes" width={80} height={80} />
+                    </div>
+                    <div className={styles.modelNumAndName}>
+                        <p className={styles.modelNum}>FW7208</p>
+                        <p className={styles.engName}>Adidas Gradas Collegiate Green</p>
+                        <p className={styles.korName}>아디다스 그라다스 컬리지에이트 그린</p>
+                    </div>
+                </div>
+                <div className={styles.sizeBox}>
+                    {[220, 225, 230, 235, 240, 245, 250, 255, 260, 265, 270, 275, 280, 285, 290, 295, 300].map((size) => (
+                        <button
+                            key={size}
+                            className={styles.size} 
+                            onClick={() => clickBuySize(size)}>
+                            {size}
+                        </button>
+                    ))}
+                </div>
+                <div className={styles.goOrderBtn}>
+                    <Link href="/order" className={styles.btn}>
+                        {selectBuySize}
+                    </Link>
+                </div>
+            </div>
+        </div>
+    )
+}
+
+function ModalPage({clickModal, setSelectedSize}) {
+    const handleSizeClick = (size) => {
+        setSelectedSize(size);
+      };
+
     return (
         <div className={styles.modalPage} onClick={clickModal}>
             <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
                 <p className={styles.word}>사이즈 선택</p>
                 <div className={styles.sizeBox}>
-                    <button className={styles.size}>220</button>
-                    <button className={styles.size}>225</button>
-                    <button className={styles.size}>230</button>
-                    <button className={styles.size}>235</button>
-                    <button className={styles.size}>240</button>
-                    <button className={styles.size}>245</button>
-                    <button className={styles.size}>250</button>
-                    <button className={styles.size}>255</button>
-                    <button className={styles.size}>260</button>
-                    <button className={styles.size}>265</button>
-                    <button className={styles.size}>270</button>
-                    <button className={styles.size}>275</button>
-                    <button className={styles.size}>280</button>
-                    <button className={styles.size}>285</button>
-                    <button className={styles.size}>290</button>
-                    <button className={styles.size}>295</button>
-                    <button className={styles.size}>300</button>
+                    {[220, 225, 230, 235, 240, 245, 250, 255, 260, 265, 270, 275, 280, 285, 290, 295, 300].map((size) => (
+                        <button
+                            key={size}
+                            className={styles.size}
+                            onClick={() => handleSizeClick(size)}>
+                            {size}
+                        </button>
+                    ))}
                 </div>
                 <button className={styles.okBtn} onClick={clickModal}>확인</button>
             </div>
@@ -64,10 +103,15 @@ function InfoCollection() {
 
 export default function Products() {
     const [showModal, setShowModal] = useState(false);
+    const [showBuyModal, setShowBuyModal] = useState(false);
+    const [selectedSize, setSelectedSize] = useState(null);
+
+    const clickBuyModal = () => {
+        setShowBuyModal(!showBuyModal);
+    }
 
     const clickModal = () => {
         setShowModal(!showModal);
-        console.log(showModal);
     }
 
     return(
@@ -88,10 +132,10 @@ export default function Products() {
                             <p className={styles.engName}>Adidas Gradas Collegiate Green</p>
                             <p className={styles.korName}>아디다스 그라다스 컬리지에이트 그린</p>
                         </div>
-                        <button className={styles.selectSize} onClick={clickModal}>모든 사이즈</button>
+                        <button className={styles.selectSize} onClick={clickModal}>{selectedSize !== null ? selectedSize : "모든 사이즈"}</button>
                         <InfoCollection />
                         <div className={styles.buySellBtn}>
-                            <button className={styles.buyBtn}>
+                            <button className={styles.buyBtn} onClick={clickBuyModal}>
                                 <p className={styles.btnName}>구매</p>
                                 <div className={styles.price}>
                                     <p className={styles.priceWord}>79,000원</p>
@@ -155,7 +199,8 @@ export default function Products() {
                     </div>
                 </div>
             </div>
-            {showModal && <ModalPage clickModal={clickModal}/>}
+            {showModal && <ModalPage clickModal={clickModal} setSelectedSize={setSelectedSize}/>}
+            {showBuyModal && <ModalBuyPage clickBuyModal={clickBuyModal}/>}
         </>
     )
 }
