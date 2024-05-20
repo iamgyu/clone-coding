@@ -1,0 +1,186 @@
+.myPage {
+    display: flex;
+    margin-top: 87px;
+    padding: 0 155px;
+    min-height: 100vh;
+
+    .navigation {
+        display: flex;
+        flex-direction: column;
+        width: 200px;
+
+        .title {
+            font-size: 24px;
+            padding-top: 30px;
+            font-weight: bold;
+        }
+
+        .info {
+            display: flex;
+            flex-direction: column;
+            padding-top: 30px;
+            gap: 12px;
+
+            .infoTitle {
+                font-size: 18px;
+                font-weight: bold;
+            }
+
+            .link {
+                font-size: 15px;
+                font-weight: 200;
+                color: rgb(156, 156, 156);
+            }
+        }
+    }
+
+    .myPageBox {
+        flex: 1;
+        padding-top: 30px;
+        padding-bottom: 200px;
+
+        .myProfile {
+            display: flex;
+            padding: 25px;
+            align-items: center;
+            justify-content: space-between;
+            border: 1px solid rgb(235, 235, 235);
+            border-radius: 8px;
+
+            .myInfo {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                
+                .profieImg {
+                    width: 60px;
+                    height: 60px;
+                    border-radius: 50%;
+                    background-color: gray;
+                }
+
+                .nameAndMail {
+                    display: flex;
+                    flex-direction: column;
+
+                    .name {
+                        font-size: 18px;
+                        font-weight: 500;
+                    }
+
+                    .email {
+                        font-size: 14px;
+                        color: rgb(172, 172, 172);
+                    }
+                }
+            }
+
+            .profileChangeBtn {
+                display: flex;
+                gap: 10px;
+                
+                .button {
+                    padding: 10px;
+                    border: 1px solid rgb(208, 208, 208);
+                    border-radius: 8px;
+                    font-size: 12px;
+                    color: rgb(124, 124, 124);
+                    background-color: white;
+                }
+            }
+        }
+        
+        .purchaceHistory {
+            display: flex;
+            flex-direction: column;
+            margin-top: 30px;
+            align-items: center;
+            justify-content: space-between;
+            border-radius: 8px;
+
+            .purchaceTitle {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                width: 100%;
+                padding: 20px 0;
+
+                .title {
+                    font-size: 18px;
+                    font-weight: bold;
+                }
+
+                .showMore {
+                    font-size: 12px;
+                    color: rgb(167, 167, 167);
+                    cursor: pointer;
+                }
+            }
+
+            .purchaceCount {
+                display: table;
+                text-align: center;
+                width: 100%;
+                table-layout: fixed;
+                border-radius: 12px;
+                background-color: rgb(250, 250, 250);
+
+                .oneBox {
+                    display:table-cell;
+                    vertical-align: middle;
+                    height: 100px;
+                }
+            }
+
+            .purchaceHistoryInfo {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 200px;
+                width: 100%;
+                font-size: 12px;
+                color: rgb(167, 167, 167);
+            }
+        }
+
+        .interestBox {
+            display: flex;
+            flex-direction: column;
+            margin-top: 30px;
+            align-items: center;
+            justify-content: space-between;
+            border-radius: 8px;
+
+            .interestTitle {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                width: 100%;
+                padding: 20px 0;
+
+                .title {
+                    font-size: 18px;
+                    font-weight: bold;
+                }
+
+                .showMore {
+                    font-size: 12px;
+                    color: rgb(167, 167, 167);
+                    cursor: pointer;
+                }
+            }
+
+            .interestInfo {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 250px;
+                width: 100%;
+                font-size: 12px;
+                border-radius: 12px;
+                color: rgb(167, 167, 167);
+                background-color: rgb(250, 250, 250);
+            }
+        }
+    }
+}

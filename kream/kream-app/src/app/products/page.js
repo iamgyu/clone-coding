@@ -12,6 +12,7 @@ function ModalBuyPage({clickBuyModal}){
     const clickBuySize = (size) => {
         setSelectBuySize(size);
     }
+    
     return (
         <div className={styles.modalBuyPage} onClick={clickBuyModal}>
             <div className={styles.buyModalContent} onClick={(e) => e.stopPropagation()}>

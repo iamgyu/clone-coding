@@ -3,6 +3,7 @@
     flex-direction: column;
     align-items: center;
     margin-top: 87px;
+    padding-bottom: 150px;
     min-height: 100vh;
     gap: 10px;
     background-color: rgb(244, 244, 244);
@@ -56,6 +57,9 @@
         background-color: white;
 
         .address {
+            padding-bottom: 30px;
+            border-bottom: 1px solid rgb(235, 235, 235);
+
             .title {
                 font-size: 18px;
                 font-weight: 500;
@@ -82,19 +86,263 @@
                     padding: 10px 5px;
                     margin-left: 10px;
                 }
-            }   
+            }
+
+            .requestBtn {
+                margin-top: 20px;
+                padding: 10px 10px;
+                width: 100%;
+                text-align: left;
+                font-size: 14px;
+                border: 1px solid rgb(235, 235, 235);
+                border-radius: 8px;
+                color: black;
+                background-color: white;
+                cursor: pointer;
+            }
         }
 
-        .requestBtn {
-            margin-top: 20px;
-            padding: 10px 10px;
+        .method {
+            display: flex;
+            flex-direction: column;
+
+            .methodTitle {
+                padding: 10px 0;
+                font-size: 18px;
+                font-weight: 500;
+            }
+
+            .selectMethod {
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+
+                .info {
+                    display: flex;
+                    align-items: center;
+                    padding: 10px 20px;
+                    gap: 20px;
+                    border: 1px solid rgb(235, 235, 235);
+                    border-radius: 8px;
+                    cursor: pointer;
+
+                    .img {
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 50%;
+                        background-color: gray;
+                    }
+
+                    .infoDetail {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        gap: 4px;
+
+                        .title {
+                            font-size: 14px;
+                            color: black;
+                        }
+
+                        .detail {
+                            font-size: 12px;
+                            color: rgb(184, 184, 184);
+                            font-weight: 300;
+                        }
+                    }
+                }
+
+                .infoColor {
+                    border: 1px solid black;
+                }
+            }
+        }
+    }
+
+    .paymentInfo {
+        display: flex;
+        flex-direction: column;   
+        width: 700px;
+        padding: 30px;
+        background-color: white;
+
+        .paymentTitle {
+            padding: 10px 0;
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+        .easyPayment {
             width: 100%;
-            text-align: left;
-            font-size: 14px;
-            border: 1px solid rgb(235, 235, 235);
+
+            .title {
+                padding: 10px 0; 
+                font-size: 16px; 
+                font-weight: 200; 
+            }
+
+            .registBtn {
+                padding: 20px 20px;
+                width: 100%;
+                text-align: start;
+                border-radius: 8px;
+                color: rgb(142, 142, 142);
+                border: 1px solid rgb(211, 211, 211);
+                background-color: rgb(250, 250, 250);
+                cursor: pointer;
+            }
+        }
+
+        .normalPayment {
+            padding-top: 10px;
+            width: 100%;
+
+            .title {
+                padding: 10px 0;
+                font-size: 16px;
+                font-weight: 200;
+            }
+
+            .btnCollection {
+                display: flex;
+                flex-wrap: wrap;
+                padding: 5px;;
+                gap: 5px; 
+                width: 100%;
+                
+                .button {
+                    width: calc(33.33% - 10px);
+                    text-align: start;
+                    padding: 20px 10px;
+                    border: 1px solid rgb(211, 211, 211);
+                    border-radius: 8px;
+                    color: black;
+                    background-color: white;
+                    cursor: pointer;
+                }
+
+                .buttonFocus {
+                    border: 1px solid black;
+                    font-weight: bold;
+                }
+            }
+        }
+
+        .warningText {
+            padding: 10px 0;
+            color: rgb(117, 117, 117);
+            font-size: 12px;
+        }
+
+        .benefitCollection {
+            display: flex;
+            align-items: center;
+            padding: 5px 0;
+            .benefitTitle {
+                font-size: 12px;
+                width: 100px;
+                color: rgb(105, 105, 105)
+            }
+
+            .benefitInfo {
+                display: flex;
+                flex: 1;
+                justify-content: space-between;
+                font-size: 12px;
+                color: rgb(177, 177, 177);
+
+                .showMore {
+                    text-decoration: underline;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    .finalOrderInfo {
+        display: flex;
+        flex-direction: column;   
+        width: 700px;
+        padding: 30px;
+        background-color: white;
+
+        .finalOrderTitle {
+            padding: 5px 0;
+            font-size: 18px;
+            font-weight: 500;
+        }
+        
+        .buyNow {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            padding: 10px 0;
+
+            .title {
+                font-size: 14px;
+            }
+
+            .price {
+                font-size: 14px;
+                font-weight: bold;
+            }
+        }
+
+        .expense {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            padding: 10px 0;
+
+            .title {
+                font-size: 14px;
+                color: rgb(159, 159, 159);
+            }
+
+            .price {
+                font-size: 14px;
+                color: black;
+            }
+        }
+    }
+
+    .totalPrice {
+        position: relative;
+        width: 700px;
+        margin-top: -30px;
+        border-top: 1px solid rgb(240, 240, 240);
+        padding: 60px;
+        background-color: rgb(250, 250, 250);
+
+        .title {
+            position: absolute;
+            left: 30px;
+            top: 30px;
+        }
+
+        .price {
+            position: absolute;
+            right: 30px;
+            bottom: 30px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    }
+
+    .paymentBtn {
+        display: flex;
+        flex-direction: column; 
+        width: 700px;
+        padding: 30px;
+        background-color: white;
+
+        .button {
+            width: 100%;
+            font-size: 16px;
+            padding: 15px;
+            border: none;
             border-radius: 8px;
-            color: black;
-            background-color: white;
+            background-color: rgb(222, 107, 90);
             cursor: pointer;
         }
     }
@@ -131,12 +379,46 @@
             display: flex;
             flex-direction: column;
             width: 100%;
+            gap: 5px;
 
             .oneRequest {
-                padding: 20px 0;
+                padding: 15px 0;
+                text-align: start;
+                border: none;
                 border-bottom: 1px solid rgb(235, 235, 235);
                 font-size: 15px;
                 font-weight: 300;
+                color: black;
+                background-color: white;
+                cursor: pointer;
+
+                &:focus {
+                    font-weight: bolder;
+                }
+            }
+        }
+
+        .btnCollection {
+            display: flex;
+            margin-top: 80px;
+            gap: 10px;
+
+            .cancelBtn {
+                height: 40px;
+                width: 110px;
+                border: none;
+                border-radius: 8px;
+                border: 1px solid gray;
+                color: black;
+                background-color: white;
+            }
+
+            .applyBtn {
+                height: 40px;
+                width: 110px;
+                border: none;
+                border-radius: 8px;
+                background-color: black;
             }
         }
     }

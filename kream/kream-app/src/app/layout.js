@@ -18,7 +18,7 @@ export default function RootLayout({ children }) {
         <div className="navbar_total">
           <div className="navbar_top">
             <Link href="/">고객센터</Link>
-            <Link href="/">마이페이지</Link>
+            <Link href="/my">마이페이지</Link>
             <Link href="/">관심</Link>
             <Link href="/">알림</Link>
             <Link href="/login">로그인</Link>
