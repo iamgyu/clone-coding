@@ -156,8 +156,68 @@
           border-radius: 8px;
           color: black;
           background-color: white;
+          cursor: pointer;
         }
       }
+    }
+  }
+}
+
+.modalPage {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .modalContent {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 450px;
+      height: 450px;
+      background-color: white;
+
+      .word {
+          padding: 20px 0;
+          font-size: 18px;
+          font-weight: bold;
+      }
+
+      .sizeBox {
+          height: 270px;
+          padding: 5px 30px;
+          overflow-x: hidden;
+          overflow-y: auto;
+
+          .size {
+              padding: 16px 48px;
+              margin: 4px;
+              color: black;
+              background-color: white;
+              border: 1px solid rgb(211, 211 ,211);
+              border-radius: 16px;
+              cursor: pointer;
+
+              &:focus {
+                  border: 1px solid black;
+                  font-weight: bold;
+              }
+          }
+      }
+
+    .okBtn {
+        padding: 16px 48px;
+        margin-top: 35px;
+        border-radius: 16px;
+        background-color: black;
+        color: white;
+        border: none;
+        cursor: pointer;
     }
   }
 }

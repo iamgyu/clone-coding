@@ -3,7 +3,9 @@
 import Image from "next/image";
 import styles from "./order.module.css";
 import shoes from "/public/shoes.webp";
-import { useState } from "react";
+import logo from "/public/kreamlogo.jpeg";
+import Cookies from "js-cookie";
+import { useEffect, useState } from "react";
 import classNames from "classnames";
 import Link from "next/link";
 
@@ -55,14 +57,54 @@ function ProductInfo() {
     )
 }
 
+function NavBar({loginState, setLoginState}) {
+
+    useEffect(() => {
+      if (Cookies.get('jwt') !== undefined){
+        setLoginState(true);
+      }
+    }, [loginState]);
+  
+    const handleLogout = () => {
+      setLoginState(false);
+      Cookies.remove('jwt');
+    }
+  
+    return (
+      <div className="navbar_total">
+        <div className="navbar_top">
+          <Link href="/" scroll={false}>고객센터</Link>
+          {loginState ? <Link href="/my" scroll={false}>마이페이지</Link> : <Link href="/login" scroll={false}>마이페이지</Link>}
+          <Link href="/" scroll={false}>관심</Link>
+          <Link href="/" scroll={false}>알림</Link>
+          {loginState ? <Link href="/" onClick={handleLogout} scroll={false}>로그아웃</Link> : <Link href="/login" scroll={false}>로그인</Link>}
+        </div>
+        <div className="navbar">
+          <div className="logo">
+            <Link href="/" scroll={false}><Image src={logo} alt="logo" width="120" height="24"/></Link>
+          </div>
+          <div className="nav">
+            <Link href="/" scroll={false}>HOME</Link>
+            <Link href="/" scroll={false}>STYLE</Link>
+            <Link href="/" scroll={false}>SHOP</Link>
+            <Link href="/" scroll={false}><Image src="/search.svg" alt="search" width="28" height="28" /></Link>
+          </div>
+        </div>
+      </div>
+    )
+}
+
 function DeliveryInfo({clickModal, requestText}) {
     const [focusedDiv, setFocusedDiv] = useState(null);
+    const [loginState, setLoginState] = useState(false);
 
     const handleDivClick = (divId) => {
         setFocusedDiv(divId);
     };
 
     return (
+        <>
+        <NavBar loginState={loginState} setLoginState={setLoginState} />
         <div className={styles.deliveryInfo}>
             <div className={styles.address}>
                 <p className={styles.title}>배송 주소</p>
@@ -92,6 +134,7 @@ function DeliveryInfo({clickModal, requestText}) {
                 </div>
             </div>
         </div>
+        </>
     )
 }
 
