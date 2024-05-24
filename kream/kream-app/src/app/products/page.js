@@ -12,9 +12,11 @@ import axios from "axios";
 
 function ModalBuyPage({clickBuyModal, data, shoeSize}){
     const [selectBuySize, setSelectBuySize] = useState(0);
+    const [orderSize, setOrderSize] = useState(0);
 
-    const clickBuySize = (size) => {
+    const clickBuySize = (size, sizeId) => {
         setSelectBuySize(size);
+        setOrderSize(sizeId);
     }
 
     return (
@@ -40,13 +42,18 @@ function ModalBuyPage({clickBuyModal, data, shoeSize}){
                             <button
                                 key={size.id}
                                 className={styles.size} 
-                                onClick={() => clickBuySize(size.type)}>
+                                onClick={() => clickBuySize(size.type, size.id)}>
                                 {size.type}
                             </button>
                     ))}
                 </div>
                 <div className={styles.goOrderBtn}>
-                    <Link href="/order" className={styles.btn}>
+                    <Link href={{
+                        pathname: '/order',
+                        query: {
+                            orderSize: orderSize
+                        },
+                    }} className={styles.btn}>
                         {selectBuySize}
                     </Link>
                 </div>
@@ -86,11 +93,11 @@ function InfoCollection({data}) {
         <div className={styles.infoCollection}>
             <div className={styles.oneInfoFirst}>
                 <p className={styles.title}>최근 거래가</p>
-                <p className={styles.detail}>{data.recent_price ? data.recent_price.toLocaleString() : ""}원</p>
+                <p className={styles.detail}>{data.recent_price ? data.recent_price.toLocaleString() : "-"}원</p>
             </div>
             <div className={styles.oneInfo}>
                 <p className={styles.title}>발매가</p>
-                <p className={styles.detail}>{data.release_price ? data.release_price.toLocaleString() : ""}원</p>
+                <p className={styles.detail}>{data.release_price ? data.release_price.toLocaleString() : "-"}원</p>
             </div>
             <div className={styles.oneInfo}>
                 <p className={styles.title}>모델번호</p>
@@ -248,7 +255,7 @@ export default function Products() {
                     <div className={styles.infoBox}>
                         <div className={styles.buyNow}>
                             <p className={styles.word}>즉시 구매가</p>
-                            <p className={styles.price}>{data.min_price ? data.min_price.toLocaleString() : ""}원</p>
+                            <p className={styles.price}>{data.min_price ? data.min_price.toLocaleString() : "-"}원</p>
                         </div>
                         <div className={styles.productName}>
                             <p className={styles.engName}>{data.name}</p>

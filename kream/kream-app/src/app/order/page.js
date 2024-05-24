@@ -8,6 +8,7 @@ import Cookies from "js-cookie";
 import { useEffect, useState } from "react";
 import classNames from "classnames";
 import Link from "next/link";
+import axios from "axios";
 
 function RequestModal({clickModal, setRequestText}) {
     const [storeText, setStoreText] = useState("");
@@ -42,16 +43,16 @@ function RequestModal({clickModal, setRequestText}) {
     )
 }
 
-function ProductInfo() {
+function ProductInfo({stockData}) {
     return (
         <div className={styles.productInfo}>
             <div className={styles.img}>
                 <Image src={shoes} alt="shoes" width={80} height={80} />
             </div>
             <div className={styles.modelNumAndName}>
-                <p className={styles.modelNum}>FW7208</p>
-                <p className={styles.engName}>Adidas Gradas Collegiate Green</p>
-                <p className={styles.korName}>아디다스 그라다스 컬리지에이트 그린</p>
+                <p className={styles.modelNum}>{stockData.item_model}</p>
+                <p className={styles.engName}>{stockData.item_name}</p>
+                <p className={styles.korName}>{stockData.item_name}</p>
             </div>
         </div>
     )
@@ -94,13 +95,36 @@ function NavBar({loginState, setLoginState}) {
     )
 }
 
-function DeliveryInfo({clickModal, requestText}) {
+function DeliveryInfo({clickModal, requestText, stockData, setDeliveryId}) {
     const [focusedDiv, setFocusedDiv] = useState(null);
     const [loginState, setLoginState] = useState(false);
+    const [userName, setUserName] = useState('');
+    const [userPhoneNumber, setUserPhoneNumber] = useState('');
+    const [userAddress, setUserAddress] = useState('');
+    const [deliveryState, setDeliveryState] = useState(true);
 
     const handleDivClick = (divId) => {
         setFocusedDiv(divId);
     };
+
+    const handleDeliveryInfo = () => {
+        axios.post('http://127.0.0.1:5001/deliveries', {
+            name: userName,
+            phone_number: userPhoneNumber,
+            address: userAddress,
+        }, 
+        {
+            headers: {
+                'Content-Type': 'application/json',
+                Authorization: Cookies.get('jwt'),
+            },
+        })
+        .then(res => {
+            console.log(res.data);
+            setDeliveryId(res.data.id);
+            setDeliveryState(false);
+        })
+    }
 
     return (
         <>
@@ -109,8 +133,10 @@ function DeliveryInfo({clickModal, requestText}) {
             <div className={styles.address}>
                 <p className={styles.title}>배송 주소</p>
                 <div className={styles.addressInput}>
-                    <input className={styles.inputBox} type="text" placeholder="주소"/>
-                    <button className={styles.sendBtn}>보내기</button>
+                    <input className={styles.inputBox} type="text" placeholder="이름" onChange={(e) => {setUserName(e.target.value)}}/>
+                    <input className={styles.inputBox} type="text" placeholder="전화번호" onChange={(e) => {setUserPhoneNumber(e.target.value)}}/>
+                    <input className={styles.inputBox} type="text" placeholder="주소" onChange={(e) => {setUserAddress(e.target.value)}}/>
+                    {deliveryState && <button className={styles.sendBtn} onClick={handleDeliveryInfo}>보내기</button>}
                 </div>
                 <button className={styles.requestBtn} onClick={clickModal}>{requestText}</button>
             </div>
@@ -120,7 +146,7 @@ function DeliveryInfo({clickModal, requestText}) {
                     <div className={classNames(styles.info, {[styles.infoColor]: focusedDiv === "div1"})} onClick={() => handleDivClick("div1")}>
                         <div className={styles.img}></div>
                         <div className={styles.infoDetail}>
-                            <p className={styles.title}>일반배송 3,000원</p>
+                            <p className={styles.title}>{stockData.delivery_type} {stockData.delivery_price ? stockData.delivery_price.toLocaleString() : "-"}원</p>
                             <p className={styles.detail}>검수 후 배송 ・ 9-11일 내 도착 예정</p>
                         </div>
                     </div>
@@ -213,31 +239,27 @@ function PaymentInfo() {
     )
 }
 
-function FinalOrderInfo() {
+function FinalOrderInfo({stockData}) {
     return (
         <>
         <div className={styles.finalOrderInfo}>
             <p className={styles.finalOrderTitle}>최종 주문정보</p>
             <div className={styles.buyNow}>
                 <p className={styles.title}>즉시 구매가</p>
-                <p className={styles.price}>85,000원</p>
+                <p className={styles.price}>{stockData.price ? stockData.price.toLocaleString() : ""}원</p>
             </div>
             <div className={styles.expense}>
                 <p className={styles.title}>검수비</p>
                 <p className={styles.price}>무료</p>
             </div>
             <div className={styles.expense}>
-                <p className={styles.title}>수수료</p>
-                <p className={styles.price}>2,800원</p>
-            </div>
-            <div className={styles.expense}>
                 <p className={styles.title}>배송비</p>
-                <p className={styles.price}>3,000원</p>
+                <p className={styles.price}>{stockData.delivery_price ? stockData.delivery_price.toLocaleString() : ""}원</p>
             </div>
         </div>
         <div className={styles.totalPrice}>
             <p className={styles.title}>총 결제금액</p>
-            <p className={styles.price}>90,800원</p>
+            <p className={styles.price}>{stockData.total_price ? stockData.total_price.toLocaleString() : ""}원</p>
         </div>
         </>
     )
@@ -246,21 +268,53 @@ function FinalOrderInfo() {
 export default function Order() {
     const [showModal, setShowModal] = useState(false);
     const [requestText, setRequestText] = useState("요청사항 없음");
+    const [stockData, setStockData] = useState([]);
+    const [deliveryId, setDeliveryId] = useState(0);
+    
+    useEffect(() => {
+        const url = new URL(location.href);
+
+        axios.get('http://127.0.0.1:5001/stocks/size/' + url.searchParams.get('orderSize'), {
+            headers: {
+                'Content-Type': 'application/json',
+                Authorization: Cookies.get('jwt'),
+            },
+        })
+        .then(res => {
+            console.log(res.data);
+            setStockData(res.data);
+        })
+    },[])
 
     const clickModal = () => {
         setShowModal(!showModal);
+    }
+    
+    const handleOrder = () => {
+        axios.post('http://127.0.0.1:5001/orders', {
+            stock_id: stockData.id,
+            delivery_id: deliveryId,
+        }, {
+            headers: {
+                'Content-Type': 'application/json',
+                Authorization: Cookies.get('jwt'),
+            },
+        })
+        .then(res => {
+            console.log(res.data);
+        })
     }
 
     return (
         <>
             <div className={styles.orderPage}>
-                <ProductInfo />
-                <DeliveryInfo clickModal={clickModal} requestText={requestText}/>
+                <ProductInfo stockData={stockData}/>
+                <DeliveryInfo clickModal={clickModal} requestText={requestText} stockData={stockData} setDeliveryId={setDeliveryId}/>
                 <PaymentInfo />
-                <FinalOrderInfo />
+                <FinalOrderInfo stockData={stockData}/>
                 <div className={styles.paymentBtn}>
                     <Link href={"/"}>
-                        <button className={styles.button}>90,800원</button>           
+                        <button className={styles.button} onClick={handleOrder}>{stockData.total_price ? stockData.total_price.toLocaleString() : ""}원</button>           
                     </Link>
                 </div>
             </div>

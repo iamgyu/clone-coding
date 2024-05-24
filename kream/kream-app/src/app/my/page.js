@@ -28,7 +28,7 @@ function Navigation() {
     )
 }
 
-function MyPageInfo({email, nickname, deliveryData}) {
+function MyPageInfo({email, nickname, orderData, interestData}) {
     return (
         <div className={styles.myPageBox}>
             <div className={styles.myProfile}>
@@ -44,13 +44,13 @@ function MyPageInfo({email, nickname, deliveryData}) {
                     <button className={styles.button}>내 스타일</button>
                 </div>
             </div>
-            <PurchaceHistory  deliveryData={deliveryData}/>
-            <InterestInfo />
+            <PurchaceHistory  orderData={orderData}/>
+            <InterestInfo interestData={interestData}/>
         </div>
     )
 }
 
-function PurchaceHistory({deliveryData}) {
+function PurchaceHistory({orderData}) {
     return(
         <div className={styles.purchaceHistory}>
             <div className={styles.purchaceTitle}>
@@ -60,7 +60,7 @@ function PurchaceHistory({deliveryData}) {
             <div className={styles.purchaceCount}>
                 <div className={styles.oneBox}>
                     <p>전체</p>
-                    <p>{deliveryData.length}</p>
+                    <p>{orderData.length}</p>
                 </div>
                 <div className={styles.oneBox}>
                     <p>입찰중</p>
@@ -76,13 +76,32 @@ function PurchaceHistory({deliveryData}) {
                 </div>
             </div>
             <div className={styles.purchaceHistoryInfo}>
-                거래 내역이 없습니다.
+                    {
+                    orderData.map((order) => (
+                        <div key={order.id} className={styles.oneOrder}>
+                            <p>주문 번호 : {order.id}</p>
+                            <p>상품 가격 : {order.price}</p>
+                            <p>주문 시간 : {order.ordered_at}</p>
+                        </div>
+                    ))}
             </div>
         </div>
     )
 }
 
-function InterestInfo() {
+function InterestInfo({interestData}) {
+    const deleteInterest = (interestId) => {
+        axios.delete('http://127.0.0.1:5001/interests/' + interestId, {
+            headers: {
+                'Content-Type': 'application/json',
+                Authorization: Cookies.get('jwt'),
+            },
+        })
+        .then(res => {
+            window.location.reload();
+        })
+    }
+
     return (
         <div className={styles.interestBox}>
             <div className={styles.interestTitle}>
@@ -90,7 +109,17 @@ function InterestInfo() {
                 <p className={styles.showMore}>더보기</p>
             </div>
             <div className={styles.interestInfo}>
-                추가하신 관심 상품이 없습니다.
+                {
+                    interestData.map((interest) => (
+                        <div key={interest.id} className={styles.oneInterest}>
+                            <p>브랜드 : {interest.item_brand}</p>
+                            <p>제품명 : {interest.item_name}</p>
+                            <p>즉시 구매가 : {interest.min_price}</p>
+                            <p>사이즈 : {interest.size_type}</p>
+                            <button onClick={() => deleteInterest(interest.id)}>관심 삭제</button>
+                        </div>
+                    ))
+                }
             </div>
         </div>
     )
@@ -138,7 +167,8 @@ export default function My() {
     const [userId, setUserId] = useState(0);
     const [email, setEmail] = useState('');
     const [nickname, setNickname] = useState('');
-    const [deliveryData, setDeliveryData] = useState([]);
+    const [orderData, setOrderData] = useState([]);
+    const [interestData, setInterestData] = useState([]);
 
     useEffect(() => {
         axios.get('http://127.0.0.1:5001/users', {
@@ -155,28 +185,35 @@ export default function My() {
     },[]);
 
     useEffect(() => {
-        if (userId !== 0) {
-          axios.get('http://127.0.0.1:5001/orders/' + userId, {
+        axios.get('http://127.0.0.1:5001/orders', {
             headers: {
               'Content-Type': 'application/json',
               Authorization: Cookies.get('jwt'),
             },
           })
           .then(res => {
-            setDeliveryData(Array.isArray(res.data) ? res.data : [res.data]);
+            setOrderData(Array.isArray(res.data) ? res.data : [res.data]);
           })
-          .catch(error => {
-            console.error("Error fetching orders data:", error);
-          });
-        }
-      }, [userId]);
+      }, []);
+
+      useEffect(() => {
+        axios.get('http://127.0.0.1:5001/interests', {
+            headers: {
+                'Content-Type': 'application/json',
+                Authorization: Cookies.get('jwt'),
+            },
+        })
+        .then(res => {
+            setInterestData(res.data);
+        })
+      }, []);
 
     return(
         <>
             <NavBar loginState={loginState} setLoginState={setLoginState} />
             <div className={styles.myPage}>
                 <Navigation />
-                <MyPageInfo email={email} nickname={nickname} deliveryData={deliveryData}/>
+                <MyPageInfo email={email} nickname={nickname} orderData={orderData} interestData={interestData}/>
             </div>
         </>
     )
